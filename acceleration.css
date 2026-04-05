@@ -1,0 +1,684 @@
+/* ============================================
+   AI ACCELERATION PROGRAMME — STYLES
+   Uses base design system from styles.css
+   ============================================ */
+
+/* --- Hero Override for Acceleration Page --- */
+.accel-hero {
+    min-height: 85vh;
+    background: var(--navy);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.accel-hero .hero-content {
+    padding-top: 120px;
+    padding-bottom: var(--space-3xl);
+}
+
+.accel-hero .hero-title-line {
+    font-size: clamp(36px, 6vw, 72px);
+}
+
+/* --- Section Subtitle --- */
+.section-subtitle {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: var(--space-md) auto 0;
+    line-height: 1.7;
+}
+
+
+/* ============================================
+   VALUE PROPOSITION CARDS
+   ============================================ */
+.accel-value-section {
+    background: var(--bg-primary);
+    padding: var(--space-4xl) 0;
+    margin-top: -60px;
+    position: relative;
+    z-index: 2;
+}
+
+.accel-value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.accel-value-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    transition: all var(--duration-normal) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.accel-value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+}
+
+.accel-value-card:nth-child(1)::before { background: var(--teal); }
+.accel-value-card:nth-child(2)::before { background: var(--red); }
+.accel-value-card:nth-child(3)::before { background: var(--purple); }
+
+.accel-value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-xl);
+}
+
+.accel-value-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+}
+
+.accel-value-icon .material-symbols-outlined {
+    font-size: 28px;
+    color: var(--white);
+}
+
+.accel-value-icon--teal { background: var(--teal); }
+.accel-value-icon--red { background: var(--red); }
+.accel-value-icon--purple { background: var(--purple); }
+
+.accel-value-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: var(--space-sm);
+}
+
+.accel-value-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+
+/* ============================================
+   COMPETITION CARDS
+   ============================================ */
+.accel-competitions-section {
+    background: var(--navy-05);
+}
+
+.comp-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.comp-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.comp-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.comp-card-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.comp-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out);
+}
+
+.comp-card:hover .comp-card-img img {
+    transform: scale(1.08);
+}
+
+.comp-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(1, 27, 100, 0.7));
+}
+
+.comp-card-date {
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.comp-card-date .material-symbols-outlined {
+    font-size: 16px;
+}
+
+.comp-card-body {
+    padding: var(--space-xl);
+}
+
+.comp-card-location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+}
+
+.comp-card--teal .comp-card-location { color: var(--teal); }
+.comp-card--purple .comp-card-location { color: var(--purple); }
+.comp-card--red .comp-card-location { color: var(--red); }
+
+.comp-card-location .material-symbols-outlined {
+    font-size: 16px;
+}
+
+.comp-card-body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.comp-card-subtitle {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: var(--space-md);
+}
+
+.comp-card-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.comp-card-org {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.comp-meta-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    white-space: nowrap;
+}
+
+.comp-meta-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.comp-card-prize {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.prize-value {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.comp-card--teal .prize-value { color: var(--teal); }
+.comp-card--purple .prize-value { color: var(--purple); }
+.comp-card--red .prize-value { color: var(--red); }
+
+.prize-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+
+/* ============================================
+   COMPETITION TIMELINE
+   ============================================ */
+.accel-timeline-section {
+    background: var(--bg-primary);
+}
+
+.accel-timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 60px;
+}
+
+.accel-timeline-line {
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--teal), var(--purple), var(--red));
+    border-radius: 3px;
+}
+
+.accel-timeline-item {
+    position: relative;
+    padding-bottom: var(--space-3xl);
+}
+
+.accel-timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.accel-timeline-marker {
+    position: absolute;
+    left: -48px;
+    top: 4px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 4px var(--bg-primary);
+    z-index: 1;
+}
+
+.accel-timeline-marker .material-symbols-outlined {
+    font-size: 22px;
+    color: var(--white);
+}
+
+.accel-timeline-item--teal .accel-timeline-marker { background: var(--teal); }
+.accel-timeline-item--purple .accel-timeline-marker { background: var(--purple); }
+.accel-timeline-item--red .accel-timeline-marker { background: var(--red); }
+
+.accel-timeline-content {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl) var(--space-2xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.accel-timeline-item:hover .accel-timeline-content {
+    box-shadow: var(--shadow-md);
+    transform: translateX(8px);
+}
+
+.accel-timeline-date {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.accel-timeline-item--teal .accel-timeline-date { color: var(--teal); }
+.accel-timeline-item--purple .accel-timeline-date { color: var(--purple); }
+.accel-timeline-item--red .accel-timeline-date { color: var(--red); }
+
+.accel-timeline-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+.accel-timeline-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+}
+
+.accel-timeline-value {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.accel-timeline-item--teal .accel-timeline-value { color: var(--teal); }
+.accel-timeline-item--purple .accel-timeline-value { color: var(--purple); }
+.accel-timeline-item--red .accel-timeline-value { color: var(--red); }
+
+
+/* ============================================
+   BENEFITS / MORE THAN A COMPETITION
+   ============================================ */
+.accel-benefits-section {
+    background: var(--navy-05);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-3xl);
+}
+
+.benefit-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.benefit-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+}
+
+.benefit-icon .material-symbols-outlined {
+    font-size: 24px;
+    color: var(--white);
+}
+
+.benefit-icon--teal { background: var(--teal); }
+.benefit-icon--red { background: var(--red); }
+.benefit-icon--purple { background: var(--purple); }
+
+.benefit-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: var(--space-sm);
+}
+
+.benefit-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+
+/* --- Gateway Panel --- */
+.gateway-panel {
+    background: var(--navy);
+    border-radius: var(--radius-xl);
+    padding: var(--space-3xl);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.gateway-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.gateway-content {
+    position: relative;
+    z-index: 1;
+}
+
+.gateway-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--teal);
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-lg);
+}
+
+.gateway-content h3 {
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    margin-bottom: var(--space-md);
+}
+
+.gateway-content p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+}
+
+.gateway-cities {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.gateway-city {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.gateway-city:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(8px);
+}
+
+.gateway-city-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.gateway-city-event {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+}
+
+.gateway-city--teal .gateway-city-event {
+    background: rgba(0, 177, 176, 0.15);
+    color: var(--teal);
+}
+
+.gateway-city--purple .gateway-city-event {
+    background: rgba(103, 121, 189, 0.15);
+    color: var(--purple);
+}
+
+.gateway-city--red .gateway-city-event {
+    background: rgba(255, 0, 6, 0.15);
+    color: var(--red);
+}
+
+
+/* ============================================
+   BOTTOM CTA
+   ============================================ */
+.accel-cta-section {
+    background: var(--bg-primary);
+    padding: var(--space-4xl) 0 var(--space-5xl);
+}
+
+.accel-cta-inner {
+    position: relative;
+    background: var(--navy);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4xl) var(--space-3xl);
+    text-align: center;
+    overflow: hidden;
+}
+
+.accel-cta-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.accel-cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.accel-cta-content h2 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -1px;
+    margin-bottom: var(--space-md);
+}
+
+.accel-cta-content p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin-bottom: var(--space-2xl);
+}
+
+.accel-cta-content .hero-ctas {
+    justify-content: center;
+}
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    .comp-cards-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .gateway-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .accel-value-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto var(--space-3xl);
+    }
+
+    .accel-hero {
+        min-height: auto;
+        padding-bottom: var(--space-3xl);
+    }
+
+    .accel-hero .hero-content {
+        padding-top: 100px;
+    }
+
+    .accel-value-section {
+        margin-top: 0;
+    }
+
+    .accel-timeline {
+        padding-left: 50px;
+    }
+
+    .accel-timeline-marker {
+        left: -40px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .accel-timeline-marker .material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    .gateway-panel {
+        padding: var(--space-2xl);
+    }
+
+    .accel-cta-inner {
+        padding: var(--space-2xl) var(--space-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .accel-timeline {
+        padding-left: 45px;
+    }
+
+    .accel-timeline-marker {
+        left: -36px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .accel-timeline-content {
+        padding: var(--space-lg);
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        justify-content: center;
+    }
+}
