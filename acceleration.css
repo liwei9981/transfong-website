@@ -116,7 +116,7 @@
    COMPETITION CARDS
    ============================================ */
 .accel-competitions-section {
-    background: var(--navy-05);
+    background: var(--white);
 }
 
 .comp-cards-grid {
@@ -385,7 +385,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
-    margin-bottom: var(--space-3xl);
 }
 
 .benefit-card {
@@ -548,14 +547,14 @@
    ============================================ */
 .accel-cta-section {
     background: var(--bg-primary);
-    padding: var(--space-4xl) 0 var(--space-5xl);
+    padding: var(--space-2xl) 0 var(--space-3xl);
 }
 
 .accel-cta-inner {
     position: relative;
     background: var(--navy);
     border-radius: var(--radius-xl);
-    padding: var(--space-4xl) var(--space-3xl);
+    padding: var(--space-2xl) var(--space-xl) var(--space-xl);
     text-align: center;
     overflow: hidden;
 }
@@ -570,23 +569,23 @@
 .accel-cta-content {
     position: relative;
     z-index: 1;
-    max-width: 640px;
+    max-width: 580px;
     margin: 0 auto;
 }
 
 .accel-cta-content h2 {
-    font-size: clamp(28px, 5vw, 44px);
+    font-size: clamp(24px, 4vw, 32px);
     font-weight: 800;
     color: var(--white);
-    letter-spacing: -1px;
-    margin-bottom: var(--space-md);
+    letter-spacing: -0.5px;
+    margin-bottom: var(--space-sm);
 }
 
 .accel-cta-content p {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.7;
-    margin-bottom: var(--space-2xl);
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
 }
 
 .accel-cta-content .hero-ctas {
@@ -654,7 +653,7 @@
     }
 
     .accel-cta-inner {
-        padding: var(--space-2xl) var(--space-xl);
+        padding: var(--space-xl);
     }
 }
 
