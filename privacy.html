@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Transfong</title>
+    <meta name="description" content="Transfong's Privacy Policy explains how we collect, use, disclose, and safeguard your personal data in compliance with Singapore's PDPA.">
+    <meta name="keywords" content="Transfong, privacy policy, PDPA, Singapore, personal data protection">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Privacy Page Specific Styles */
+        .privacy-hero {
+            background: var(--navy);
+            padding: 140px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .privacy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(
+                circle at top right,
+                rgba(29, 116, 255, 0.15) 0%,
+                rgba(36, 172, 251, 0.06) 40%,
+                transparent 70%
+            );
+            pointer-events: none;
+        }
+
+        .privacy-hero .section-label {
+            background: rgba(0, 177, 176, 0.15);
+            color: var(--teal);
+        }
+
+        .privacy-hero .section-title {
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+
+        .privacy-hero .privacy-updated {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 400;
+        }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-4xl) var(--space-xl);
+        }
+
+        .privacy-content p {
+            font-size: 15px;
+            line-height: 1.85;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .privacy-content p.privacy-intro {
+            font-size: 16px;
+            color: var(--text-primary);
+            line-height: 1.9;
+        }
+
+        .privacy-content h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-top: var(--space-3xl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--navy-10);
+            letter-spacing: -0.3px;
+        }
+
+        .privacy-content h2 .section-num {
+            color: var(--teal);
+            margin-right: 8px;
+        }
+
+        .privacy-content ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--space-lg);
+        }
+
+        .privacy-content ul li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: var(--space-md);
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .privacy-content ul li::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--teal);
+        }
+
+        .privacy-content ul li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .privacy-content .privacy-note {
+            margin-top: var(--space-3xl);
+            padding: var(--space-xl);
+            background: var(--navy-05);
+            border-left: 3px solid var(--teal);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-size: 14px;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .privacy-content .dpo-card {
+            margin-top: var(--space-xl);
+            padding: var(--space-xl) var(--space-2xl);
+            background: var(--navy-05);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+        }
+
+        .privacy-content .dpo-card p {
+            margin-bottom: var(--space-sm);
+        }
+
+        .privacy-content .dpo-card strong {
+            color: var(--text-primary);
+        }
+
+        .privacy-content .dpo-card a {
+            color: var(--teal);
+            font-weight: 600;
+            transition: color var(--duration-fast);
+        }
+
+        .privacy-content .dpo-card a:hover {
+            color: var(--navy);
+        }
+
+        @media (max-width: 768px) {
+            .privacy-hero {
+                padding: 120px 0 40px;
+            }
+            .privacy-content {
+                padding: var(--space-3xl) var(--space-lg);
+            }
+            .privacy-content h2 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Skip Link for Keyboard Accessibility -->
+    <a href="#privacy-content" class="skip-link">Skip to main content</a>
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="pictures/Transfong Chinese Logo - On Blue.png" alt="Transfong" class="nav-logo-img nav-logo-dark" />
+                <img src="pictures/Transfong Chinese Logo - On White.png" alt="Transfong" class="nav-logo-img nav-logo-light" />
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link" data-en="Home" data-zh="首页">Home</a>
+                <a href="index.html#about" class="nav-link" data-en="About" data-zh="关于我们">About</a>
+                <a href="index.html#services" class="nav-link" data-en="Services" data-zh="核心业务">Services</a>
+                <a href="ai-acceleration.html" class="nav-link" data-en="AI Acceleration" data-zh="AI加速计划">AI Acceleration</a>
+                <a href="index.html#team" class="nav-link" data-en="Team" data-zh="团队">Team</a>
+                <a href="index.html#contact" class="nav-link" data-en="Contact" data-zh="联系我们">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle Language">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-divider">|</span>
+                    <span class="lang-option" data-lang="zh">中文</span>
+                </button>
+                <button class="nav-burger" id="navBurger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ PRIVACY HERO ============ -->
+    <section class="privacy-hero">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 0;">
+                <span class="section-label" data-en="Legal" data-zh="法律条款">Legal</span>
+                <h1 class="section-title" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy<span class="title-red-dot">.</span></h1>
+                <p class="privacy-updated" data-en="Last Updated: January 2026" data-zh="最后更新：2026年1月">Last Updated: January 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PRIVACY CONTENT ============ -->
+    <main class="privacy-content" id="privacy-content">
+
+        <p class="privacy-intro" data-en="Welcome to Transfong (referred to as &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We are committed to protecting your privacy and ensuring that your personal data is handled in compliance with the Singapore Personal Data Protection Act 2012 (&quot;PDPA&quot;)." data-zh="欢迎访问Transfong（以下简称"我们"）。我们致力于保护您的隐私，确保您的个人数据按照《新加坡个人数据保护法》（2012年）("PDPA")进行处理。">
+            Welcome to Transfong (referred to as "we", "us", or "our"). We are committed to protecting your privacy and ensuring that your personal data is handled in compliance with the Singapore Personal Data Protection Act 2012 ("PDPA").
+        </p>
+
+        <p data-en="This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you visit our website (www.transfong), interact with our LinkedIn advertisements, or submit an online &quot;Register Interest&quot; form." data-zh="本隐私政策说明了当您访问我们的网站（www.transfong）、与我们的LinkedIn广告互动或提交在线"注册兴趣"表格时，我们如何收集、使用、披露和保护您的个人数据。">
+            This Privacy Policy explains how we collect, use, disclose, and safeguard your personal data when you visit our website (www.transfong), interact with our LinkedIn advertisements, or submit an online "Register Interest" form.
+        </p>
+
+        <p data-en="By interacting with us, submitting information to us (including via third-party platforms like LinkedIn), or signing up for any products or services offered by us, you agree and consent to Transfong collecting, using, disclosing, and sharing your Personal Data in accordance with this Privacy Policy." data-zh="通过与我们互动、向我们提交信息（包括通过LinkedIn等第三方平台），或注册我们提供的任何产品或服务，即表示您同意并允许Transfong按照本隐私政策收集、使用、披露和共享您的个人数据。">
+            By interacting with us, submitting information to us (including via third-party platforms like LinkedIn), or signing up for any products or services offered by us, you agree and consent to Transfong collecting, using, disclosing, and sharing your Personal Data in accordance with this Privacy Policy.
+        </p>
+
+        <!-- Section 1 -->
+        <h2><span class="section-num">1.</span> Personal Data We Collect</h2>
+
+        <p data-en="&quot;Personal Data&quot; refers to any data, whether true or not, about an individual who can be identified from that data, or from that data and other information to which we have or are likely to have access." data-zh=""个人数据"是指关于某个人的任何数据，无论真实与否，只要能从该数据或从该数据与我们已有或可能获得的其他信息中识别出该个人。">
+            "Personal Data" refers to any data, whether true or not, about an individual who can be identified from that data, or from that data and other information to which we have or are likely to have access.
+        </p>
+
+        <p data-en="Depending on your interaction with us (such as filling out a &quot;Register Interest&quot; form or submitting a LinkedIn Lead Generation form), we may collect the following personal data:" data-zh="根据您与我们的互动方式（例如填写"注册兴趣"表格或提交LinkedIn潜在客户表格），我们可能会收集以下个人数据：">
+            Depending on your interaction with us (such as filling out a "Register Interest" form or submitting a LinkedIn Lead Generation form), we may collect the following personal data:
+        </p>
+
+        <ul>
+            <li data-en="&lt;strong&gt;Contact Information:&lt;/strong&gt; Name, email address, phone number." data-zh="&lt;strong&gt;联系信息：&lt;/strong&gt;姓名、电子邮件地址、电话号码。">
+                <strong>Contact Information:</strong> Name, email address, phone number.
+            </li>
+            <li data-en="&lt;strong&gt;Professional Information:&lt;/strong&gt; Job title, company name, industry, and any other information available on your LinkedIn profile if you interact with our LinkedIn Ads." data-zh="&lt;strong&gt;职业信息：&lt;/strong&gt;职位、公司名称、行业，以及您与我们的LinkedIn广告互动时LinkedIn个人资料上的其他信息。">
+                <strong>Professional Information:</strong> Job title, company name, industry, and any other information available on your LinkedIn profile if you interact with our LinkedIn Ads.
+            </li>
+            <li data-en="&lt;strong&gt;Interaction Data:&lt;/strong&gt; Information regarding your inquiries, interest in our services, and preferences." data-zh="&lt;strong&gt;互动数据：&lt;/strong&gt;有关您的咨询、对我们服务的兴趣和偏好的信息。">
+                <strong>Interaction Data:</strong> Information regarding your inquiries, interest in our services, and preferences.
+            </li>
+        </ul>
+
+        <!-- Section 2 -->
+        <h2><span class="section-num">2.</span> Purposes for the Collection, Use, and Disclosure of Personal Data</h2>
+
+        <p data-en="We generally collect, use, and disclose your Personal Data for the following purposes:" data-zh="我们通常基于以下目的收集、使用和披露您的个人数据：">
+            We generally collect, use, and disclose your Personal Data for the following purposes:
+        </p>
+
+        <ul>
+            <li data-en="&lt;strong&gt;Responding to Inquiries:&lt;/strong&gt; To process and respond to your &quot;Register Interest&quot; submissions, queries, requests, and applications." data-zh="&lt;strong&gt;回复咨询：&lt;/strong&gt;处理和回复您的"注册兴趣"提交、查询、请求和申请。">
+                <strong>Responding to Inquiries:</strong> To process and respond to your "Register Interest" submissions, queries, requests, and applications.
+            </li>
+            <li data-en="&lt;strong&gt;Marketing and Communications:&lt;/strong&gt; To send you relevant marketing materials, updates, newsletters, and information about our services that we believe may be of interest to you (you may opt-out at any time)." data-zh="&lt;strong&gt;营销通讯：&lt;/strong&gt;向您发送我们认为您可能感兴趣的相关营销材料、更新、通讯和服务信息（您可以随时选择退出）。">
+                <strong>Marketing and Communications:</strong> To send you relevant marketing materials, updates, newsletters, and information about our services that we believe may be of interest to you (you may opt-out at any time).
+            </li>
+            <li data-en="&lt;strong&gt;Business Operations:&lt;/strong&gt; To manage our administrative and business operations and comply with internal policies and procedures." data-zh="&lt;strong&gt;业务运营：&lt;/strong&gt;管理我们的行政和业务运营，遵守内部政策和程序。">
+                <strong>Business Operations:</strong> To manage our administrative and business operations and comply with internal policies and procedures.
+            </li>
+            <li data-en="&lt;strong&gt;Analytics and Improvement:&lt;/strong&gt; To analyze user engagement with our website and LinkedIn advertisements to improve our marketing strategies and service offerings." data-zh="&lt;strong&gt;分析改进：&lt;/strong&gt;分析用户与我们网站和LinkedIn广告的互动，以改善我们的营销策略和服务内容。">
+                <strong>Analytics and Improvement:</strong> To analyze user engagement with our website and LinkedIn advertisements to improve our marketing strategies and service offerings.
+            </li>
+            <li data-en="&lt;strong&gt;Compliance:&lt;/strong&gt; To meet or comply with any applicable rules, laws, regulations, codes of practice, or guidelines issued by any legal or regulatory bodies which are binding on us." data-zh="&lt;strong&gt;合规：&lt;/strong&gt;遵守任何适用的规则、法律、法规、行业准则或法律监管机构发布的对我们有约束力的指导方针。">
+                <strong>Compliance:</strong> To meet or comply with any applicable rules, laws, regulations, codes of practice, or guidelines issued by any legal or regulatory bodies which are binding on us.
+            </li>
+        </ul>
+
+        <!-- Section 3 -->
+        <h2><span class="section-num">3.</span> Consent and Withdrawal of Consent</h2>
+
+        <p data-en="By voluntarily providing your Personal Data to us via our website forms or LinkedIn advertisements, you are deemed to have consented to the collection, use, and disclosure of your Personal Data for the purposes stated above." data-zh="通过我们的网站表格或LinkedIn广告自愿向我们提供您的个人数据，即视为您同意我们基于上述目的收集、使用和披露您的个人数据。">
+            By voluntarily providing your Personal Data to us via our website forms or LinkedIn advertisements, you are deemed to have consented to the collection, use, and disclosure of your Personal Data for the purposes stated above.
+        </p>
+
+        <p data-en="You may withdraw your consent for the collection, use, and/or disclosure of your Personal Data in our possession or under our control at any time by contacting our Data Protection Officer (DPO). Please note that depending on the nature of your request, withdrawing consent may impact our ability to continue providing our services or responding to your inquiries." data-zh="您可以随时联系我们的数据保护官（DPO），撤回对我们持有或控制的您个人数据的收集、使用和/或披露的同意。请注意，根据您请求的性质，撤回同意可能会影响我们继续为您提供服务或回复您咨询的能力。">
+            You may withdraw your consent for the collection, use, and/or disclosure of your Personal Data in our possession or under our control at any time by contacting our Data Protection Officer (DPO). Please note that depending on the nature of your request, withdrawing consent may impact our ability to continue providing our services or responding to your inquiries.
+        </p>
+
+        <!-- Section 4 -->
+        <h2><span class="section-num">4.</span> Disclosure of Personal Data</h2>
+
+        <p data-en="We will not sell or rent your Personal Data to third parties. However, we may disclose your Personal Data to:" data-zh="我们不会向第三方出售或出租您的个人数据。但我们可能会向以下方披露您的个人数据：">
+            We will not sell or rent your Personal Data to third parties. However, we may disclose your Personal Data to:
+        </p>
+
+        <ul>
+            <li data-en="Third-party service providers, agents, or contractors who provide operational, marketing (e.g., email automation platforms), or technical services to us." data-zh="为我们提供运营、营销（如电子邮件自动化平台）或技术服务的第三方服务提供商、代理或承包商。">
+                Third-party service providers, agents, or contractors who provide operational, marketing (e.g., email automation platforms), or technical services to us.
+            </li>
+            <li data-en="Relevant regulatory authorities, statutory boards, or law enforcement agencies to comply with any directions, laws, or regulations." data-zh="相关监管机构、法定委员会或执法机构，以遵守任何指令、法律或法规。">
+                Relevant regulatory authorities, statutory boards, or law enforcement agencies to comply with any directions, laws, or regulations.
+            </li>
+        </ul>
+
+        <!-- Section 5 -->
+        <h2><span class="section-num">5.</span> Protection and Security of Personal Data</h2>
+
+        <p data-en="To safeguard your Personal Data from unauthorized access, collection, use, disclosure, copying, modification, disposal, or similar risks, we have introduced appropriate administrative, physical, and technical measures. While security cannot be fully guaranteed, we strive to protect the security of your information and are constantly reviewing and enhancing our information security measures." data-zh="为保护您的个人数据免受未经授权的访问、收集、使用、披露、复制、修改、处置或类似风险，我们已采取适当的行政、物理和技术措施。虽然安全性无法完全保证，但我们努力保护您信息的安全，并不断审查和加强我们的信息安全措施。">
+            To safeguard your Personal Data from unauthorized access, collection, use, disclosure, copying, modification, disposal, or similar risks, we have introduced appropriate administrative, physical, and technical measures. While security cannot be fully guaranteed, we strive to protect the security of your information and are constantly reviewing and enhancing our information security measures.
+        </p>
+
+        <!-- Section 6 -->
+        <h2><span class="section-num">6.</span> Retention of Personal Data</h2>
+
+        <p data-en="We may retain your Personal Data for as long as it is necessary to fulfill the purpose for which it was collected, or as required or permitted by applicable laws. We will cease to retain your Personal Data or remove the means by which the data can be associated with you, as soon as it is reasonable to assume that such retention no longer serves the purpose for which the personal data was collected and is no longer necessary for legal or business purposes." data-zh="我们可能会保留您的个人数据，直到实现收集目的所需的时间，或适用法律要求或允许的时间。一旦合理认定此类保留不再服务于收集个人数据的目的，且不再是法律或商业目的所必需，我们将停止保留您的个人数据或删除可将数据与您关联的方式。">
+            We may retain your Personal Data for as long as it is necessary to fulfill the purpose for which it was collected, or as required or permitted by applicable laws. We will cease to retain your Personal Data or remove the means by which the data can be associated with you, as soon as it is reasonable to assume that such retention no longer serves the purpose for which the personal data was collected and is no longer necessary for legal or business purposes.
+        </p>
+
+        <!-- Section 7 -->
+        <h2><span class="section-num">7.</span> Access and Correction of Personal Data</h2>
+
+        <p data-en="If you wish to make (a) an access request for access to a copy of the Personal Data which we hold about you or information about the ways in which we use or disclose your Personal Data, or (b) a correction request to correct or update any of your Personal Data which we hold about you, you may submit your request in writing or via email to our Data Protection Officer." data-zh="如果您希望（a）申请访问我们持有的关于您的个人数据副本或我们使用或披露您个人数据的方式信息，或（b）申请更正或更新我们持有的关于您的任何个人数据，您可以书面或通过电子邮件向我们的数据保护官提交请求。">
+            If you wish to make (a) an access request for access to a copy of the Personal Data which we hold about you or information about the ways in which we use or disclose your Personal Data, or (b) a correction request to correct or update any of your Personal Data which we hold about you, you may submit your request in writing or via email to our Data Protection Officer.
+        </p>
+
+        <!-- Section 8 -->
+        <h2><span class="section-num">8.</span> Contacting Our Data Protection Officer (DPO)</h2>
+
+        <p data-en="If you have any questions, feedback, or concerns regarding our Privacy Policy, or if you wish to withdraw your consent, access, or correct your Personal Data, please contact our Data Protection Officer:" data-zh="如果您对我们的隐私政策有任何疑问、反馈或关切，或者您希望撤回同意、访问或更正您的个人数据，请联系我们的数据保护官：">
+            If you have any questions, feedback, or concerns regarding our Privacy Policy, or if you wish to withdraw your consent, access, or correct your Personal Data, please contact our Data Protection Officer:
+        </p>
+
+        <div class="dpo-card">
+            <p><strong data-en="Name:" data-zh="姓名：">Name:</strong> Tyler Huang</p>
+            <p><strong data-en="Email:" data-zh="邮箱：">Email:</strong> <a href="mailto:dpo@transfong.com">dpo@transfong.com</a></p>
+        </div>
+
+        <div class="privacy-note" data-en="Note: We may revise this Privacy Policy from time to time without any prior notice. You may determine if any such revision has taken place by referring to the date on which this Privacy Policy was last updated." data-zh="注意：我们可能会不时修订本隐私政策，恕不另行通知。您可以参阅本隐私政策最后更新的日期，以确定是否已进行修订。">
+            Note: We may revise this Privacy Policy from time to time without any prior notice. You may determine if any such revision has taken place by referring to the date on which this Privacy Policy was last updated.
+        </div>
+
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="pictures/Transfong Chinese Logo - On Blue.png" alt="Transfong" class="footer-logo-img" />
+                    <p class="footer-tagline" data-en="Singapore-led, Cross-Border Tech Business Accelerator" data-zh="以新加坡为支点的跨境科技业务推动者">Singapore-led, Cross-Border Tech Business Accelerator</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html" data-en="Home" data-zh="首页">Home</a>
+                    <a href="index.html#about" data-en="About" data-zh="关于我们">About</a>
+                    <a href="index.html#services" data-en="Services" data-zh="核心业务">Services</a>
+                    <a href="ai-acceleration.html" data-en="AI Acceleration" data-zh="AI加速计划">AI Acceleration</a>
+                    <a href="index.html#contact" data-en="Contact" data-zh="联系我们">Contact</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Transfong Ventures Pte Ltd. <span data-en="All rights reserved." data-zh="版权所有。">All rights reserved.</span></p>
+                    <p class="footer-legal-links">
+                        <a href="privacy.html" data-en="Privacy Policy" data-zh="隐私政策">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
