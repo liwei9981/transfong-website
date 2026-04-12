@@ -22,10 +22,6 @@
     font-size: clamp(36px, 6vw, 72px);
 }
 
-.accel-hero .hero-title-line.hero-title-accent {
-    font-size: clamp(24px, 4vw, 52px);
-}
-
 /* --- Section Subtitle --- */
 .section-subtitle {
     font-size: 17px;
