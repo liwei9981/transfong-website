@@ -260,12 +260,16 @@
     background: linear-gradient(180deg, #f3f6fb 0%, #eef3f9 100%);
 }
 
-.city-group {
-    margin-bottom: var(--space-3xl);
+.city-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
 }
 
-.city-group:last-child {
-    margin-bottom: 0;
+.city-column {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .city-group-title {
@@ -279,11 +283,34 @@
     display: inline-block;
 }
 
-.city-itinerary-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl);
+/* Arrow connector between city card and project card */
+.city-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: var(--space-md) 0;
+    color: var(--teal);
 }
+
+.city-arrow svg {
+    animation: arrowBounce 2s ease-in-out infinite;
+}
+
+.city-arrow span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--teal);
+    opacity: 0.7;
+}
+
+@keyframes arrowBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+}
+
 
 .city-photo-card {
     border-radius: var(--radius-xl);
@@ -893,7 +920,7 @@
         max-width: 520px;
     }
 
-    .city-itinerary-grid {
+    .city-columns {
         grid-template-columns: 1fr;
         max-width: 560px;
         margin: 0 auto;
