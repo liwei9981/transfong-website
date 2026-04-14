@@ -260,6 +260,25 @@
     background: linear-gradient(180deg, #f3f6fb 0%, #eef3f9 100%);
 }
 
+.city-group {
+    margin-bottom: var(--space-3xl);
+}
+
+.city-group:last-child {
+    margin-bottom: 0;
+}
+
+.city-group-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.3px;
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 3px solid var(--teal);
+    display: inline-block;
+}
+
 .city-itinerary-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -384,6 +403,39 @@
     position: relative;
     overflow: hidden;
 }
+
+/* Card with image variant */
+.visit-card.visit-card--with-img {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+.visit-card-img {
+    width: 140px;
+    min-height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.visit-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s var(--ease-out);
+}
+
+.visit-card--with-img:hover .visit-card-img img {
+    transform: scale(1.08);
+}
+
+.visit-card--with-img .visit-card-body {
+    flex: 1;
+    padding: var(--space-lg) var(--space-xl);
+    min-width: 0;
+}
+
 
 .visit-card:hover {
     transform: translateY(-4px);
@@ -909,5 +961,19 @@
 
     .visit-card {
         padding: var(--space-lg);
+    }
+
+    .visit-card.visit-card--with-img {
+        flex-direction: column;
+    }
+
+    .visit-card--with-img .visit-card-img {
+        width: 100%;
+        height: 160px;
+        min-height: auto;
+    }
+
+    .visit-card--with-img .visit-card-body {
+        padding: var(--space-md) var(--space-lg);
     }
 }

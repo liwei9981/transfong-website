@@ -7,37 +7,56 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Language Toggle ---
     const langToggle = document.getElementById('langToggle');
     const langOptions = langToggle.querySelectorAll('.lang-option');
-    let currentLang = 'en';
+    let currentLang = localStorage.getItem('transfong-lang') || 'en';
 
-    langToggle.addEventListener('click', (e) => {
-        const option = e.target.closest('.lang-option');
-        if (!option || option.dataset.lang === currentLang) return;
-        
-        currentLang = option.dataset.lang;
-        document.documentElement.setAttribute('data-lang', currentLang);
-        
-        langOptions.forEach(opt => opt.classList.toggle('active'));
-        
-        // Update page title
-        document.title = currentLang === 'zh'
-            ? '创士锋 — 跨境科技业务加速器'
-            : 'Transfong — Cross-Border Tech Business Accelerator';
+    // Function to apply language to the page
+    function applyLanguage(lang) {
+        currentLang = lang;
+        document.documentElement.setAttribute('data-lang', lang);
+        localStorage.setItem('transfong-lang', lang);
+
+        // Update toggle button state
+        langOptions.forEach(opt => {
+            opt.classList.toggle('active', opt.dataset.lang === lang);
+        });
 
         // Update all translatable elements
         document.querySelectorAll('[data-en][data-zh]').forEach(el => {
-            const text = el.getAttribute(`data-${currentLang}`);
-            if (text) el.textContent = text;
+            const text = el.getAttribute(`data-${lang}`);
+            if (!text) return;
+            // Preserve child elements like .title-red-dot spans
+            const preserved = el.querySelector('.title-red-dot');
+            if (preserved) {
+                // Clear text nodes only, keep child elements
+                el.childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE) node.remove();
+                });
+                el.insertBefore(document.createTextNode(text), preserved);
+            } else {
+                el.textContent = text;
+            }
         });
 
         // Re-set hero badge with dot
         const heroBadge = document.querySelector('.hero-badge');
         if (heroBadge) {
             const dot = heroBadge.querySelector('.hero-badge-dot');
-            const badgeText = heroBadge.getAttribute(`data-${currentLang}`);
+            const badgeText = heroBadge.getAttribute(`data-${lang}`);
             heroBadge.textContent = '';
             if (dot) heroBadge.appendChild(dot);
             heroBadge.append(` ${badgeText}`);
         }
+    }
+
+    // Apply saved language on page load
+    if (currentLang !== 'en') {
+        applyLanguage(currentLang);
+    }
+
+    langToggle.addEventListener('click', (e) => {
+        const option = e.target.closest('.lang-option');
+        if (!option || option.dataset.lang === currentLang) return;
+        applyLanguage(option.dataset.lang);
     });
 
 
