@@ -990,10 +990,10 @@ img {
     align-items: center;
     justify-content: center;
     gap: var(--space-sm);
-    padding: 14px var(--space-lg);
+    padding: 18px var(--space-lg);
     border-radius: var(--radius-md);
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 700;
     color: var(--text-secondary);
     transition: all var(--duration-normal) var(--ease-out);
 }
