@@ -18,6 +18,40 @@
     padding-bottom: var(--space-4xl);
 }
 
+.hero-supporters {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+}
+
+.supporters-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+.supporters-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.supporter-item {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.5px;
+}
+
 .immersion-hero .hero-title-line {
     font-size: clamp(36px, 6vw, 72px);
     line-height: 1.2;
