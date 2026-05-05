@@ -37,8 +37,6 @@
     margin: 0;
 }
 
-
-
 .supporter-item {
     font-size: 16px;
     font-weight: 700;
@@ -46,16 +44,8 @@
     letter-spacing: 0.5px;
 }
 
-/* Two-row supporters layout */
+/* Single-row supporters layout: logo + text names inline */
 .supporters-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-}
-
-/* Row 1 — all three names in a flex row */
-.supporters-names-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -70,21 +60,10 @@
     white-space: nowrap;
 }
 
-/* Row 2 — logo slot aligned under StartupX (first name) */
-.supporters-logos-row {
-    display: flex;
-    align-items: center;
-}
-
-.supporter-logo-slot {
-    display: flex;
-    align-items: center;
-}
-
 .supporter-logo {
-    height: 32px;
+    height: 28px;
     width: auto;
-    max-width: 180px;
+    max-width: 160px;
     object-fit: contain;
     display: block;
     opacity: 0.9;
@@ -93,21 +72,6 @@
 
 .supporter-logo:hover {
     opacity: 1;
-}
-
-/* StartupX — name + logo stacked (legacy, keep for safety) */
-.supporter-item--with-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-}
-
-.supporter-item--with-logo > span {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.5px;
 }
 
 .immersion-hero .hero-title-line {
