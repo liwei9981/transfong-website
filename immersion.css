@@ -75,8 +75,13 @@
 }
 
 .immersion-hero .hero-title-line {
-    font-size: clamp(36px, 6vw, 72px);
-    line-height: 1.2;
+    font-size: clamp(34px, 5.2vw, 64px);
+    line-height: 1.15;
+}
+
+/* Widen the intro copy so lines run a little longer */
+.immersion-hero .hero-subtitle {
+    max-width: 680px;
 }
 
 /* Use the base teal-to-purple gradient from styles.css for accent lines */
@@ -269,6 +274,26 @@
     color: var(--navy);
 }
 
+.immersion-intro-expo-link {
+    margin-top: var(--space-md);
+}
+
+.immersion-intro-expo-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--teal, #0FB5BA);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.immersion-intro-expo-link a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
 /* Value Props Row */
 .immersion-value-grid {
     display: grid;
@@ -279,7 +304,7 @@
 .immersion-value-card {
     background: var(--white);
     border-radius: var(--radius-lg);
-    padding: var(--space-2xl);
+    padding: var(--space-2xl) var(--space-lg);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-light);
     transition: all var(--duration-normal) var(--ease-out);
@@ -326,9 +351,10 @@
 .immersion-value-icon--purple { background: var(--purple); }
 
 .immersion-value-card h3 {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
     color: var(--navy);
+    letter-spacing: -0.3px;
     margin-bottom: var(--space-sm);
 }
 
@@ -933,7 +959,7 @@
     margin-bottom: var(--space-sm);
 }
 
-.culture-card-city--peach {
+.culture-card-city--crab {
     background: rgba(255, 140, 107, 0.1);
     color: #FF6B4A;
 }
