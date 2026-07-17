@@ -675,6 +675,19 @@
     transform: scale(1.08);
 }
 
+/* Branded placeholder panel for visit cards without a photo yet */
+.visit-card-img--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.visit-card-img--placeholder .material-symbols-outlined {
+    font-size: 44px;
+    color: rgba(255, 255, 255, 0.92);
+}
+.visits-track--teal .visit-card-img--placeholder { background: linear-gradient(150deg, var(--teal), var(--purple)); }
+.visits-track--purple .visit-card-img--placeholder { background: linear-gradient(150deg, var(--purple), var(--teal)); }
+
 .visit-card--with-img .visit-card-body {
     flex: 1;
     padding: var(--space-lg) var(--space-xl);
