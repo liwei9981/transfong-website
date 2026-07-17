@@ -639,6 +639,11 @@
     gap: var(--space-lg);
 }
 
+/* Full-width visit card — spans both columns so a lone last card fills the row (2,2,1 → neat) */
+.visits-cards-grid .visit-card--full {
+    grid-column: 1 / -1;
+}
+
 .visit-card {
     background: var(--bg-primary);
     border-radius: var(--radius-lg);
