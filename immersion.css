@@ -639,6 +639,11 @@
     gap: var(--space-lg);
 }
 
+/* Full-width visit card — spans both columns so a lone last card fills the row (2,2,1 → neat) */
+.visits-cards-grid .visit-card--full {
+    grid-column: 1 / -1;
+}
+
 .visit-card {
     background: var(--bg-primary);
     border-radius: var(--radius-lg);
@@ -674,6 +679,19 @@
 .visit-card--with-img:hover .visit-card-img img {
     transform: scale(1.08);
 }
+
+/* Branded placeholder panel for visit cards without a photo yet */
+.visit-card-img--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.visit-card-img--placeholder .material-symbols-outlined {
+    font-size: 44px;
+    color: rgba(255, 255, 255, 0.92);
+}
+.visits-track--teal .visit-card-img--placeholder { background: linear-gradient(150deg, var(--teal), var(--purple)); }
+.visits-track--purple .visit-card-img--placeholder { background: linear-gradient(150deg, var(--purple), var(--teal)); }
 
 .visit-card--with-img .visit-card-body {
     flex: 1;

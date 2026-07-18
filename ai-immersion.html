@@ -134,42 +134,151 @@
         </div>
     </section>
 
-    <!-- ============ PAST TRIP GALLERY BANNER ============ -->
-    <section class="gallery-banner" id="gallery">
-        <div class="gallery-header">
-            <span class="section-label" data-en="Past Trips" data-zh="往期回顾">Past Trips</span>
-            <h2 class="gallery-title" data-en="Moments from Previous Journeys" data-zh="往期旅程精彩瞬间">Moments from Previous Journeys<span class="title-red-dot">.</span></h2>
+    <!-- ============ TRACK RECORD (past trips) ============ -->
+    <style>
+      #track-record { background: linear-gradient(rgba(1,27,100,0.9), rgba(1,27,100,0.96)), #011B64; color: #fff; padding: 88px 0; overflow: hidden; font-family: var(--font-body); }
+      #track-record .tr-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+      #track-record .tr-eyebrow { font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #00B1B0; }
+      /* Section header styled like the rest of the site, adapted to the dark background */
+      #track-record .section-header { text-align: center; margin-bottom: 56px; }
+      #track-record .section-label { background: rgba(0,177,176,0.12); color: #00B1B0; }
+      #track-record .section-title { color: #fff; }
+      #track-record .immersion-section-subtitle { color: rgba(255,255,255,0.6); }
+      #track-record .tr-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+      #track-record .tr-head p { max-width: 420px; margin: 0; color: rgba(255,255,255,0.72); line-height: 1.65; font-size: 0.9875rem; }
+      #track-record .tr-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 32px; margin-top: 52px; }
+      #track-record .tr-stat-value { font-family: var(--font-display); font-weight: 800; font-size: 2.75rem; line-height: 1; color: #fff; }
+      #track-record .tr-stat-value .accent-red { color: #FF0006; }
+      #track-record .tr-stat-value .accent-teal { color: #00B1B0; }
+      #track-record .tr-stat-label { margin-top: 10px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.72); }
+      #track-record .tr-timeline { display: flex; overflow-x: auto; margin-top: 48px; padding-bottom: 22px; scrollbar-width: thin; }
+      #track-record .tr-trip { flex: 0 0 216px; min-width: 216px; }
+      #track-record .tr-track { position: relative; height: 12px; margin-bottom: 20px; }
+      #track-record .tr-track .line { position: absolute; top: 5px; left: 0; right: 0; height: 2px; background: rgba(255,255,255,0.18); }
+      #track-record .tr-track .node { position: absolute; top: 0; left: 0; width: 12px; height: 12px; border-radius: 50%; background: #FF0006; }
+      #track-record .tr-trip-n { font-family: var(--font-display); font-weight: 800; font-size: 0.8125rem; color: #00B1B0; letter-spacing: 0.1em; }
+      #track-record .tr-trip-date { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: #fff; margin-top: 6px; }
+      #track-record .tr-trip-cities { color: rgba(255,255,255,0.72); font-size: 0.9375rem; font-weight: 600; margin-top: 6px; line-height: 1.45; padding-right: 28px; }
+      #track-record .tr-next { flex: 0 0 250px; min-width: 250px; }
+      #track-record .tr-next .node { top: -3px; width: 18px; height: 18px; box-shadow: 0 0 0 5px rgba(255,0,6,0.28); }
+      #track-record .tr-next .line { right: 60%; }
+      #track-record .tr-next-card { display: block; text-decoration: none; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,0,6,0.55); border-radius: 14px; padding: 18px 20px; margin-right: 8px; transition: transform 200ms ease; }
+      #track-record .tr-next-card:hover { transform: translateY(-3px); text-decoration: none; }
+      #track-record .tr-next-card .k { font-family: var(--font-display); font-weight: 800; font-size: 0.8125rem; color: #FF0006; letter-spacing: 0.1em; }
+      #track-record .tr-next-card .d { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: #fff; margin-top: 6px; }
+      #track-record .tr-next-card .c { color: rgba(255,255,255,0.72); font-size: 0.9375rem; font-weight: 600; margin-top: 6px; }
+      #track-record .tr-next-card .cta { color: #fff; font-size: 0.875rem; font-weight: 700; margin-top: 12px; }
+      #track-record .tr-marquee { margin-top: 20px; overflow: hidden; }
+      #track-record .tr-marquee-inner { display: flex; gap: 16px; width: max-content; animation: tr-marquee 55s linear infinite; }
+      #track-record .tr-marquee-inner img { height: 250px; width: 375px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+      @keyframes tr-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      #track-record .tr-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px; }
+      #track-record .tr-quote { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+      #track-record .tr-quote .qdot { display: block; width: 10px; height: 10px; border-radius: 50%; }
+      #track-record .tr-quote p { margin: 0; color: #fff; line-height: 1.65; font-size: 0.9875rem; flex: 1; }
+      #track-record .tr-quote .who { font-size: 0.875rem; font-weight: 700; color: rgba(255,255,255,0.72); }
+      #track-record .tr-li-btn { display: inline-flex; align-items: center; gap: 9px; align-self: flex-start; padding: 9px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); color: #fff; font-size: 0.8125rem; font-weight: 700; text-decoration: none; transition: background 200ms ease, border-color 200ms ease; }
+      #track-record .tr-li-btn:hover { background: rgba(255,255,255,0.1); border-color: #fff; text-decoration: none; }
+      #track-record .tr-li-btn .in { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 4px; background: #fff; color: #011B64; font-family: var(--font-display); font-weight: 800; font-size: 0.6875rem; line-height: 1; }
+    </style>
+
+    <section id="track-record">
+      <div class="tr-wrap">
+        <div class="section-header">
+          <span class="section-label" data-en="Past Trips" data-zh="往期回顾">Past Trips</span>
+          <h2 class="section-title" data-en="Track Record" data-zh="过往足迹">Track Record<span class="title-red-dot">.</span></h2>
+          <p class="immersion-section-subtitle" data-en="Ten journeys and counting — since September 2023 we've run immersion trips three to four times a year, each taking a delegation deep into a different corner of China's innovation ecosystem." data-zh="十段旅程，未完待续——自2023年9月以来，我们每年举办三至四次沉浸式考察，每次都带领代表团深入中国创新生态的不同前沿。">Ten journeys and counting — since September 2023 we've run immersion trips three to four times a year, each taking a delegation deep into a different corner of China's innovation ecosystem.</p>
         </div>
-        <div class="gallery-track-wrapper">
-            <div class="gallery-track">
-                <!-- First set -->
-                <div class="gallery-slide"><img src="pictures/gallery/trip-01.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-02.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-03.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-04.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-05.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-06.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-07.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-08.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-09.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-10.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-11.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-12.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <!-- Duplicate set for seamless loop -->
-                <div class="gallery-slide"><img src="pictures/gallery/trip-01.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-02.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-03.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-04.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-05.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-06.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-07.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-08.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-09.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-10.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-11.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-12.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-            </div>
+
+        <div class="tr-stats">
+          <div><div class="tr-stat-value"><span class="accent-red">10</span></div><div class="tr-stat-label" data-en="Trips completed since Sep 2023" data-zh="自2023年9月以来完成的行程">Trips completed since Sep 2023</div></div>
+          <div><div class="tr-stat-value"><span class="accent-teal">9</span></div><div class="tr-stat-label" data-en="Innovation cities visited" data-zh="走访的创新城市">Innovation cities visited</div></div>
+          <div><div class="tr-stat-value">~12</div><div class="tr-stat-label" data-en="Companies on every trip" data-zh="每次行程的参与企业">Companies on every trip</div></div>
+          <div><div class="tr-stat-value"><span class="accent-red">110+</span></div><div class="tr-stat-label" data-en="Participating companies to date" data-zh="累计参与企业">Participating companies to date</div></div>
         </div>
+
+        <div class="tr-timeline">
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 01" data-zh="行程 01">TRIP 01</div><div class="tr-trip-date" data-en="Sep 2023" data-zh="2023年9月">Sep 2023</div><div class="tr-trip-cities" data-en="Chongqing · Chengdu" data-zh="重庆 · 成都">Chongqing · Chengdu</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 02" data-zh="行程 02">TRIP 02</div><div class="tr-trip-date" data-en="Sep 2023" data-zh="2023年9月">Sep 2023</div><div class="tr-trip-cities" data-en="Xiamen" data-zh="厦门">Xiamen</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 03" data-zh="行程 03">TRIP 03</div><div class="tr-trip-date" data-en="Sep 2024" data-zh="2024年9月">Sep 2024</div><div class="tr-trip-cities" data-en="Xiamen" data-zh="厦门">Xiamen</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 04" data-zh="行程 04">TRIP 04</div><div class="tr-trip-date" data-en="Dec 2024" data-zh="2024年12月">Dec 2024</div><div class="tr-trip-cities" data-en="Wuxi · Suzhou · Shanghai" data-zh="无锡 · 苏州 · 上海">Wuxi · Suzhou · Shanghai</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 05" data-zh="行程 05">TRIP 05</div><div class="tr-trip-date" data-en="Aug 2025" data-zh="2025年8月">Aug 2025</div><div class="tr-trip-cities" data-en="Wuxi · Nanjing" data-zh="无锡 · 南京">Wuxi · Nanjing</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 06" data-zh="行程 06">TRIP 06</div><div class="tr-trip-date" data-en="Aug 2025" data-zh="2025年8月">Aug 2025</div><div class="tr-trip-cities" data-en="Beijing · Jinan" data-zh="北京 · 济南">Beijing · Jinan</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 07" data-zh="行程 07">TRIP 07</div><div class="tr-trip-date" data-en="Sep 2025" data-zh="2025年9月">Sep 2025</div><div class="tr-trip-cities" data-en="Xiamen" data-zh="厦门">Xiamen</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 08" data-zh="行程 08">TRIP 08</div><div class="tr-trip-date" data-en="Nov 2025" data-zh="2025年11月">Nov 2025</div><div class="tr-trip-cities" data-en="Wuxi · Suzhou" data-zh="无锡 · 苏州">Wuxi · Suzhou</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 09" data-zh="行程 09">TRIP 09</div><div class="tr-trip-date" data-en="Mar 2026" data-zh="2026年3月">Mar 2026</div><div class="tr-trip-cities" data-en="Wuxi · Nanjing" data-zh="无锡 · 南京">Wuxi · Nanjing</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n" data-en="TRIP 10" data-zh="行程 10">TRIP 10</div><div class="tr-trip-date" data-en="Jul 2026" data-zh="2026年7月">Jul 2026</div><div class="tr-trip-cities" data-en="Wuxi · Nanjing" data-zh="无锡 · 南京">Wuxi · Nanjing</div></div>
+          <div class="tr-next">
+            <div class="tr-track"><div class="line"></div><div class="node"></div></div>
+            <a class="tr-next-card" href="https://forms.office.com/r/N4gHCrvSef" target="_blank" rel="noopener">
+              <div class="k" data-en="NEXT DEPARTURE" data-zh="下一次出发">NEXT DEPARTURE</div>
+              <div class="d" data-en="Oct 2026" data-zh="2026年10月">Oct 2026</div>
+              <div class="c" data-en="Wuxi · Nanjing" data-zh="无锡 · 南京">Wuxi · Nanjing</div>
+              <div class="cta" data-en="Reserve your seat →" data-zh="预留席位 →">Reserve your seat →</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- full-bleed photo marquee; images duplicated once for the seamless loop -->
+      <div class="tr-marquee">
+        <div class="tr-marquee-inner">
+          <img src="pictures/gallery/trip-01.jpeg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-02.jpeg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-03.jpeg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-04.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-05.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-06.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-07.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-08.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-09.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-10.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-11.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-12.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-01.jpeg" alt="">
+          <img src="pictures/gallery/trip-02.jpeg" alt="">
+          <img src="pictures/gallery/trip-03.jpeg" alt="">
+          <img src="pictures/gallery/trip-04.jpg" alt="">
+          <img src="pictures/gallery/trip-05.jpg" alt="">
+          <img src="pictures/gallery/trip-06.jpg" alt="">
+          <img src="pictures/gallery/trip-07.jpg" alt="">
+          <img src="pictures/gallery/trip-08.jpg" alt="">
+          <img src="pictures/gallery/trip-09.jpg" alt="">
+          <img src="pictures/gallery/trip-10.jpg" alt="">
+          <img src="pictures/gallery/trip-11.jpg" alt="">
+          <img src="pictures/gallery/trip-12.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="tr-wrap">
+        <div class="tr-eyebrow" style="margin-top: 64px;" data-en="What participants say" data-zh="参与者感言">What participants say</div>
+        <div class="tr-quotes">
+          <div class="tr-quote">
+            <span class="qdot" style="background: #FF0006;"></span>
+            <p data-en="&quot;From seed to fruition — what began as conversations on this trip has grown into real cross-border opportunities.&quot;" data-zh="“从萌芽到结果——这趟旅程中的交流，如今已成长为实实在在的跨境合作机会。”">"From seed to fruition — what began as conversations on this trip has grown into real cross-border opportunities."</p>
+            <div class="who" data-en="Daniel CF Ng · via LinkedIn" data-zh="Daniel CF Ng · 来自领英">Daniel CF Ng · via LinkedIn</div>
+            <a class="tr-li-btn" href="https://www.linkedin.com/posts/danielcfng_from-seed-to-fruition-the-honey-peach-that-activity-7482293105912721408-djm3" target="_blank" rel="noopener"><span class="in">in</span><span data-en="View full post on LinkedIn" data-zh="查看领英原文">View full post on LinkedIn</span></a>
+          </div>
+          <div class="tr-quote">
+            <span class="qdot" style="background: #00B1B0;"></span>
+            <p data-en="&quot;The tech immersion gave me a first-hand view of China's innovation ecosystem that no report could ever match.&quot;" data-zh="“这次科技沉浸之旅让我亲眼见证了中国的创新生态，这是任何报告都无法比拟的。”">"The tech immersion gave me a first-hand view of China's innovation ecosystem that no report could ever match."</p>
+            <div class="who" data-en="Tania Hamad · via LinkedIn" data-zh="Tania Hamad · 来自领英">Tania Hamad · via LinkedIn</div>
+            <a class="tr-li-btn" href="https://www.linkedin.com/posts/taniahamad_honeypeach-techimmersion-innovation-activity-7482359020146667520-u-gJ" target="_blank" rel="noopener"><span class="in">in</span><span data-en="View full post on LinkedIn" data-zh="查看领英原文">View full post on LinkedIn</span></a>
+          </div>
+          <div class="tr-quote">
+            <span class="qdot" style="background: #6779BD;"></span>
+            <p data-en="&quot;The trip connected our water-tech solution directly with the right partners and opportunities in China.&quot;" data-zh="“这趟旅程让我们的水务科技方案直接对接了中国合适的合作伙伴与机遇。”">"The trip connected our water-tech solution directly with the right partners and opportunities in China."</p>
+            <div class="who" data-en="Sean S. · via LinkedIn" data-zh="Sean S. · 来自领英">Sean S. · via LinkedIn</div>
+            <a class="tr-li-btn" href="https://www.linkedin.com/posts/seansley_waterdoctor-activity-7482264050760867840-_0AF" target="_blank" rel="noopener"><span class="in">in</span><span data-en="View full post on LinkedIn" data-zh="查看领英原文">View full post on LinkedIn</span></a>
+          </div>
+          <div class="tr-quote">
+            <span class="qdot" style="background: #FF0006;"></span>
+            <p data-en="&quot;A story of Wuxi and Singapore — welcoming this delegation as part of the growing innovation bridge between our two ecosystems.&quot;" data-zh="“无锡与新加坡的故事——欢迎此次代表团到访，共同架起两地创新生态之间日益紧密的桥梁。”">"A story of Wuxi and Singapore — welcoming this delegation as part of the growing innovation bridge between our two ecosystems."</p>
+            <div class="who" data-en="Wuxi, China · via LinkedIn" data-zh="无锡，中国 · 来自领英">Wuxi, China · via LinkedIn</div>
+            <a class="tr-li-btn" href="https://www.linkedin.com/posts/wuxi-china_wuxi-singapore-wuxistory-activity-7483095806699384832-qXDj" target="_blank" rel="noopener"><span class="in">in</span><span data-en="View full post on LinkedIn" data-zh="查看领英原文">View full post on LinkedIn</span></a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============ CITY DESTINATIONS ============ -->
@@ -306,6 +415,19 @@
                         </div>
                         </div>
                     </div>
+                    <div class="visit-card visit-card--with-img visit-card--full">
+                        <div class="visit-card-img"><img src="pictures/visits/lead_digital.jpg" alt="Lead Digital"></div>
+                        <div class="visit-card-body">
+                        <div class="visit-card-number">5</div>
+                        <h4>Lead Digital</h4>
+                        <div class="visit-card-cn">羚数智能</div>
+                        <p class="visit-card-desc" data-en="Among China's first &quot;AI + Manufacturing&quot; providers focused on deploying industrial-domain large models. Its in-house &quot;Baigong&quot; Industrial LLM uses multi-agent (Multi-Agent) collaboration to deliver full-chain smart production and supply-chain decisions for high-end manufacturing and engineering firms." data-zh="国内首批聚焦工业垂直领域大模型落地的“AI+制造”服务商，手握自研的“百工工业大模型”，通过多智能体（Multi-Agent）协同，为高端制造及工程企业提供全链路的智能生产与供应链决策。">Among China's first "AI + Manufacturing" providers focused on deploying industrial-domain large models. Its in-house "Baigong" Industrial LLM uses multi-agent (Multi-Agent) collaboration to deliver full-chain smart production and supply-chain decisions for high-end manufacturing and engineering firms.</p>
+                        <div class="visit-card-tags">
+                            <span class="visit-card-tag" data-en="Industrial LLM" data-zh="工业大模型">Industrial LLM</span>
+                            <span class="visit-card-tag" data-en="Multi-Agent" data-zh="多智能体">Multi-Agent</span>
+                        </div>
+                        </div>
+                    </div>
                 </div>
                 <p class="visits-note" data-en="Additional premium visits in the field of AI & Intelligent Tech may be included." data-zh="可能会增加AI与智能科技领域的额外优质参访。">Additional premium visits in the field of AI & Intelligent Tech may be included.</p>
             </div>
@@ -369,6 +491,19 @@
                         <div class="visit-card-tags">
                             <span class="visit-card-tag" data-en="Series A" data-zh="A轮">Series A</span>
                             <span class="visit-card-tag" data-en="Harmonic Drives" data-zh="谐波减速器">Harmonic Drives</span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="visit-card visit-card--with-img visit-card--full">
+                        <div class="visit-card-img"><img src="pictures/visits/magic_atomic.jpg" alt="Magic Atomic Robotics"></div>
+                        <div class="visit-card-body">
+                        <div class="visit-card-number">5</div>
+                        <h4>Magic Atomic Robotics</h4>
+                        <div class="visit-card-cn">魔法原子机器人科技</div>
+                        <p class="visit-card-desc" data-en="A global leader in embodied intelligence and general-purpose humanoid robots, with full-stack in-house hardware, software, and multimodal perception algorithms. Its full-size humanoid robots and quadruped robot dogs are already in volume production for complex industrial and commercial settings." data-zh="全球领先的具身智能与通用人形机器人研发商，拥有全栈自研的软硬件及多模态感知算法，其全尺寸人形机器人及四足机器狗已实现复杂工业与商业场景的量产交付。">A global leader in embodied intelligence and general-purpose humanoid robots, with full-stack in-house hardware, software, and multimodal perception algorithms. Its full-size humanoid robots and quadruped robot dogs are already in volume production for complex industrial and commercial settings.</p>
+                        <div class="visit-card-tags">
+                            <span class="visit-card-tag" data-en="Humanoid Robots" data-zh="人形机器人">Humanoid Robots</span>
+                            <span class="visit-card-tag" data-en="Embodied AI" data-zh="具身智能">Embodied AI</span>
                         </div>
                         </div>
                     </div>
