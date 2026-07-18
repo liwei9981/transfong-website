@@ -138,8 +138,11 @@
       #track-record { background: linear-gradient(rgba(1,27,100,0.9), rgba(1,27,100,0.96)), #011B64; color: #fff; padding: 88px 0; overflow: hidden; font-family: var(--font-body); }
       #track-record .tr-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
       #track-record .tr-eyebrow { font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #00B1B0; }
-      #track-record h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.9rem, 3.4vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.1; color: #fff; margin: 12px 0 0; }
-      #track-record h2 .dot { color: #FF0006; }
+      /* Section header styled like the rest of the site, adapted to the dark background */
+      #track-record .section-header { text-align: center; margin-bottom: 56px; }
+      #track-record .section-label { background: rgba(0,177,176,0.12); color: #00B1B0; }
+      #track-record .section-title { color: #fff; }
+      #track-record .immersion-section-subtitle { color: rgba(255,255,255,0.6); }
       #track-record .tr-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
       #track-record .tr-head p { max-width: 420px; margin: 0; color: rgba(255,255,255,0.72); line-height: 1.65; font-size: 0.9875rem; }
       #track-record .tr-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 32px; margin-top: 52px; }
@@ -180,12 +183,10 @@
 
     <section id="track-record">
       <div class="tr-wrap">
-        <div class="tr-head">
-          <div style="max-width: 560px;">
-            <div class="tr-eyebrow" data-en="Track Record" data-zh="过往足迹">Track Record</div>
-            <h2><span data-en="Ten journeys. And counting" data-zh="十段旅程，未完待续">Ten journeys. And counting</span><span class="dot">.</span></h2>
-          </div>
-          <p data-en="Since September 2023 we have run immersion trips three to four times a year, taking delegations of tech companies deep into a different corner of China's innovation ecosystem each time." data-zh="自2023年9月以来，我们每年举办三至四次沉浸式考察，每次都带领科技企业代表团深入中国创新生态的不同前沿。">Since September 2023 we have run immersion trips three to four times a year, taking delegations of tech companies deep into a different corner of China's innovation ecosystem each time.</p>
+        <div class="section-header">
+          <span class="section-label" data-en="Past Trips" data-zh="往期回顾">Past Trips</span>
+          <h2 class="section-title" data-en="Track Record" data-zh="过往足迹">Track Record<span class="title-red-dot">.</span></h2>
+          <p class="immersion-section-subtitle" data-en="Ten journeys and counting — since September 2023 we've run immersion trips three to four times a year, each taking a delegation deep into a different corner of China's innovation ecosystem." data-zh="十段旅程，未完待续——自2023年9月以来，我们每年举办三至四次沉浸式考察，每次都带领代表团深入中国创新生态的不同前沿。">Ten journeys and counting — since September 2023 we've run immersion trips three to four times a year, each taking a delegation deep into a different corner of China's innovation ecosystem.</p>
         </div>
 
         <div class="tr-stats">
