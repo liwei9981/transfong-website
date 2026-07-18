@@ -133,42 +133,150 @@
         </div>
     </section>
 
-    <!-- ============ PAST TRIP GALLERY BANNER ============ -->
-    <section class="gallery-banner" id="gallery">
-        <div class="gallery-header">
-            <span class="section-label" data-en="Past Trips" data-zh="往期回顾">Past Trips</span>
-            <h2 class="gallery-title" data-en="Moments from Previous Journeys" data-zh="往期旅程精彩瞬间">Moments from Previous Journeys<span class="title-red-dot">.</span></h2>
+    <!-- ============ TRACK RECORD (past trips) ============ -->
+    <style>
+      #track-record { background: linear-gradient(rgba(1,27,100,0.9), rgba(1,27,100,0.96)), #011B64; color: #fff; padding: 88px 0; overflow: hidden; font-family: var(--font-body); }
+      #track-record .tr-wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+      #track-record .tr-eyebrow { font-family: var(--font-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #00B1B0; }
+      #track-record h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.9rem, 3.4vw, 2.6rem); letter-spacing: -0.02em; line-height: 1.1; color: #fff; margin: 12px 0 0; }
+      #track-record h2 .dot { color: #FF0006; }
+      #track-record .tr-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+      #track-record .tr-head p { max-width: 420px; margin: 0; color: rgba(255,255,255,0.72); line-height: 1.65; font-size: 0.9875rem; }
+      #track-record .tr-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 32px; margin-top: 52px; }
+      #track-record .tr-stat-value { font-family: var(--font-display); font-weight: 800; font-size: 2.75rem; line-height: 1; color: #fff; }
+      #track-record .tr-stat-value .accent-red { color: #FF0006; }
+      #track-record .tr-stat-value .accent-teal { color: #00B1B0; }
+      #track-record .tr-stat-label { margin-top: 10px; font-size: 0.875rem; font-weight: 600; color: rgba(255,255,255,0.72); }
+      #track-record .tr-timeline { display: flex; overflow-x: auto; margin-top: 48px; padding-bottom: 22px; scrollbar-width: thin; }
+      #track-record .tr-trip { flex: 0 0 216px; min-width: 216px; }
+      #track-record .tr-track { position: relative; height: 12px; margin-bottom: 20px; }
+      #track-record .tr-track .line { position: absolute; top: 5px; left: 0; right: 0; height: 2px; background: rgba(255,255,255,0.18); }
+      #track-record .tr-track .node { position: absolute; top: 0; left: 0; width: 12px; height: 12px; border-radius: 50%; background: #FF0006; }
+      #track-record .tr-trip-n { font-family: var(--font-display); font-weight: 800; font-size: 0.8125rem; color: #00B1B0; letter-spacing: 0.1em; }
+      #track-record .tr-trip-date { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: #fff; margin-top: 6px; }
+      #track-record .tr-trip-cities { color: rgba(255,255,255,0.72); font-size: 0.9375rem; font-weight: 600; margin-top: 6px; line-height: 1.45; padding-right: 28px; }
+      #track-record .tr-next { flex: 0 0 250px; min-width: 250px; }
+      #track-record .tr-next .node { top: -3px; width: 18px; height: 18px; box-shadow: 0 0 0 5px rgba(255,0,6,0.28); }
+      #track-record .tr-next .line { right: 60%; }
+      #track-record .tr-next-card { display: block; text-decoration: none; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,0,6,0.55); border-radius: 14px; padding: 18px 20px; margin-right: 8px; transition: transform 200ms ease; }
+      #track-record .tr-next-card:hover { transform: translateY(-3px); text-decoration: none; }
+      #track-record .tr-next-card .k { font-family: var(--font-display); font-weight: 800; font-size: 0.8125rem; color: #FF0006; letter-spacing: 0.1em; }
+      #track-record .tr-next-card .d { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; color: #fff; margin-top: 6px; }
+      #track-record .tr-next-card .c { color: rgba(255,255,255,0.72); font-size: 0.9375rem; font-weight: 600; margin-top: 6px; }
+      #track-record .tr-next-card .cta { color: #fff; font-size: 0.875rem; font-weight: 700; margin-top: 12px; }
+      #track-record .tr-marquee { margin-top: 20px; overflow: hidden; }
+      #track-record .tr-marquee-inner { display: flex; gap: 16px; width: max-content; animation: tr-marquee 55s linear infinite; }
+      #track-record .tr-marquee-inner img { height: 250px; width: 375px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+      @keyframes tr-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      #track-record .tr-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px; }
+      #track-record .tr-quote { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+      #track-record .tr-quote .qdot { display: block; width: 10px; height: 10px; border-radius: 50%; }
+      #track-record .tr-quote p { margin: 0; color: #fff; line-height: 1.65; font-size: 0.9875rem; flex: 1; }
+      #track-record .tr-quote .who { font-size: 0.875rem; font-weight: 700; color: rgba(255,255,255,0.72); }
+      #track-record .tr-li-btn { display: inline-flex; align-items: center; gap: 9px; align-self: flex-start; padding: 9px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); color: #fff; font-size: 0.8125rem; font-weight: 700; text-decoration: none; transition: background 200ms ease, border-color 200ms ease; }
+      #track-record .tr-li-btn:hover { background: rgba(255,255,255,0.1); border-color: #fff; text-decoration: none; }
+      #track-record .tr-li-btn .in { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 4px; background: #fff; color: #011B64; font-family: var(--font-display); font-weight: 800; font-size: 0.6875rem; line-height: 1; }
+    </style>
+
+    <section id="track-record">
+      <div class="tr-wrap">
+        <div class="tr-head">
+          <div style="max-width: 560px;">
+            <div class="tr-eyebrow">Track Record</div>
+            <h2>Ten journeys. And counting<span class="dot">.</span></h2>
+          </div>
+          <p>Since September 2023 we have run immersion trips three to four times a year, taking delegations of tech companies deep into a different corner of China's innovation ecosystem each time.</p>
         </div>
-        <div class="gallery-track-wrapper">
-            <div class="gallery-track">
-                <!-- First set -->
-                <div class="gallery-slide"><img src="pictures/gallery/trip-01.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-02.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-03.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-04.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-05.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-06.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-07.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-08.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-09.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-10.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-11.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-12.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <!-- Duplicate set for seamless loop -->
-                <div class="gallery-slide"><img src="pictures/gallery/trip-01.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-02.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-03.jpeg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-04.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-05.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-06.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-07.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-08.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-09.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-10.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-11.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-                <div class="gallery-slide"><img src="pictures/gallery/trip-12.jpg" alt="Past immersion trip moment" loading="lazy"></div>
-            </div>
+
+        <div class="tr-stats">
+          <div><div class="tr-stat-value"><span class="accent-red">10</span></div><div class="tr-stat-label">Trips completed since Sep 2023</div></div>
+          <div><div class="tr-stat-value"><span class="accent-teal">9</span></div><div class="tr-stat-label">Innovation cities visited</div></div>
+          <div><div class="tr-stat-value">~12</div><div class="tr-stat-label">Companies on every trip</div></div>
+          <div><div class="tr-stat-value"><span class="accent-red">110+</span></div><div class="tr-stat-label">Participating companies to date</div></div>
         </div>
+
+        <div class="tr-timeline">
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 01</div><div class="tr-trip-date">Sep 2023</div><div class="tr-trip-cities">Chongqing · Chengdu</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 02</div><div class="tr-trip-date">Sep 2023</div><div class="tr-trip-cities">Xiamen</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 03</div><div class="tr-trip-date">Sep 2024</div><div class="tr-trip-cities">Xiamen</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 04</div><div class="tr-trip-date">Dec 2024</div><div class="tr-trip-cities">Wuxi · Suzhou · Shanghai</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 05</div><div class="tr-trip-date">Aug 2025</div><div class="tr-trip-cities">Wuxi · Nanjing</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 06</div><div class="tr-trip-date">Aug 2025</div><div class="tr-trip-cities">Beijing · Jinan</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 07</div><div class="tr-trip-date">Sep 2025</div><div class="tr-trip-cities">Xiamen</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 08</div><div class="tr-trip-date">Nov 2025</div><div class="tr-trip-cities">Wuxi · Suzhou</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 09</div><div class="tr-trip-date">Mar 2026</div><div class="tr-trip-cities">Wuxi · Nanjing</div></div>
+          <div class="tr-trip"><div class="tr-track"><div class="line"></div><div class="node"></div></div><div class="tr-trip-n">TRIP 10</div><div class="tr-trip-date">Jul 2026</div><div class="tr-trip-cities">Wuxi · Nanjing</div></div>
+          <div class="tr-next">
+            <div class="tr-track"><div class="line"></div><div class="node"></div></div>
+            <a class="tr-next-card" href="https://forms.office.com/r/N4gHCrvSef" target="_blank" rel="noopener">
+              <div class="k">NEXT DEPARTURE</div>
+              <div class="d">Oct 2026</div>
+              <div class="c">Wuxi · Nanjing</div>
+              <div class="cta">Reserve your seat →</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- full-bleed photo marquee; images duplicated once for the seamless loop -->
+      <div class="tr-marquee">
+        <div class="tr-marquee-inner">
+          <img src="pictures/gallery/trip-01.jpeg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-02.jpeg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-03.jpeg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-04.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-05.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-06.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-07.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-08.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-09.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-10.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-11.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-12.jpg" alt="Past immersion trip moment">
+          <img src="pictures/gallery/trip-01.jpeg" alt="">
+          <img src="pictures/gallery/trip-02.jpeg" alt="">
+          <img src="pictures/gallery/trip-03.jpeg" alt="">
+          <img src="pictures/gallery/trip-04.jpg" alt="">
+          <img src="pictures/gallery/trip-05.jpg" alt="">
+          <img src="pictures/gallery/trip-06.jpg" alt="">
+          <img src="pictures/gallery/trip-07.jpg" alt="">
+          <img src="pictures/gallery/trip-08.jpg" alt="">
+          <img src="pictures/gallery/trip-09.jpg" alt="">
+          <img src="pictures/gallery/trip-10.jpg" alt="">
+          <img src="pictures/gallery/trip-11.jpg" alt="">
+          <img src="pictures/gallery/trip-12.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="tr-wrap">
+        <div class="tr-eyebrow" style="margin-top: 64px;">What participants say</div>
+        <div class="tr-quotes">
+          <div class="tr-quote">
+            <span class="qdot" style="background: #FF0006;"></span>
+            <p>"From seed to fruition — what began as conversations on this trip has grown into real cross-border opportunities."</p>
+            <div class="who">Daniel CF Ng · via LinkedIn</div>
+            <a class="tr-li-btn" href="https://www.linkedin.com/posts/danielcfng_from-seed-to-fruition-the-honey-peach-that-activity-7482293105912721408-djm3" target="_blank" rel="noopener"><span class="in">in</span>View full post on LinkedIn</a>
+          </div>
+          <div class="tr-quote">
+            <span class="qdot" style="background: #00B1B0;"></span>
+            <p>"The tech immersion gave me a first-hand view of China's innovation ecosystem that no report could ever match."</p>
+            <div class="who">Tania Hamad · via LinkedIn</div>
+            <a class="tr-li-btn" href="https://www.linkedin.com/posts/taniahamad_honeypeach-techimmersion-innovation-activity-7482359020146667520-u-gJ" target="_blank" rel="noopener"><span class="in">in</span>View full post on LinkedIn</a>
+          </div>
+          <div class="tr-quote">
+            <span class="qdot" style="background: #6779BD;"></span>
+            <p>"The trip connected our water-tech solution directly with the right partners and opportunities in China."</p>
+            <div class="who">Sean S. · via LinkedIn</div>
+            <a class="tr-li-btn" href="https://www.linkedin.com/posts/seansley_waterdoctor-activity-7482264050760867840-_0AF" target="_blank" rel="noopener"><span class="in">in</span>View full post on LinkedIn</a>
+          </div>
+          <div class="tr-quote">
+            <span class="qdot" style="background: #FF0006;"></span>
+            <p>"A story of Wuxi and Singapore — welcoming this delegation as part of the growing innovation bridge between our two ecosystems."</p>
+            <div class="who">Wuxi, China · via LinkedIn</div>
+            <a class="tr-li-btn" href="https://www.linkedin.com/posts/wuxi-china_wuxi-singapore-wuxistory-activity-7483095806699384832-qXDj" target="_blank" rel="noopener"><span class="in">in</span>View full post on LinkedIn</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============ CITY DESTINATIONS ============ -->
