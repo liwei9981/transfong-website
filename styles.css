@@ -1262,8 +1262,16 @@ img {
 
 .training-card h4 {
     font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.training-card-sub {
+    font-size: 14.5px;
     font-weight: 700;
+    color: var(--navy-60);
     margin-bottom: var(--space-sm);
+    line-height: 1.5;
 }
 
 .training-card-gov h4 {
@@ -2226,12 +2234,22 @@ a, .nav-link, .pillar-tab, .lang-option, .city-card, .btn, .footer-links a {
    PARTNERS SECTION
    ============================================ */
 .section-partners {
-    background: var(--bg-section);
+    background: var(--navy);
+}
+
+.section-partners .section-title {
+    color: var(--white);
+}
+
+.section-partners .section-label {
+    background: rgba(0, 177, 176, 0.15);
+    color: var(--teal);
+    border-color: rgba(0, 177, 176, 0.3);
 }
 
 .partners-subtitle {
     font-size: 17px;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.72);
     max-width: 640px;
     margin: var(--space-md) auto 0;
     line-height: 1.7;
@@ -2240,49 +2258,56 @@ a, .nav-link, .pillar-tab, .lang-option, .city-card, .btn, .footer-links a {
 .partners-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
+    gap: var(--space-md);
     margin-top: var(--space-2xl);
+    max-width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .partner-card {
     background: var(--white);
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--radius-lg);
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     transition: all var(--duration-normal) var(--ease-out);
 }
 
 .partner-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 16px 48px rgba(0, 177, 176, 0.2), 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
 .partner-logo {
-    height: 96px;
+    height: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
 }
 
 .partner-logo img {
-    max-height: 96px;
-    max-width: 220px;
+    max-height: 72px;
+    max-width: 200px;
     width: auto;
     object-fit: contain;
 }
 
 .partner-name {
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--text-secondary);
-    line-height: 1.55;
-    max-width: 260px;
+    line-height: 1.5;
+    max-width: 250px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 992px) {
