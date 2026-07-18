@@ -1194,6 +1194,20 @@ img {
     line-height: 1.7;
 }
 
+.accel-card-link {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--teal);
+    transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.accel-card-link:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
 /* Training Grid (Pillar 3) */
 .training-grid {
     display: grid;
@@ -1214,8 +1228,9 @@ img {
 }
 
 .training-card-gov {
-    background: linear-gradient(135deg, var(--navy), var(--navy-90));
-    color: var(--white);
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
 }
 
 .training-card-corp {
@@ -1236,8 +1251,8 @@ img {
 }
 
 .training-card-gov .training-card-tag {
-    background: rgba(0, 177, 176, 0.2);
-    color: var(--teal);
+    background: rgba(1, 27, 100, 0.07);
+    color: var(--navy);
 }
 
 .training-card-corp .training-card-tag {
@@ -1252,7 +1267,7 @@ img {
 }
 
 .training-card-gov h4 {
-    color: var(--white);
+    color: var(--navy);
 }
 
 .training-card-corp h4 {
@@ -1265,7 +1280,7 @@ img {
 }
 
 .training-card-gov p {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-secondary);
 }
 
 .training-card-corp p {
@@ -1321,7 +1336,7 @@ img {
 
 .stat-label {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-secondary);
     font-weight: 500;
 }
 

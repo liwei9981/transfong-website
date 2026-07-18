@@ -126,6 +126,13 @@
 .fellows-step-number--red { color: var(--red); }
 .fellows-step-number--purple { color: var(--purple); }
 
+.fellows-step-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
 .fellows-step-icon {
     width: 56px;
     height: 56px;
@@ -133,7 +140,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-lg);
+    flex-shrink: 0;
 }
 
 .fellows-step-icon .material-symbols-outlined {
@@ -145,11 +152,27 @@
 .fellows-step-icon--red { background: var(--red); }
 .fellows-step-icon--purple { background: var(--purple); }
 
-.fellows-step-card h3 {
-    font-size: 22px;
+.fellows-step-card h3.fellows-step-title {
+    font-size: 19px;
     font-weight: 800;
-    color: var(--navy);
     letter-spacing: -0.3px;
+    line-height: 1.25;
+    margin-bottom: 0;
+}
+
+.fellows-step-title span {
+    display: block;
+}
+
+h3.fellows-step-title--teal { color: var(--teal); }
+h3.fellows-step-title--red { color: var(--red); }
+h3.fellows-step-title--purple { color: var(--purple); }
+
+.fellows-step-sub {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.2px;
     margin-bottom: var(--space-sm);
 }
 
@@ -438,6 +461,29 @@
     padding: var(--space-4xl) 0;
 }
 
+/* --- Portfolio section on navy --- */
+.fellows-why-section {
+    background: var(--navy);
+}
+
+.fellows-why-section .section-title {
+    color: var(--white);
+}
+
+.fellows-why-section .section-label {
+    background: rgba(0, 177, 176, 0.12);
+    color: var(--teal);
+    border-color: rgba(0, 177, 176, 0.2);
+}
+
+.fellows-why-section .fellows-section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.fellows-why-section .fellows-startups-note {
+    color: rgba(255, 255, 255, 0.55);
+}
+
 /* --- Portfolio flip cards --- */
 .fellows-portfolio-grid {
     display: grid;
@@ -449,7 +495,7 @@
 .fellows-flip-card {
     perspective: 1200px;
     cursor: pointer;
-    height: 380px;
+    height: 460px;
 }
 
 .fellows-flip-card:focus-visible {
@@ -493,72 +539,111 @@
     background: var(--white);
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-sm);
-    transition: box-shadow var(--duration-normal) var(--ease-out);
+    padding: var(--space-lg);
+    transition: box-shadow var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
 }
 
 .fellows-flip-card:hover .fellows-flip-front {
     box-shadow: var(--shadow-lg);
 }
 
-.fellows-flip-photo {
-    height: 170px;
-    background: var(--navy-05);
+.fellows-flip-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--space-md);
+}
+
+.fellows-flip-corner {
+    font-size: 20px;
+    color: var(--teal);
+    opacity: 0.45;
+    transition: opacity var(--duration-fast) var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.fellows-flip-card:hover .fellows-flip-corner {
+    opacity: 1;
+    transform: rotate(180deg);
+}
+
+.fellows-flip-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
 }
 
-.fellows-flip-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.fellows-flip-icon .material-symbols-outlined {
+    font-size: 26px;
+    color: var(--white);
 }
 
-.fellows-flip-front-body {
-    padding: var(--space-md);
+.fellows-flip-icon--red { background: var(--red); }
+.fellows-flip-icon--purple { background: var(--purple); }
+.fellows-flip-icon--navy { background: var(--navy); }
+.fellows-flip-icon--teal { background: var(--teal); }
+
+.fellows-flip-overline {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+
+.fellows-flip-front h4 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.2px;
+    margin-bottom: var(--space-sm);
+}
+
+.fellows-flip-tagrow {
+    margin-bottom: var(--space-md);
+}
+
+.fellows-flip-tagrow .fellows-flip-tag {
+    display: inline-block;
+}
+
+.fellows-flip-founderline {
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-light);
     display: flex;
     flex-direction: column;
     flex: 1;
+    min-height: 0;
 }
 
-.fellows-flip-front-body h4 {
-    font-size: 16px;
+.fellows-flip-founder-name {
+    font-size: 18px;
     font-weight: 800;
     color: var(--navy);
-    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+    margin: 2px 0 8px;
 }
 
-.fellows-flip-front-body p {
-    font-size: 12.5px;
+.fellows-flip-founderline p {
+    font-size: 14px;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.62;
     flex: 1;
-}
-
-.fellows-flip-hint {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 11.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--teal);
-    margin-top: var(--space-sm);
-}
-
-.fellows-flip-hint .material-symbols-outlined {
-    font-size: 15px;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .fellows-flip-back {
-    background: var(--navy);
+    background: var(--navy-90);
     transform: rotateY(180deg);
     padding: var(--space-lg);
-    border: 1px solid var(--navy);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     overflow-y: auto;
-}
-
-.fellows-flip-front-body p {
-    overflow: hidden;
 }
 
 .fellows-flip-back h4 {
@@ -582,16 +667,35 @@
     margin-bottom: var(--space-md);
 }
 
-.fellows-flip-back p {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.65;
+.fellows-flip-back > p {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.58;
     margin-bottom: var(--space-sm);
 }
 
-.fellows-flip-back .fellows-flip-vision {
-    color: rgba(255, 255, 255, 0.65);
-    font-style: italic;
+.fellows-flip-vision {
+    margin: 2px 0 var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.fellows-flip-vision-label {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: var(--teal);
+    margin-bottom: 4px;
+}
+
+.fellows-flip-vision p {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.45;
+    margin: 0;
 }
 
 /* --- Partners strip --- */
