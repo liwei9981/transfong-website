@@ -554,6 +554,11 @@
     transform: rotateY(180deg);
     padding: var(--space-lg);
     border: 1px solid var(--navy);
+    overflow-y: auto;
+}
+
+.fellows-flip-front-body p {
+    overflow: hidden;
 }
 
 .fellows-flip-back h4 {
