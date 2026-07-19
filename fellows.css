@@ -85,10 +85,34 @@
 }
 
 .fellows-steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-md);
     margin-top: var(--space-2xl);
+}
+
+.fellows-steps-grid > .fellows-step-card {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+/* Small progression arrows between the three steps (1 → 2 → 3) */
+.fellows-step-arrow {
+    flex: 0 0 auto;
+    align-self: center;
+    display: flex;
+    color: var(--navy);
+    opacity: 0.28;
+}
+
+.fellows-step-arrow .material-symbols-outlined {
+    font-size: 32px;
+}
+
+@media (max-width: 992px) {
+    .fellows-steps-grid { flex-direction: column; }
+    .fellows-steps-grid > .fellows-step-card { flex: 0 0 auto; }
+    .fellows-step-arrow { transform: rotate(90deg); margin: 2px auto; }
 }
 
 .fellows-step-card {
