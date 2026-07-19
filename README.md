@@ -75,12 +75,10 @@ git push origin main
 ### 2. Build a clean bundle (only the web files)
 From the project root:
 ```bash
-tar czf transfong-web.tar.gz \
-  index.html ai-immersion.html ai-acceleration.html privacy.html \
-  styles.css immersion.css acceleration.css \
-  script.js immersion.js acceleration.js \
-  favicon.png pictures competition
+./build-bundle.sh   # writes ~/Desktop/transfong-web.tar.gz
 ```
+The script stamps every CSS/JS/image URL in the HTML with `?v=<git hash>` (cache-busting),
+so returning visitors get fresh assets after each release despite the 30-day browser cache.
 
 ### 3. Upload to the server
 ```bash
