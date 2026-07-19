@@ -28,6 +28,6 @@ for f in os.listdir(stage):
     print(f'  stamped {f}')
 PYEOF
 
-tar czf ~/Desktop/transfong-web.tar.gz -C "$STAGE" .
+COPYFILE_DISABLE=1 tar --no-xattrs --no-mac-metadata -czf ~/Desktop/transfong-web.tar.gz -C "$STAGE" .
 rm -rf "$STAGE"
 echo "Bundle ready: ~/Desktop/transfong-web.tar.gz (release $VERSION)"
