@@ -1,5 +1,13 @@
 # Transfong Website
 
+## Current status (2026-07-19)
+
+- **Live site = GitHub main = this folder** — pages: index, ai-acceleration (menu "Competition"), ai-immersion ("Immersion"), internship ("Internship", old /tech-fellows redirects), privacy.
+- Deploys now use **`./build-bundle.sh`** (cache-busting `?v=<git hash>` on assets) — see "How to update the live website" below.
+- **In flight:** `whatwedo-redesign-handoff/` — front-page "What We Do" section being redesigned via Claude Design; integrate only `#services` when it returns.
+- Session worktrees under `.claude/worktrees/` should be **pruned after their branch merges** (`git worktree remove … && git branch -d …`) — stale copies have misled sessions before.
+- Full change history: `git log --oneline`.
+
 Marketing website for **Transfong Ventures** — a Singapore-led, cross-border tech
 business accelerator. Live at **https://www.transfong.com**.
 
