@@ -151,160 +151,237 @@
 
     <!-- ============ SERVICES SECTION ============ -->
     <section class="section section-services" id="services">
+        <style>
+        /* --- What We Do (redesigned) — all styles scoped to #services --- */
+        #services .wwd-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: -28px; }
+        #services .wwd-nav a { display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-full); font-size: 14px; font-weight: 700; color: var(--navy); box-shadow: var(--shadow-sm); transition: all var(--duration-normal) var(--ease-out); }
+        #services .wwd-nav a:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        #services .wwd-nav a:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+        #services .wwd-nav-num { font-size: 12px; font-weight: 800; color: var(--teal); letter-spacing: 1px; }
+        #services .wwd-pillar { margin-top: var(--space-3xl); }
+        #services .wwd-pillar + .wwd-pillar { margin-top: var(--space-3xl); padding-top: var(--space-3xl); border-top: 1px solid var(--border-light); }
+        #services .wwd-pillar-head { display: flex; gap: var(--space-lg); align-items: flex-start; margin-bottom: var(--space-xl); max-width: 860px; }
+        #services .wwd-pillar-num { flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--navy); color: var(--white); font-size: 15px; font-weight: 800; letter-spacing: 1px; border-radius: 14px; }
+        #services .wwd-pillar-head h3 { font-size: 24px; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; line-height: 1.25; margin: 9px 0 8px; }
+        #services .wwd-pillar-head p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+        #services .wwd-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+        #services .wwd-card { display: flex; flex-direction: column; position: relative; overflow: hidden; background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); transition: all var(--duration-normal) var(--ease-out); }
+        #services .wwd-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--purple)); transform: scaleX(0); transform-origin: left; transition: transform var(--duration-normal) var(--ease-out); z-index: 1; }
+        #services .wwd-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        #services .wwd-card:hover::before { transform: scaleX(1); }
+        #services .wwd-city-photo { position: relative; height: 130px; overflow: hidden; }
+        #services .wwd-city-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        #services .wwd-card:hover .wwd-city-photo img { transform: scale(1.06); }
+        #services .wwd-city-year { position: absolute; top: 10px; left: 10px; padding: 4px 12px; background: rgba(1, 27, 100, 0.85); color: var(--white); font-size: 12px; font-weight: 700; letter-spacing: 1px; border-radius: var(--radius-full); backdrop-filter: blur(4px); }
+        #services .wwd-card-body { display: flex; flex-direction: column; flex: 1; padding: var(--space-xl); }
+        #services .wwd-card-body h4 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: var(--space-sm); }
+        #services .wwd-card-body p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        #services .wwd-city .wwd-card-body p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+        #services .wwd-icon { width: 44px; height: 44px; padding: 10px; background: rgba(0, 177, 176, 0.08); border-radius: var(--radius-md); color: var(--teal); margin-bottom: var(--space-md); }
+        #services .wwd-icon svg { width: 100%; height: 100%; }
+        #services .wwd-sub { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 0.5px; margin-bottom: 6px; }
+        #services .wwd-link { margin-top: auto; padding-top: var(--space-md); font-size: 14px; font-weight: 700; color: var(--teal); align-self: flex-start; }
+        #services .wwd-link:hover { text-decoration: underline; }
+        #services .wwd-link:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
+        #services .wwd-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: var(--space-md); }
+        #services .wwd-card-head .wwd-icon { margin-bottom: 0; flex-shrink: 0; }
+        #services .wwd-card-head h4 { font-size: 21px; font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 0; }
+        #services.wwd-anim .wwd-reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        #services.wwd-anim .wwd-reveal.wwd-in { opacity: 1; transform: none; }
+        @media (max-width: 1024px) {
+            #services .wwd-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+            #services .wwd-grid { grid-template-columns: 1fr; }
+            #services .wwd-nav { gap: 8px; }
+            #services .wwd-nav a { padding: 8px 16px; font-size: 13px; }
+            #services .wwd-pillar-head { flex-direction: column; gap: var(--space-md); }
+            #services .wwd-pillar-head h3 { margin-top: 0; }
+        }
+        </style>
         <div class="container">
             <div class="section-header">
                 <span class="section-label" data-en="What We Do" data-zh="我们的业务">What We Do</span>
                 <h2 class="section-title" data-en="Three Pillars of Excellence" data-zh="三大业务板块">Three Pillars of Excellence<span class="title-red-dot">.</span></h2>
             </div>
 
-            <div class="pillars-nav">
-                <button class="pillar-tab active" data-pillar="1">
-                    <span class="pillar-tab-num">01</span>
-                    <span class="pillar-tab-text" data-en="Ecosystem Partnership" data-zh="政府园区国际生态">Ecosystem Partnership</span>
-                </button>
-                <button class="pillar-tab" data-pillar="2">
-                    <span class="pillar-tab-num">02</span>
-                    <span class="pillar-tab-text" data-en="SG-CN Acceleration" data-zh="新中科创加速">SG-CN Acceleration</span>
-                </button>
-                <button class="pillar-tab" data-pillar="3">
-                    <span class="pillar-tab-num">03</span>
-                    <span class="pillar-tab-text" data-en="Education & Internship" data-zh="科创教育与实习">Education & Internship</span>
-                </button>
-            </div>
+            <nav class="wwd-nav wwd-reveal" aria-label="Three pillars">
+                <a href="#pillar-1"><span class="wwd-nav-num" aria-hidden="true">01</span><span data-en="Ecosystem Partnership" data-zh="政府园区国际生态">Ecosystem Partnership</span></a>
+                <a href="#pillar-2"><span class="wwd-nav-num" aria-hidden="true">02</span><span data-en="SG-CN Acceleration" data-zh="新中科创加速">SG-CN Acceleration</span></a>
+                <a href="#pillar-3"><span class="wwd-nav-num" aria-hidden="true">03</span><span data-en="Education & Internship" data-zh="科创教育与实习">Education & Internship</span></a>
+            </nav>
 
             <!-- Pillar 1 -->
-            <div class="pillar-panel active" id="pillar-1">
-                <div class="pillar-header-row">
-                    <div class="pillar-icon-lg">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="24" cy="24" r="20"/><path d="M24 4a32 32 0 0 1 8 20 32 32 0 0 1-8 20 32 32 0 0 1-8-20A32 32 0 0 1 24 4z"/><line x1="4" y1="24" x2="44" y2="24"/><line x1="8" y1="12" x2="40" y2="12"/><line x1="8" y1="36" x2="40" y2="36"/></svg>
-                    </div>
+            <div class="wwd-pillar" id="pillar-1">
+                <div class="wwd-pillar-head wwd-reveal">
+                    <div class="wwd-pillar-num" aria-hidden="true">01</div>
                     <div>
-                        <h3 data-en="SG-CN Ecosystem Partnership" data-zh="政府园区国际生态">SG-CN Ecosystem Partnership</h3>
-                        <p data-en="We are the official partner entrusted to operate the 'Singapore Center' across multiple cities, collaborating with key local entities." data-zh="我们运营多地中国-新加坡合作园区的"新加坡中心"，并与各地核心机构开展深度合作。">We are the official partner entrusted to operate the "Singapore Center" across multiple cities, collaborating with key local entities.</p>
+                        <h3 data-en="SG-CN Ecosystem Partnership" data-zh="政府园区国际生态">SG-CN Ecosystem Partnership<span class="title-red-dot">.</span></h3>
+                        <p data-en="We are the official partner entrusted to operate the 'Singapore Center' across multiple cities, collaborating with key local entities." data-zh="我们运营多地中国-新加坡合作园区的「新加坡中心」，并与各地核心机构开展深度合作。">We are the official partner entrusted to operate the "Singapore Center" across multiple cities, collaborating with key local entities.</p>
                     </div>
                 </div>
-                <div class="cities-grid">
-                    <div class="city-card">
-                        <div class="city-card-photo"><img src="pictures/city photos/xiamen.png" alt="Xiamen" /></div>
-                        <div class="city-card-body">
-                            <div class="city-year">2019</div>
-                            <h4 class="city-name" data-en="Xiamen" data-zh="厦门">Xiamen</h4>
-                            <p class="city-partners" data-en="Xiamen Sci-Tech Bureau, Torch High-Tech Park, Huli District" data-zh="厦门市科技局、火炬高新区、湖里区政府">Xiamen Sci-Tech Bureau, Torch High-Tech Park, Huli District</p>
+                <div class="wwd-grid">
+                    <div class="wwd-card wwd-city wwd-reveal">
+                        <div class="wwd-city-photo"><img src="pictures/city photos/xiamen.png" alt="Xiamen" loading="lazy"><span class="wwd-city-year">2019</span></div>
+                        <div class="wwd-card-body">
+                            <h4 data-en="Xiamen" data-zh="厦门">Xiamen</h4>
+                            <p data-en="Xiamen Sci-Tech Bureau, Torch High-Tech Park, Huli District" data-zh="厦门市科技局、火炬高新区、湖里区政府">Xiamen Sci-Tech Bureau, Torch High-Tech Park, Huli District</p>
                         </div>
                     </div>
-                    <div class="city-card">
-                        <div class="city-card-photo"><img src="pictures/city photos/suzhou_city_1775401526737.png" alt="Suzhou" /></div>
-                        <div class="city-card-body">
-                            <div class="city-year">2021</div>
-                            <h4 class="city-name" data-en="Suzhou" data-zh="苏州">Suzhou</h4>
-                            <p class="city-partners" data-en="Suzhou Industry Park (SIP) and CSSD" data-zh="苏州工业园区及中新集团">Suzhou Industry Park (SIP) and CSSD</p>
+                    <div class="wwd-card wwd-city wwd-reveal">
+                        <div class="wwd-city-photo"><img src="pictures/city photos/suzhou_city_1775401526737.png" alt="Suzhou" loading="lazy"><span class="wwd-city-year">2021</span></div>
+                        <div class="wwd-card-body">
+                            <h4 data-en="Suzhou" data-zh="苏州">Suzhou</h4>
+                            <p data-en="Suzhou Industry Park (SIP) and CSSD" data-zh="苏州工业园区及中新集团">Suzhou Industry Park (SIP) and CSSD</p>
                         </div>
                     </div>
-                    <div class="city-card">
-                        <div class="city-card-photo"><img src="pictures/city photos/wuxi_city_1775401544086.png" alt="Wuxi" /></div>
-                        <div class="city-card-body">
-                            <div class="city-year">2023</div>
-                            <h4 class="city-name" data-en="Wuxi" data-zh="无锡">Wuxi</h4>
-                            <p class="city-partners" data-en="Wuxi High-Tech Park (SG Tech-Inno City) and Guolian Group" data-zh="无锡高新区及无锡国联集团">Wuxi High-Tech Park (SG Tech-Inno City) and Guolian Group</p>
+                    <div class="wwd-card wwd-city wwd-reveal">
+                        <div class="wwd-city-photo"><img src="pictures/city photos/wuxi_city_1775401544086.png" alt="Wuxi" loading="lazy"><span class="wwd-city-year">2023</span></div>
+                        <div class="wwd-card-body">
+                            <h4 data-en="Wuxi" data-zh="无锡">Wuxi</h4>
+                            <p data-en="Wuxi High-Tech Park (SG Tech-Inno City) and Guolian Group" data-zh="无锡高新区及无锡国联集团">Wuxi High-Tech Park (SG Tech-Inno City) and Guolian Group</p>
                         </div>
                     </div>
-                    <div class="city-card">
-                        <div class="city-card-photo"><img src="pictures/city photos/nanjing_city_1775401560749.png" alt="Nanjing" /></div>
-                        <div class="city-card-body">
-                            <div class="city-year">2024</div>
-                            <h4 class="city-name" data-en="Nanjing" data-zh="南京">Nanjing</h4>
-                            <p class="city-partners" data-en="Singapore-Nanjing Eco Hi-Tech Island" data-zh="新加坡·南京生态科技岛">Singapore-Nanjing Eco Hi-Tech Island</p>
+                    <div class="wwd-card wwd-city wwd-reveal">
+                        <div class="wwd-city-photo"><img src="pictures/city photos/nanjing_city_1775401560749.png" alt="Nanjing" loading="lazy"><span class="wwd-city-year">2024</span></div>
+                        <div class="wwd-card-body">
+                            <h4 data-en="Nanjing" data-zh="南京">Nanjing</h4>
+                            <p data-en="Singapore-Nanjing Eco Hi-Tech Island" data-zh="新加坡·南京生态科技岛">Singapore-Nanjing Eco Hi-Tech Island</p>
                         </div>
                     </div>
-                    <div class="city-card">
-                        <div class="city-card-photo"><img src="pictures/city photos/beijing_city_1775401578524.png" alt="Beijing" /></div>
-                        <div class="city-card-body">
-                            <div class="city-year">2025</div>
-                            <h4 class="city-name" data-en="Beijing" data-zh="北京">Beijing</h4>
-                            <p class="city-partners" data-en="ZGC International and Beijing Chaoyang CBD" data-zh="中关村国际及北京朝阳CBD">ZGC International and Beijing Chaoyang CBD</p>
+                    <div class="wwd-card wwd-city wwd-reveal">
+                        <div class="wwd-city-photo"><img src="pictures/city photos/beijing_city_1775401578524.png" alt="Beijing" loading="lazy"><span class="wwd-city-year">2025</span></div>
+                        <div class="wwd-card-body">
+                            <h4 data-en="Beijing" data-zh="北京">Beijing</h4>
+                            <p data-en="ZGC International and Beijing Chaoyang CBD" data-zh="中关村国际及北京朝阳CBD">ZGC International and Beijing Chaoyang CBD</p>
                         </div>
                     </div>
-                    <div class="city-card">
-                        <div class="city-card-photo"><img src="pictures/city photos/jinan_city_1775401597961.png" alt="Jinan" /></div>
-                        <div class="city-card-body">
-                            <div class="city-year">2025</div>
-                            <h4 class="city-name" data-en="Jinan" data-zh="济南">Jinan</h4>
-                            <p class="city-partners" data-en="Surbana Jurong and Jinan Start-up Area for Growth Drivers" data-zh="盛裕集团及济南新旧动能转换起步区">Surbana Jurong and Jinan Start-up Area for Growth Drivers</p>
+                    <div class="wwd-card wwd-city wwd-reveal">
+                        <div class="wwd-city-photo"><img src="pictures/city photos/jinan_city_1775401597961.png" alt="Jinan" loading="lazy"><span class="wwd-city-year">2025</span></div>
+                        <div class="wwd-card-body">
+                            <h4 data-en="Jinan" data-zh="济南">Jinan</h4>
+                            <p data-en="Surbana Jurong and Jinan Start-up Area for Growth Drivers" data-zh="盛裕集团及济南新旧动能转换起步区">Surbana Jurong and Jinan Start-up Area for Growth Drivers</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- Pillar 2 -->
-            <div class="pillar-panel" id="pillar-2">
-                <div class="pillar-header-row">
-                    <div class="pillar-icon-lg">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 40V24l16-16 16 16v16"/><path d="M18 40V28h12v12"/><path d="M4 24l20-20 20 20"/></svg>
-                    </div>
+            <div class="wwd-pillar" id="pillar-2">
+                <div class="wwd-pillar-head wwd-reveal">
+                    <div class="wwd-pillar-num" aria-hidden="true">02</div>
                     <div>
-                        <h3 data-en="SG-CN Acceleration" data-zh="新中科创加速">SG-CN Acceleration</h3>
+                        <h3 data-en="SG-CN Acceleration" data-zh="新中科创加速">SG-CN Acceleration<span class="title-red-dot">.</span></h3>
                         <p data-en="A full range of cross-border acceleration services, directly supporting 200+ international tech startups and SMEs annually." data-zh="依托新中合作的产业科创生态，为科创企业提供全方位跨国加速服务，每年直接支持200余家国际科创企业。">A full range of cross-border acceleration services, directly supporting 200+ international tech startups and SMEs annually.</p>
                     </div>
                 </div>
-                <div class="accel-features">
-                    <div class="accel-card">
-                        <div class="accel-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                <div class="wwd-grid">
+                    <div class="wwd-card wwd-reveal">
+                        <div class="wwd-card-body">
+                            <div class="wwd-card-head">
+                                <div class="wwd-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                                </div>
+                                <h4 data-en="Startup Competition" data-zh="科创大赛">Startup Competition</h4>
+                            </div>
+                            <p data-en="Our flagship pitching series — the gateway into China's premier innovation ecosystems." data-zh="旗舰路演大赛系列——通往中国顶级创新生态的入口。">Our flagship pitching series — the gateway into China's premier innovation ecosystems.</p>
+                            <a href="ai-acceleration.html" class="wwd-link" data-en="View the Competition →" data-zh="了解科创大赛 →">View the Competition →</a>
                         </div>
-                        <h4 data-en="Startup Competition" data-zh="科创大赛">Startup Competition</h4>
-                        <p data-en="Our flagship pitching competition series — the gateway into China's premier innovation ecosystems, with investment access, cash prizes, sponsored immersions, and talent programmes." data-zh="旗舰路演大赛系列——通往中国顶级创新生态的入口，提供投资对接、现金奖励、全额资助考察与人才计划。">Our flagship pitching competition series — the gateway into China's premier innovation ecosystems, with investment access, cash prizes, sponsored immersions, and talent programmes.</p>
-                        <a href="ai-acceleration.html" class="accel-card-link" data-en="View the Competition →" data-zh="了解科创大赛 →">View the Competition →</a>
                     </div>
-                    <div class="accel-card">
-                        <div class="accel-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                    <div class="wwd-card wwd-reveal">
+                        <div class="wwd-card-body">
+                            <div class="wwd-card-head">
+                                <div class="wwd-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                                </div>
+                                <h4 data-en="Tech Immersion Trips" data-zh="科技沉浸考察">Tech Immersion Trips</h4>
+                            </div>
+                            <p data-en="Curated deep-dives into China's leading tech ecosystems — on the ground." data-zh="深入中国领先科技生态的精品实地考察。">Curated deep-dives into China's leading tech ecosystems — on the ground.</p>
+                            <a href="ai-immersion.html" class="wwd-link" data-en="Explore Immersion Trips →" data-zh="了解沉浸考察 →">Explore Immersion Trips →</a>
                         </div>
-                        <h4 data-en="Tech Immersion Trips" data-zh="科技沉浸考察">Tech Immersion Trips</h4>
-                        <p data-en="Curated deep-dives into China's leading tech ecosystems — meeting future unicorns, hidden champions, and government partners on the ground." data-zh="深入中国领先科技生态的精品考察——实地对接未来独角兽、隐形冠军与政府合作伙伴。">Curated deep-dives into China's leading tech ecosystems — meeting future unicorns, hidden champions, and government partners on the ground.</p>
-                        <a href="ai-immersion.html" class="accel-card-link" data-en="Explore Immersion Trips →" data-zh="了解沉浸考察 →">Explore Immersion Trips →</a>
                     </div>
-                    <div class="accel-card">
-                        <div class="accel-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    <div class="wwd-card wwd-reveal">
+                        <div class="wwd-card-body">
+                            <div class="wwd-card-head">
+                                <div class="wwd-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                                </div>
+                                <h4 data-en="Corporate Service Support" data-zh="企业落地服务">Corporate Service Support</h4>
+                            </div>
+                            <p data-en="One-stop landing services: incorporation, EntrePass, directorship, and back-office support." data-zh="一站式落地服务：公司注册、创业准证申请、董事服务与后台支持。">One-stop landing services: incorporation, EntrePass, directorship, and back-office support.</p>
                         </div>
-                        <h4 data-en="Corporate Service Support" data-zh="企业落地服务">Corporate Service Support</h4>
-                        <p data-en="One-stop landing services for cross-border teams: company incorporation, EntrePass applications, venture-building directorship, and back-office support." data-zh="面向跨境创业团队的一站式落地服务：公司注册、创业准证（EntrePass）申请、创业董事服务与后台运营支持。">One-stop landing services for cross-border teams: company incorporation, EntrePass applications, venture-building directorship, and back-office support.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Pillar 3 -->
-            <div class="pillar-panel" id="pillar-3">
-                <div class="pillar-header-row">
-                    <div class="pillar-icon-lg">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H18a2.5 2.5 0 0 1 2.5 2.5v21a2.5 2.5 0 0 1-2.5 2.5H6.5A2.5 2.5 0 0 1 4 40.5z"/><path d="M20.5 12.5A2.5 2.5 0 0 1 23 10h11.5a2.5 2.5 0 0 1 2.5 2.5v28a2.5 2.5 0 0 1-2.5 2.5H23a2.5 2.5 0 0 1-2.5-2.5z"/><path d="M37 5.5A2.5 2.5 0 0 1 39.5 3H42a2.5 2.5 0 0 1 2.5 2.5v35A2.5 2.5 0 0 1 42 43h-2.5A2.5 2.5 0 0 1 37 40.5z"/></svg>
-                    </div>
+            <div class="wwd-pillar" id="pillar-3">
+                <div class="wwd-pillar-head wwd-reveal">
+                    <div class="wwd-pillar-num" aria-hidden="true">03</div>
                     <div>
-                        <h3 data-en="Technopreneur Education & Internship" data-zh="科创教育与实习">Technopreneur Education & Internship</h3>
+                        <h3 data-en="Technopreneur Education & Internship" data-zh="科创教育与实习">Technopreneur Education & Internship<span class="title-red-dot">.</span></h3>
                         <p data-en="From government decision-makers to student technopreneurs — training and internship programmes that build innovation and entrepreneurship capability across borders." data-zh="从政府决策者到学生科创人才——助力跨国创新创业生态建设的培训与实习项目。">From government decision-makers to student technopreneurs — training and internship programmes that build innovation and entrepreneurship capability across borders.</p>
                     </div>
                 </div>
-                <div class="training-grid">
-                    <div class="training-card training-card-gov">
-                        <h4 data-en="Government Training" data-zh="政府培训">Government Training</h4>
-                        <div class="training-card-sub" data-en="Singapore Innovation Ecosystem Training" data-zh="新加坡创新生态培训">Singapore Innovation Ecosystem Training</div>
-                        <p data-en="Singapore learning journeys for delegations from 30+ Chinese provinces, cities, and government agencies — and, together with Singapore universities and agencies, training programmes for international delegations from 20+ countries." data-zh="承接中国30余个省市及政府机构的新加坡学习考察，并携手新加坡本地大学与政府机构，为20多个国家的国际代表团提供培训。">Singapore learning journeys for delegations from 30+ Chinese provinces, cities, and government agencies — and, together with Singapore universities and agencies, training programmes for international delegations from 20+ countries.</p>
+                <div class="wwd-grid">
+                    <div class="wwd-card wwd-reveal">
+                        <div class="wwd-card-body">
+                            <div class="wwd-card-head">
+                                <div class="wwd-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+                                </div>
+                                <h4 data-en="Government Training" data-zh="政府培训">Government Training</h4>
+                            </div>
+                            <p data-en="Singapore innovation ecosystem training for delegations from 30+ Chinese provinces and 20+ countries." data-zh="新加坡创新生态培训——承接中国30余个省市及20多个国家代表团的学习考察。">Singapore innovation ecosystem training for delegations from 30+ Chinese provinces and 20+ countries.</p>
+                        </div>
                     </div>
-                    <div class="training-card training-card-corp">
-                        <h4 data-en="Local SME Education" data-zh="本地中小企业培训">Local SME Education</h4>
-                        <div class="training-card-sub" data-en="iSGP SME Programme with NTU" data-zh="iSGP新加坡企业成长营">iSGP SME Programme with NTU</div>
-                        <p data-en="The iLEAD SMEs Growth Programme, delivered in partnership with Nanyang Technological University and Singapore government agencies to strengthen local SMEs' growth and innovation capabilities." data-zh="与南洋理工大学及新加坡政府机构合作开展iSGP新加坡企业成长营，助力新加坡本地中小企业提升成长与创新能力。">The iLEAD SMEs Growth Programme, delivered in partnership with Nanyang Technological University and Singapore government agencies to strengthen local SMEs' growth and innovation capabilities.</p>
-                        <a href="https://www.ntu.edu.sg/ntupreneur/programmes/professional-development/iSGP-chinese" target="_blank" rel="noopener" class="training-card-link" data-en="Programme at NTU →" data-zh="查看NTU课程页面 →">Programme at NTU →</a>
+                    <div class="wwd-card wwd-reveal">
+                        <div class="wwd-card-body">
+                            <div class="wwd-card-head">
+                                <div class="wwd-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+                                </div>
+                                <h4 data-en="Local SME Education" data-zh="本地中小企业培训">Local SME Education</h4>
+                            </div>
+                            <p data-en="The iSGP SMEs Growth Programme, delivered with NTU and Singapore government agencies." data-zh="与南洋理工大学及新加坡政府机构合作开展iSGP新加坡企业成长营。">The iSGP SMEs Growth Programme, delivered with NTU and Singapore government agencies.</p>
+                            <a href="https://www.ntu.edu.sg/ntupreneur/programmes/professional-development/iSGP-chinese" target="_blank" rel="noopener" class="wwd-link" data-en="Programme at NTU →" data-zh="查看NTU课程页面 →">Programme at NTU →</a>
+                        </div>
                     </div>
-                    <div class="training-card training-card-intern">
-                        <h4 data-en="International Internship" data-zh="国际实习">International Internship</h4>
-                        <div class="training-card-sub" data-en="Technopreneur or Tech Research Project Internship" data-zh="科创与科研项目实习">Technopreneur or Tech Research Project Internship</div>
-                        <p data-en="Internship opportunities inside international tech startups for students — in partnership with universities and high schools in Singapore and overseas." data-zh="携手新加坡及海外高校与中学，为学生提供进入国际科技创业公司实习的机会。">Internship opportunities inside international tech startups for students — in partnership with universities and high schools in Singapore and overseas.</p>
-                        <a href="internship.html" class="training-card-link" data-en="Explore the Fellowship →" data-zh="了解英才计划 →">Explore the Fellowship →</a>
+                    <div class="wwd-card wwd-reveal">
+                        <div class="wwd-card-body">
+                            <div class="wwd-card-head">
+                                <div class="wwd-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12.5V17c3 3 9 3 12 0v-4.5"/></svg>
+                                </div>
+                                <h4 data-en="International Internship" data-zh="国际实习">International Internship</h4>
+                            </div>
+                            <p data-en="Technopreneur and tech research internships inside international startups, in Singapore and overseas." data-zh="科创与科研项目实习——为学生提供进入国际科技创业公司的实习机会。">Technopreneur and tech research internships inside international startups, in Singapore and overseas.</p>
+                            <a href="internship.html" class="wwd-link" data-en="Explore the Fellowship →" data-zh="了解英才计划 →">Explore the Fellowship →</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+        /* Scoped to #services: scroll-reveal for the redesigned What We Do section */
+        (function () {
+            var sec = document.getElementById('services');
+            if (!sec || !('IntersectionObserver' in window)) return;
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            sec.classList.add('wwd-anim');
+            var els = sec.querySelectorAll('.wwd-reveal');
+            els.forEach(function (el, i) { el.style.transitionDelay = (i % 3) * 0.08 + 's'; });
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('wwd-in');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '0px 0px -60px 0px' });
+            els.forEach(function (el) { io.observe(el); });
+        })();
+        </script>
     </section>
 
     <!-- ============ PARTNERS ============ -->
