@@ -186,13 +186,13 @@
         #services .wwd-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: var(--space-md); }
         #services .wwd-card-head .wwd-icon { margin-bottom: 0; flex-shrink: 0; }
         #services .wwd-card-head h4 { font-size: 21px; font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 0; }
-        /* Why-Join-style: solid icon chip (white icon) + colored title — Blue / Red / Green across the 3 cards */
-        #services .wwd-grid .wwd-card:nth-child(1) .wwd-icon { background: var(--navy); color: #fff; }
-        #services .wwd-grid .wwd-card:nth-child(2) .wwd-icon { background: var(--red); color: #fff; }
-        #services .wwd-grid .wwd-card:nth-child(3) .wwd-icon { background: var(--teal); color: #fff; }
-        #services .wwd-grid .wwd-card:nth-child(1) .wwd-card-head h4 { color: var(--navy); }
-        #services .wwd-grid .wwd-card:nth-child(2) .wwd-card-head h4 { color: var(--red); }
-        #services .wwd-grid .wwd-card:nth-child(3) .wwd-card-head h4 { color: var(--teal); }
+        /* Sub-section (pillar) titles + number chips colored like the internship "Why Join" cards: teal / red / purple */
+        #services #pillar-1 .wwd-pillar-num { background: var(--teal); }
+        #services #pillar-1 .wwd-pillar-head h3 { color: var(--teal); }
+        #services #pillar-2 .wwd-pillar-num { background: var(--red); }
+        #services #pillar-2 .wwd-pillar-head h3 { color: var(--red); }
+        #services #pillar-3 .wwd-pillar-num { background: var(--purple); }
+        #services #pillar-3 .wwd-pillar-head h3 { color: var(--purple); }
         #services.wwd-anim .wwd-reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
         #services.wwd-anim .wwd-reveal.wwd-in { opacity: 1; transform: none; }
         @media (max-width: 1024px) {
