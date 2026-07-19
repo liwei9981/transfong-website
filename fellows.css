@@ -902,6 +902,14 @@ h3.fellows-step-title--purple { color: var(--purple); }
     margin-top: var(--space-2xl);
 }
 
+/* Single unified eligibility card (no separate tracks) */
+.fellows-tracks-grid--single {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .fellows-track-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-light);
