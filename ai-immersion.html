@@ -110,24 +110,30 @@
 
             <div class="immersion-value-grid">
                 <div class="immersion-value-card">
-                    <div class="immersion-value-icon immersion-value-icon--teal">
-                        <span class="material-symbols-outlined">travel_explore</span>
+                    <div class="immersion-value-head">
+                        <div class="immersion-value-icon immersion-value-icon--teal">
+                            <span class="material-symbols-outlined">travel_explore</span>
+                        </div>
+                        <h3 class="immersion-value-title immersion-value-title--teal"><span data-en="Market" data-zh="市场">Market</span><span data-en="Exploration" data-zh="探索">Exploration</span></h3>
                     </div>
-                    <h3 data-en="Market Exploration" data-zh="市场探索">Market Exploration</h3>
                     <p data-en="Go deep inside the real innovation frontline to understand how industries, policies, and ecosystems actually operate." data-zh="深入真正的创新前沿，了解产业、政策和生态系统如何实际运作。">Go deep inside the real innovation frontline to understand how industries, policies, and ecosystems actually operate.</p>
                 </div>
                 <div class="immersion-value-card">
-                    <div class="immersion-value-icon immersion-value-icon--red">
-                        <span class="material-symbols-outlined">hub</span>
+                    <div class="immersion-value-head">
+                        <div class="immersion-value-icon immersion-value-icon--red">
+                            <span class="material-symbols-outlined">hub</span>
+                        </div>
+                        <h3 class="immersion-value-title immersion-value-title--red"><span data-en="Supply Chain" data-zh="供应链">Supply Chain</span><span data-en="Consolidation" data-zh="整合">Consolidation</span></h3>
                     </div>
-                    <h3 data-en="Supply Chain Consolidation" data-zh="供应链整合">Supply Chain Consolidation</h3>
                     <p data-en="Connect directly with China's strengths in AI, robotics, and advanced manufacturing for scalable cross-border collaboration." data-zh="直接对接中国在AI、机器人和先进制造领域的优势，实现可规模化的跨境合作。">Connect directly with China's strengths in AI, robotics, and advanced manufacturing for scalable cross-border collaboration.</p>
                 </div>
                 <div class="immersion-value-card">
-                    <div class="immersion-value-icon immersion-value-icon--purple">
-                        <span class="material-symbols-outlined">handshake</span>
+                    <div class="immersion-value-head">
+                        <div class="immersion-value-icon immersion-value-icon--purple">
+                            <span class="material-symbols-outlined">handshake</span>
+                        </div>
+                        <h3 class="immersion-value-title immersion-value-title--purple"><span data-en="Commercial" data-zh="商业">Commercial</span><span data-en="Outcomes" data-zh="成果">Outcomes</span></h3>
                     </div>
-                    <h3 data-en="Commercial Outcomes" data-zh="商业成果">Commercial Outcomes</h3>
                     <p data-en="Engage in tailored, high-precision business matching with the right customers, partners, investors, and government agencies." data-zh="与合适的客户、合作伙伴、投资者和政府机构进行量身定制的高精度商业对接。">Engage in tailored, high-precision business matching with the right customers, partners, investors, and government agencies.</p>
                 </div>
             </div>
@@ -281,236 +287,194 @@
       </div>
     </section>
 
-    <!-- ============ CITY DESTINATIONS ============ -->
-    <section class="section immersion-cities-section" id="cities">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label" data-en="Two Cities" data-zh="双城之旅">Two Cities</span>
-                <h2 class="section-title" data-en="Your Journey" data-zh="您的旅程">Your Journey<span class="title-red-dot">.</span></h2>
-                <p class="immersion-section-subtitle" data-en="Wuxi and Nanjing — two cities at the forefront of China's innovation revolution and collaboration with Singapore." data-zh="无锡和南京——中国创新革命与新加坡合作的前沿双城。">Wuxi and Nanjing — two cities at the forefront of China's innovation revolution and collaboration with Singapore.</p>
-            </div>
+    <!-- ============ TWO CITIES / YOUR JOURNEY ============ -->
+    <style>
+      #two-cities { background: #F4F6FB; padding: 88px 24px; font-family: var(--font-body); color: var(--text-secondary); }
+      #two-cities .tc-wrap { max-width: 1160px; margin: 0 auto; }
+      #two-cities .section-header { text-align: center; margin-bottom: 44px; }
+      #two-cities .tc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 28px; }
+      @media (max-width: 520px) { #two-cities .tc-grid { grid-template-columns: 1fr; } }
+      #two-cities .tc-card { background: #fff; border: 1px solid var(--border-light); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 200ms ease, box-shadow 200ms ease; }
+      #two-cities .tc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+      #two-cities .tc-card > img { width: 100%; height: 240px; object-fit: cover; display: block; }
+      #two-cities .tc-body { padding: 28px; }
+      #two-cities .tc-body h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: var(--navy); margin: 0 0 10px; }
+      #two-cities .tc-body > p { margin: 0; line-height: 1.65; font-size: 0.9875rem; }
+      #two-cities .tc-collab { display: flex; align-items: center; gap: 14px; margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--border-light); }
+      #two-cities .tc-collab img { width: 88px; height: 66px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+      #two-cities .tc-collab .k { font-family: var(--font-display); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); }
+      #two-cities .tc-collab .t { font-weight: 800; color: var(--navy); font-size: 0.9375rem; margin-top: 4px; }
+      #two-cities .tc-collab p { margin: 4px 0 0; font-size: 0.8438rem; line-height: 1.5; }
+    </style>
 
-            <div class="city-columns">
-                <!-- Wuxi Column -->
-                <div class="city-column">
-                    <h3 class="city-group-title" data-en="Wuxi" data-zh="无锡">Wuxi</h3>
-                    <div class="city-photo-card">
-                        <img src="pictures/city photos/wuxi_city_1775401544086.png" alt="Wuxi">
-                        <div class="city-photo-overlay">
-                            <h3 data-en="Wuxi" data-zh="无锡">Wuxi</h3>
-                            <p data-en="China's applied innovation & advanced manufacturing hub — the nation's 'Capital of IoT' and host of the World Internet of Things Exposition." data-zh="中国应用创新和先进制造业中心——被誉为中国“物联网之都”，也是世界物联网博览会的举办地。">China's applied innovation & advanced manufacturing hub — the nation's 'Capital of IoT' and host of the World Internet of Things Exposition.</p>
-                        </div>
-                    </div>
-                    <div class="city-arrow">
-                        <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
-                            <path d="M12 0 L12 32 M4 24 L12 34 L20 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span data-en="Singapore-China Collaboration" data-zh="中新合作项目">Singapore-China Collaboration</span>
-                    </div>
-                    <div class="city-photo-card city-photo-card--project">
-                        <img src="pictures/Wuxi-Sci-Tech.jpg" alt="Wuxi Singapore Science and Technology Innovation City">
-                        <div class="city-photo-overlay">
-                            <h3 data-en="Wuxi-Singapore Sci-Tech City" data-zh="无锡新加坡科创城">Wuxi-Singapore Sci-Tech City</h3>
-                            <p data-en="A flagship project deepening Singapore-China economic and tech cooperation, focusing on AI, integrated circuits, and biomedicine through joint innovation incubation programs." data-zh="中新两国深化经贸与技术合作的旗舰项目，聚焦人工智能、集成电路及生物医药等硬核赛道，通过联合创新孵化计划等机制深度链接新加坡科创资源。">A flagship project deepening Singapore-China economic and tech cooperation, focusing on AI, integrated circuits, and biomedicine through joint innovation incubation programs.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Nanjing Column -->
-                <div class="city-column">
-                    <h3 class="city-group-title" data-en="Nanjing" data-zh="南京">Nanjing</h3>
-                    <div class="city-photo-card">
-                        <img src="pictures/city photos/nanjing_city_1775401560749.png" alt="Nanjing">
-                        <div class="city-photo-overlay">
-                            <h3 data-en="Nanjing" data-zh="南京">Nanjing</h3>
-                            <p data-en="A growing tech and talent capital powered by universities, deep-tech R&D, and policy support." data-zh="一座由高校、深科技研发和政策支持驱动的新兴科技与人才之都。">A growing tech and talent capital powered by universities, deep-tech R&D, and policy support.</p>
-                        </div>
-                    </div>
-                    <div class="city-arrow">
-                        <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
-                            <path d="M12 0 L12 32 M4 24 L12 34 L20 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span data-en="Singapore-China Collaboration" data-zh="中新合作项目">Singapore-China Collaboration</span>
-                    </div>
-                    <div class="city-photo-card city-photo-card--project">
-                        <img src="pictures/Nanjing-Eco-Hi-Tech-Island.jpg" alt="Singapore Nanjing Eco Hi-Tech Island">
-                        <div class="city-photo-overlay">
-                            <h3 data-en="Singapore-Nanjing Eco Hi-Tech Island" data-zh="新加坡南京生态科技岛">Singapore-Nanjing Eco Hi-Tech Island</h3>
-                            <p data-en="The largest flagship cooperation project between Singapore and Jiangsu Province, positioned as an international Eco-Tech City and Low-Carbon Smart Island, focusing on AI, water science, and digital economy." data-zh="新加坡与江苏省规模最大的旗舰合作项目，定位为国际化的生态科技城、低碳智慧岛，深度聚焦人工智能、水科学及数字经济等绿色高科技产业。">The largest flagship cooperation project between Singapore and Jiangsu Province, positioned as an international Eco-Tech City and Low-Carbon Smart Island, focusing on AI, water science, and digital economy.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="two-cities">
+      <div class="tc-wrap">
+        <div class="section-header">
+          <span class="section-label" data-en="Two Cities" data-zh="双城之旅">Two Cities</span>
+          <h2 class="section-title" data-en="Your Journey" data-zh="您的旅程">Your Journey<span class="title-red-dot">.</span></h2>
+          <p class="immersion-section-subtitle" data-en="Wuxi and Nanjing — two cities at the forefront of China's innovation revolution and collaboration with Singapore." data-zh="无锡和南京——中国创新革命与新加坡合作的前沿双城。">Wuxi and Nanjing — two cities at the forefront of China's innovation revolution and collaboration with Singapore.</p>
         </div>
+        <div class="tc-grid">
+          <div class="tc-card">
+            <img src="pictures/city photos/wuxi_city_1775401544086.png" alt="Wuxi">
+            <div class="tc-body">
+              <h3 data-en="Wuxi" data-zh="无锡">Wuxi<span class="title-red-dot">.</span></h3>
+              <p data-en="China's applied innovation &amp; advanced manufacturing hub — the nation's 'Capital of IoT' and host of the World Internet of Things Exposition." data-zh="中国应用创新和先进制造业中心——被誉为中国“物联网之都”，也是世界物联网博览会的举办地。">China's applied innovation &amp; advanced manufacturing hub — the nation's 'Capital of IoT' and host of the World Internet of Things Exposition.</p>
+              <div class="tc-collab">
+                <img src="pictures/Wuxi-Sci-Tech.jpg" alt="Wuxi-Singapore Sci-Tech City">
+                <div>
+                  <div class="k" data-en="Singapore-China Collaboration" data-zh="中新合作项目">Singapore-China Collaboration</div>
+                  <div class="t" data-en="Wuxi-Singapore Sci-Tech City" data-zh="无锡新加坡科创城">Wuxi-Singapore Sci-Tech City</div>
+                  <p data-en="Flagship project deepening SG-China tech cooperation in AI, integrated circuits, and biomedicine." data-zh="中新深化科技合作的旗舰项目，聚焦人工智能、集成电路与生物医药。">Flagship project deepening SG-China tech cooperation in AI, integrated circuits, and biomedicine.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tc-card">
+            <img src="pictures/city photos/nanjing_city_1775401560749.png" alt="Nanjing">
+            <div class="tc-body">
+              <h3 data-en="Nanjing" data-zh="南京">Nanjing<span class="title-red-dot">.</span></h3>
+              <p data-en="A growing tech and talent capital powered by universities, deep-tech R&amp;D, and policy support." data-zh="一座由高校、深科技研发和政策支持驱动的新兴科技与人才之都。">A growing tech and talent capital powered by universities, deep-tech R&amp;D, and policy support.</p>
+              <div class="tc-collab">
+                <img src="pictures/Nanjing-Eco-Hi-Tech-Island.jpg" alt="Singapore-Nanjing Eco Hi-Tech Island">
+                <div>
+                  <div class="k" data-en="Singapore-China Collaboration" data-zh="中新合作项目">Singapore-China Collaboration</div>
+                  <div class="t" data-en="Singapore-Nanjing Eco Hi-Tech Island" data-zh="新加坡南京生态科技岛">Singapore-Nanjing Eco Hi-Tech Island</div>
+                  <p data-en="The largest SG-Jiangsu flagship cooperation project — AI, water science, and digital economy." data-zh="新加坡与江苏省最大的旗舰合作项目——聚焦人工智能、水科学与数字经济。">The largest SG-Jiangsu flagship cooperation project — AI, water science, and digital economy.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- ============ COMPANY VISITS ============ -->
-    <section class="section immersion-visits-section immersion-visits-section--dark" id="visits">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label" data-en="Site Visits" data-zh="实地参访">Site Visits</span>
-                <h2 class="section-title" data-en="Meet Future Unicorns" data-zh="对话未来独角兽">Meet Future Unicorns<span class="title-red-dot">.</span></h2>
-                <p class="immersion-section-subtitle" data-en="Visit upcoming unicorns and hidden tech champions across AI, robotics, and advanced sectors." data-zh="参访AI、机器人和先进领域的新兴独角兽和隐形科技冠军。">Visit upcoming unicorns and hidden tech champions across AI, robotics, and advanced sectors.</p>
-            </div>
+    <!-- ============ SITE VISITS ============ -->
+    <style>
+      #site-visits { background: #fff; padding: 88px 24px; font-family: var(--font-body); color: var(--text-secondary); }
+      #site-visits .sv-wrap { max-width: 1160px; margin: 0 auto; }
+      #site-visits .section-header { text-align: center; margin-bottom: 8px; }
+      #site-visits .sv-cat { font-family: var(--font-display); font-weight: 800; font-size: 1.375rem; color: var(--navy); margin: 48px 0 6px; }
+      #site-visits .sv-cat + .sv-cat-sub { margin: 0 0 26px; font-size: 0.9875rem; }
+      #site-visits .sv-cat .num { color: var(--navy); }
+      #site-visits .sv-cat.second { margin-top: 64px; }
+      #site-visits .sv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+      #site-visits .sv-card { background: #fff; border: 1px solid var(--border-light); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease; }
+      #site-visits .sv-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+      #site-visits .sv-card > img { width: 100%; height: 170px; object-fit: cover; display: block; background: #EDF1F9; }
+      #site-visits .sv-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+      #site-visits .sv-title { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+      #site-visits .sv-title .n { font-family: var(--font-display); font-weight: 800; color: var(--red); font-size: 0.9375rem; }
+      #site-visits .sv-title .name { font-family: var(--font-display); font-weight: 800; color: var(--navy); font-size: 1.125rem; }
+      #site-visits .sv-title .cn { color: var(--text-light); font-size: 0.875rem; font-weight: 600; }
+      #site-visits .sv-body > p { margin: 0; font-size: 0.9063rem; line-height: 1.6; flex: 1; }
+      #site-visits .sv-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+      #site-visits .sv-tag { font-size: 0.75rem; font-weight: 700; padding: 5px 11px; border-radius: 999px; }
+      #site-visits .sv-tag.red { background: #FFE5E5; color: #C50005; }
+      #site-visits .sv-tag.teal { background: #DDF4F4; color: #06706F; }
+      #site-visits .sv-note { margin: 20px 0 0; font-size: 0.875rem; color: var(--text-light); }
+    </style>
 
-            <!-- Track 1: AI & Intelligent Tech -->
-            <div class="visits-track visits-track--teal">
-                <div class="visits-track-header">
-                    <div class="visits-track-number visits-track-number--teal">1</div>
-                    <div class="visits-track-info">
-                        <h3 data-en="AI & Intelligent Tech" data-zh="AI与智能科技">AI & Intelligent Tech</h3>
-                        <p data-en="Meeting upcoming unicorns in AI application and Intelligent Tech." data-zh="对话AI应用和智能科技领域的新兴独角兽。">Meeting upcoming unicorns in AI application and Intelligent Tech.</p>
-                    </div>
-                </div>
-                <div class="visits-cards-grid">
-                    <div class="visit-card visit-card--with-img">
-                        <div class="visit-card-img"><img src="pictures/visits/saturn_info_tech.png" alt="Saturn Info Tech"></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">1</div>
-                        <h4>Saturn Info Tech</h4>
-                        <div class="visit-card-cn">土星视界</div>
-                        <p class="visit-card-desc" data-en="Voiceprint Recognition Technology for the Power Industry. Founded in 2020, Series B: tens of millions of RMB raised." data-zh="电力行业声纹识别技术。成立于2020年，B轮融资：数千万人民币。">Voiceprint Recognition Technology for the Power Industry. Founded in 2020, Series B: tens of millions of RMB raised.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="Series B" data-zh="B轮">Series B</span>
-                            <span class="visit-card-tag" data-en="Voiceprint AI" data-zh="声纹AI">Voiceprint AI</span>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="visit-card visit-card--with-img">
-                        <div class="visit-card-img"><img src="pictures/visits/silicon_int.png" alt="Silicon Int."></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">2</div>
-                        <h4>Silicon Int.</h4>
-                        <div class="visit-card-cn">硅基智能</div>
-                        <p class="visit-card-desc" data-en="AIGC Digital Human for live streaming and intelligent customer service. Founded in 2017, Series D: hundreds of millions of RMB." data-zh="用于直播和智能客服的AIGC数字人。成立于2017年，D轮融资：数亿元人民币。">AIGC Digital Human for live streaming and intelligent customer service. Founded in 2017, Series D: hundreds of millions of RMB.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="Series D" data-zh="D轮">Series D</span>
-                            <span class="visit-card-tag" data-en="AIGC Digital Human" data-zh="AIGC数字人">AIGC Digital Human</span>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="visit-card visit-card--with-img">
-                        <div class="visit-card-img"><img src="pictures/visits/titan_tech.png" alt="Titan Tech"></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">3</div>
-                        <h4>Titan Tech</h4>
-                        <div class="visit-card-cn">大块头智驾</div>
-                        <p class="visit-card-desc" data-en="Level 4 Autonomous Heavy Truck for Mining, Ports, and Other Heavy Industries. Founded in 2021, Series B: tens of millions of RMB raised." data-zh="用于矿山、港口和其他重工业的L4自动驾驶重卡。成立于2021年，B轮融资：数千万人民币。">Level 4 Autonomous Heavy Truck for Mining, Ports, and Other Heavy Industries. Founded in 2021, Series B: tens of millions of RMB raised.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="Series B" data-zh="B轮">Series B</span>
-                            <span class="visit-card-tag" data-en="Autonomous Driving" data-zh="自动驾驶">Autonomous Driving</span>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="visit-card visit-card--with-img">
-                        <div class="visit-card-img"><img src="pictures/visits/longshine_tech.png" alt="LongShine"></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">4</div>
-                        <h4>LongShine</h4>
-                        <div class="visit-card-cn">朗新科技</div>
-                        <p class="visit-card-desc" data-en="Specializing in energy internet, smart/digital cities, and digitalized services. Founded in 1996, listed in Shenzhen in 2017." data-zh="专注于能源互联网、智慧/数字城市和数字化服务。成立于1996年，2017年在深圳上市。">Specializing in energy internet, smart/digital cities, and digitalized services. Founded in 1996, listed in Shenzhen in 2017.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="Listed" data-zh="上市">Listed</span>
-                            <span class="visit-card-tag" data-en="Energy Internet" data-zh="能源互联网">Energy Internet</span>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="visit-card visit-card--with-img visit-card--full">
-                        <div class="visit-card-img"><img src="pictures/visits/lead_digital.jpg" alt="Lead Digital"></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">5</div>
-                        <h4>Lead Digital</h4>
-                        <div class="visit-card-cn">羚数智能</div>
-                        <p class="visit-card-desc" data-en="Among China's first &quot;AI + Manufacturing&quot; providers focused on deploying industrial-domain large models. Its in-house &quot;Baigong&quot; Industrial LLM uses multi-agent (Multi-Agent) collaboration to deliver full-chain smart production and supply-chain decisions for high-end manufacturing and engineering firms." data-zh="国内首批聚焦工业垂直领域大模型落地的“AI+制造”服务商，手握自研的“百工工业大模型”，通过多智能体（Multi-Agent）协同，为高端制造及工程企业提供全链路的智能生产与供应链决策。">Among China's first "AI + Manufacturing" providers focused on deploying industrial-domain large models. Its in-house "Baigong" Industrial LLM uses multi-agent (Multi-Agent) collaboration to deliver full-chain smart production and supply-chain decisions for high-end manufacturing and engineering firms.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="Industrial LLM" data-zh="工业大模型">Industrial LLM</span>
-                            <span class="visit-card-tag" data-en="Multi-Agent" data-zh="多智能体">Multi-Agent</span>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="visits-note" data-en="Additional premium visits in the field of AI & Intelligent Tech may be included." data-zh="可能会增加AI与智能科技领域的额外优质参访。">Additional premium visits in the field of AI & Intelligent Tech may be included.</p>
-            </div>
-
-            <!-- Track 2: Embodied AI & Robotics -->
-            <div class="visits-track visits-track--purple">
-                <div class="visits-track-header">
-                    <div class="visits-track-number visits-track-number--purple">2</div>
-                    <div class="visits-track-info">
-                        <h3 data-en="Embodied AI & Robotics" data-zh="具身AI与机器人">Embodied AI & Robotics</h3>
-                        <p data-en="Hidden tech champions in specialized sectors of Robotics." data-zh="机器人专业领域的隐形科技冠军。">Hidden tech champions in specialized sectors of Robotics.</p>
-                    </div>
-                </div>
-                <div class="visits-cards-grid">
-                    <div class="visit-card visit-card--with-img">
-                        <div class="visit-card-img"><img src="pictures/visits/estun_automation.png" alt="ESTUN Automation"></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">1</div>
-                        <h4>ESTUN Automation</h4>
-                        <div class="visit-card-cn">埃斯顿自动化</div>
-                        <p class="visit-card-desc" data-en="Founded in 1993 in Nanjing, dual-listed on SZSE (002747) and HKEX (02715) — China's first A+H listed industrial robotics company. Consistently ranked #1 in industrial robot shipments in China, a benchmark enterprise for China's robotics self-reliance." data-zh="1993年成立于南京，深交所（002747）和港交所（02715）上市，成为中国工业机器人领域首家A+H上市企业；连续多年稳居工业机器人出货量中国第一，是中国机器人自主化标杆企业。">Founded in 1993 in Nanjing, dual-listed on SZSE (002747) and HKEX (02715) — China's first A+H listed industrial robotics company. Consistently ranked #1 in industrial robot shipments in China, a benchmark enterprise for China's robotics self-reliance.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="A+H Listed" data-zh="A+H上市">A+H Listed</span>
-                            <span class="visit-card-tag" data-en="Industrial Robotics" data-zh="工业机器人">Industrial Robotics</span>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="visit-card visit-card--with-img">
-                        <div class="visit-card-img"><img src="pictures/visits/trans_bionics.png" alt="Trans-Bionics"></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">2</div>
-                        <h4>Trans-Bionics</h4>
-                        <div class="visit-card-cn">泉智博科技</div>
-                        <p class="visit-card-desc" data-en="Design and manufacturing technologies for high quality robotic joints. Founded in 2025, Series A+: hundreds of millions of RMB raised." data-zh="高品质机器人关节的设计和制造技术。成立于2025年，A+轮融资：数亿元人民币。">Design and manufacturing technologies for high quality robotic joints. Founded in 2025, Series A+: hundreds of millions of RMB raised.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="Series A+" data-zh="A+轮">Series A+</span>
-                            <span class="visit-card-tag" data-en="Robotic Joints" data-zh="机器人关节">Robotic Joints</span>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="visit-card visit-card--with-img">
-                        <div class="visit-card-img"><img src="pictures/visits/zhiyue_space.png" alt="Zhiyue Space Intel"></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">3</div>
-                        <h4>Zhiyue Space Intel</h4>
-                        <div class="visit-card-cn">知跃空间智能科技</div>
-                        <p class="visit-card-desc" data-en="Robotic 'macro-micro brain' systems for complex industrial environments. Founded in 2025, Angel Round: tens of millions of RMB raised." data-zh="面向复杂工业环境的机器人"宏微脑"系统。成立于2025年，天使轮融资：数千万人民币。">Robotic "macro-micro brain" systems for complex industrial environments. Founded in 2025, Angel Round: tens of millions of RMB raised.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="Angel" data-zh="天使轮">Angel</span>
-                            <span class="visit-card-tag" data-en="Spatial Intelligence" data-zh="空间智能">Spatial Intelligence</span>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="visit-card visit-card--with-img">
-                        <div class="visit-card-img"><img src="pictures/visits/juxie_drive.png" alt="Juxie Drive"></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">4</div>
-                        <h4>Juxie Drive</h4>
-                        <div class="visit-card-cn">巨蟹智能驱动科技</div>
-                        <p class="visit-card-desc" data-en="Core robotic components such as harmonic drives and micro low-voltage actuators. Founded in 2019, Series A: undisclosed amount." data-zh="谐波减速器和微型低压执行器等核心机器人组件。成立于2019年，A轮融资：金额未公开。">Core robotic components such as harmonic drives and micro low-voltage actuators. Founded in 2019, Series A: undisclosed amount.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="Series A" data-zh="A轮">Series A</span>
-                            <span class="visit-card-tag" data-en="Harmonic Drives" data-zh="谐波减速器">Harmonic Drives</span>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="visit-card visit-card--with-img visit-card--full">
-                        <div class="visit-card-img"><img src="pictures/visits/magic_atomic.jpg" alt="Magic Atomic Robotics"></div>
-                        <div class="visit-card-body">
-                        <div class="visit-card-number">5</div>
-                        <h4>Magic Atomic Robotics</h4>
-                        <div class="visit-card-cn">魔法原子机器人科技</div>
-                        <p class="visit-card-desc" data-en="A global leader in embodied intelligence and general-purpose humanoid robots, with full-stack in-house hardware, software, and multimodal perception algorithms. Its full-size humanoid robots and quadruped robot dogs are already in volume production for complex industrial and commercial settings." data-zh="全球领先的具身智能与通用人形机器人研发商，拥有全栈自研的软硬件及多模态感知算法，其全尺寸人形机器人及四足机器狗已实现复杂工业与商业场景的量产交付。">A global leader in embodied intelligence and general-purpose humanoid robots, with full-stack in-house hardware, software, and multimodal perception algorithms. Its full-size humanoid robots and quadruped robot dogs are already in volume production for complex industrial and commercial settings.</p>
-                        <div class="visit-card-tags">
-                            <span class="visit-card-tag" data-en="Humanoid Robots" data-zh="人形机器人">Humanoid Robots</span>
-                            <span class="visit-card-tag" data-en="Embodied AI" data-zh="具身智能">Embodied AI</span>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="visits-note" data-en="Additional premium visits in the field of Embodied AI & Robotics may be included." data-zh="可能会增加具身AI与机器人领域的额外优质参访。">Additional premium visits in the field of Embodied AI & Robotics may be included.</p>
-            </div>
+    <section id="site-visits">
+      <div class="sv-wrap">
+        <div class="section-header">
+          <span class="section-label" data-en="Site Visits" data-zh="实地参访">Site Visits</span>
+          <h2 class="section-title" data-en="Meet Future Unicorns" data-zh="对话未来独角兽">Meet Future Unicorns<span class="title-red-dot">.</span></h2>
+          <p class="immersion-section-subtitle" data-en="Visit upcoming unicorns and hidden tech champions across AI, robotics, and advanced sectors." data-zh="参访AI、机器人和先进领域的新兴独角兽和隐形科技冠军。">Visit upcoming unicorns and hidden tech champions across AI, robotics, and advanced sectors.</p>
         </div>
+
+        <h3 class="sv-cat"><span class="num">1<span class="title-red-dot">.</span></span> <span data-en="AI &amp; Intelligent Tech" data-zh="AI与智能科技">AI &amp; Intelligent Tech</span></h3>
+        <p class="sv-cat-sub" data-en="Meeting upcoming unicorns in AI application and Intelligent Tech." data-zh="对话AI应用和智能科技领域的新兴独角兽。">Meeting upcoming unicorns in AI application and Intelligent Tech.</p>
+        <div class="sv-grid">
+          <div class="sv-card">
+            <img src="pictures/visits/saturn_info_tech.png" alt="Saturn Info Tech">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">1</span><span class="name">Saturn Info Tech</span><span class="cn">土星视界</span></div>
+              <p data-en="Voiceprint recognition technology for the power industry. Founded in 2020, Series B: tens of millions of RMB raised." data-zh="电力行业声纹识别技术。成立于2020年，B轮融资：数千万人民币。">Voiceprint recognition technology for the power industry. Founded in 2020, Series B: tens of millions of RMB raised.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="Series B" data-zh="B轮">Series B</span><span class="sv-tag teal" data-en="Voiceprint AI" data-zh="声纹AI">Voiceprint AI</span></div>
+            </div>
+          </div>
+          <div class="sv-card">
+            <img src="pictures/visits/silicon_int.png" alt="Silicon Int.">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">2</span><span class="name">Silicon Int.</span><span class="cn">硅基智能</span></div>
+              <p data-en="AIGC digital human for live streaming and intelligent customer service. Founded in 2017, Series D: hundreds of millions of RMB." data-zh="用于直播和智能客服的AIGC数字人。成立于2017年，D轮融资：数亿元人民币。">AIGC digital human for live streaming and intelligent customer service. Founded in 2017, Series D: hundreds of millions of RMB.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="Series D" data-zh="D轮">Series D</span><span class="sv-tag teal" data-en="AIGC Digital Human" data-zh="AIGC数字人">AIGC Digital Human</span></div>
+            </div>
+          </div>
+          <div class="sv-card">
+            <img src="pictures/visits/titan_tech.png" alt="Titan Tech">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">3</span><span class="name">Titan Tech</span><span class="cn">大块头智驾</span></div>
+              <p data-en="Level 4 autonomous heavy trucks for mining, ports, and other heavy industries. Founded in 2021, Series B: tens of millions of RMB raised." data-zh="用于矿山、港口和其他重工业的L4自动驾驶重卡。成立于2021年，B轮融资：数千万人民币。">Level 4 autonomous heavy trucks for mining, ports, and other heavy industries. Founded in 2021, Series B: tens of millions of RMB raised.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="Series B" data-zh="B轮">Series B</span><span class="sv-tag teal" data-en="Autonomous Driving" data-zh="自动驾驶">Autonomous Driving</span></div>
+            </div>
+          </div>
+          <div class="sv-card">
+            <img src="pictures/visits/longshine_tech.png" alt="LongShine">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">4</span><span class="name">LongShine</span><span class="cn">朗新科技</span></div>
+              <p data-en="Specializing in energy internet, smart/digital cities, and digitalized services. Founded in 1996, listed in Shenzhen in 2017." data-zh="专注于能源互联网、智慧/数字城市和数字化服务。成立于1996年，2017年在深圳上市。">Specializing in energy internet, smart/digital cities, and digitalized services. Founded in 1996, listed in Shenzhen in 2017.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="Listed" data-zh="上市">Listed</span><span class="sv-tag teal" data-en="Energy Internet" data-zh="能源互联网">Energy Internet</span></div>
+            </div>
+          </div>
+          <div class="sv-card">
+            <img src="pictures/visits/lead_digital.jpg" alt="Lead Digital">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">5</span><span class="name">Lead Digital</span><span class="cn">羚数智能</span></div>
+              <p data-en="Among China's first 'AI + Manufacturing' providers. Its in-house 'Baigong' Industrial LLM uses multi-agent collaboration to deliver full-chain smart production and supply-chain decisions for high-end manufacturing." data-zh="国内首批聚焦工业垂直领域大模型落地的“AI+制造”服务商，手握自研的“百工工业大模型”，通过多智能体协同，为高端制造及工程企业提供全链路的智能生产与供应链决策。">Among China's first 'AI + Manufacturing' providers. Its in-house 'Baigong' Industrial LLM uses multi-agent collaboration to deliver full-chain smart production and supply-chain decisions for high-end manufacturing.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="Industrial LLM" data-zh="工业大模型">Industrial LLM</span><span class="sv-tag teal" data-en="Multi-Agent" data-zh="多智能体">Multi-Agent</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="sv-note" data-en="Additional premium visits in the field of AI &amp; Intelligent Tech may be included." data-zh="可能会增加AI与智能科技领域的额外优质参访。">Additional premium visits in the field of AI &amp; Intelligent Tech may be included.</p>
+
+        <h3 class="sv-cat second"><span class="num">2<span class="title-red-dot">.</span></span> <span data-en="Embodied AI &amp; Robotics" data-zh="具身AI与机器人">Embodied AI &amp; Robotics</span></h3>
+        <p class="sv-cat-sub" data-en="Hidden tech champions in specialized sectors of Robotics." data-zh="机器人专业领域的隐形科技冠军。">Hidden tech champions in specialized sectors of Robotics.</p>
+        <div class="sv-grid">
+          <div class="sv-card">
+            <img src="pictures/visits/estun_automation.png" alt="ESTUN Automation">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">1</span><span class="name">ESTUN Automation</span><span class="cn">埃斯顿自动化</span></div>
+              <p data-en="Founded in 1993 in Nanjing, dual-listed on SZSE and HKEX — China's first A+H listed industrial robotics company, ranked #1 in industrial robot shipments in China." data-zh="1993年成立于南京，深交所和港交所两地上市——中国工业机器人领域首家A+H上市企业，工业机器人出货量稳居中国第一。">Founded in 1993 in Nanjing, dual-listed on SZSE and HKEX — China's first A+H listed industrial robotics company, ranked #1 in industrial robot shipments in China.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="A+H Listed" data-zh="A+H上市">A+H Listed</span><span class="sv-tag teal" data-en="Industrial Robotics" data-zh="工业机器人">Industrial Robotics</span></div>
+            </div>
+          </div>
+          <div class="sv-card">
+            <img src="pictures/visits/trans_bionics.png" alt="Trans-Bionics">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">2</span><span class="name">Trans-Bionics</span><span class="cn">泉智博科技</span></div>
+              <p data-en="Design and manufacturing technologies for high quality robotic joints. Founded in 2025, Series A+: hundreds of millions of RMB raised." data-zh="高品质机器人关节的设计和制造技术。成立于2025年，A+轮融资：数亿元人民币。">Design and manufacturing technologies for high quality robotic joints. Founded in 2025, Series A+: hundreds of millions of RMB raised.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="Series A+" data-zh="A+轮">Series A+</span><span class="sv-tag teal" data-en="Robotic Joints" data-zh="机器人关节">Robotic Joints</span></div>
+            </div>
+          </div>
+          <div class="sv-card">
+            <img src="pictures/visits/zhiyue_space.png" alt="Zhiyue Space Intel">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">3</span><span class="name">Zhiyue Space Intel</span><span class="cn">知跃空间智能科技</span></div>
+              <p data-en="Robotic 'macro-micro brain' systems for complex industrial environments. Founded in 2025, Angel Round: tens of millions of RMB raised." data-zh="面向复杂工业环境的机器人“宏微脑”系统。成立于2025年，天使轮融资：数千万人民币。">Robotic 'macro-micro brain' systems for complex industrial environments. Founded in 2025, Angel Round: tens of millions of RMB raised.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="Angel" data-zh="天使轮">Angel</span><span class="sv-tag teal" data-en="Spatial Intelligence" data-zh="空间智能">Spatial Intelligence</span></div>
+            </div>
+          </div>
+          <div class="sv-card">
+            <img src="pictures/visits/juxie_drive.png" alt="Juxie Drive">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">4</span><span class="name">Juxie Drive</span><span class="cn">巨蟹智能驱动科技</span></div>
+              <p data-en="Core robotic components such as harmonic drives and micro low-voltage actuators. Founded in 2019, Series A." data-zh="谐波减速器和微型低压执行器等核心机器人组件。成立于2019年，A轮融资。">Core robotic components such as harmonic drives and micro low-voltage actuators. Founded in 2019, Series A.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="Series A" data-zh="A轮">Series A</span><span class="sv-tag teal" data-en="Harmonic Drives" data-zh="谐波减速器">Harmonic Drives</span></div>
+            </div>
+          </div>
+          <div class="sv-card">
+            <img src="pictures/visits/magic_atomic.jpg" alt="Magic Atomic Robotics">
+            <div class="sv-body">
+              <div class="sv-title"><span class="n">5</span><span class="name">Magic Atomic Robotics</span><span class="cn">魔法原子机器人科技</span></div>
+              <p data-en="A global leader in embodied intelligence and general-purpose humanoid robots — full-size humanoids and quadruped robot dogs already in volume production for industrial and commercial settings." data-zh="全球领先的具身智能与通用人形机器人研发商——全尺寸人形机器人及四足机器狗已在工业与商业场景实现量产交付。">A global leader in embodied intelligence and general-purpose humanoid robots — full-size humanoids and quadruped robot dogs already in volume production for industrial and commercial settings.</p>
+              <div class="sv-tags"><span class="sv-tag red" data-en="Humanoid Robots" data-zh="人形机器人">Humanoid Robots</span><span class="sv-tag teal" data-en="Embodied AI" data-zh="具身智能">Embodied AI</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="sv-note" data-en="Additional premium visits in the field of Embodied AI &amp; Robotics may be included." data-zh="可能会增加具身AI与机器人领域的额外优质参访。">Additional premium visits in the field of Embodied AI &amp; Robotics may be included.</p>
+      </div>
     </section>
 
     <!-- ============ CULTURAL HIGHLIGHTS ============ -->

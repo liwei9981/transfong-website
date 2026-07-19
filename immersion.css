@@ -1240,3 +1240,34 @@
         padding: var(--space-md) var(--space-lg);
     }
 }
+
+/* ============================================
+   VALUE CARD TITLES — Why-Join style (icon + colored two-line title)
+   ============================================ */
+.immersion-value-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.immersion-value-head .immersion-value-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.immersion-value-card h3.immersion-value-title {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+    margin-bottom: 0;
+}
+
+.immersion-value-title span {
+    display: block;
+}
+
+h3.immersion-value-title--teal { color: var(--teal); }
+h3.immersion-value-title--red { color: var(--red); }
+h3.immersion-value-title--purple { color: var(--purple); }

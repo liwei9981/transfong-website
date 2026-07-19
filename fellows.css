@@ -395,6 +395,18 @@ h3.fellows-step-title--purple { color: var(--purple); }
     transform: translateY(-4px);
 }
 
+.fellows-invite-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.fellows-invite-head .fellows-invite-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
 .fellows-invite-icon {
     width: 48px;
     height: 48px;
@@ -404,6 +416,22 @@ h3.fellows-step-title--purple { color: var(--purple); }
     justify-content: center;
     margin-bottom: var(--space-md);
 }
+
+.fellows-invite-card h3.fellows-invite-title {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+    margin-bottom: 0;
+}
+
+.fellows-invite-title span {
+    display: block;
+}
+
+.fellows-invite-card h3.fellows-invite-title--teal { color: var(--teal); }
+.fellows-invite-card h3.fellows-invite-title--red { color: var(--red); }
+.fellows-invite-card h3.fellows-invite-title--purple { color: var(--purple); }
 
 .fellows-invite-icon .material-symbols-outlined {
     font-size: 24px;
