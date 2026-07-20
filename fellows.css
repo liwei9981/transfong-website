@@ -66,6 +66,16 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+.fellows-portfolio-note {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-secondary);
+    opacity: 0.85;
+    max-width: 680px;
+    margin: var(--space-sm) auto 0;
+    line-height: 1.6;
+}
+
 .section-label--on-dark {
     background: rgba(0, 177, 176, 0.12);
     color: var(--teal);
