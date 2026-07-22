@@ -376,6 +376,137 @@ html.deck-on body {
 
 .tf-slide--navy .tf-note { color: var(--text-on-inverse-muted); }
 
+/* ---- Flip cards (portfolio) — front on rest, brief on hover ---- */
+.tf-flip {
+    perspective: 1200px;
+    height: 378px;
+    cursor: pointer;
+}
+
+.tf-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tf-flip:hover .tf-flip-inner,
+.tf-flip:focus-within .tf-flip-inner { transform: rotateY(180deg); }
+
+.tf-flip-front,
+.tf-flip-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 22px;
+    border-radius: 14px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.tf-flip-front {
+    background: #fff;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
+}
+
+.tf-flip-back {
+    transform: rotateY(180deg);
+    background: var(--tf-navy);
+    color: #fff;
+}
+
+.tf-flip-front::before,
+.tf-flip-back::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--tf-red);
+}
+
+.tf-flip h4 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    color: var(--tf-navy);
+    padding-right: 22px;
+}
+
+.tf-flip-back h4 { color: #fff; }
+
+/* Hover affordance, echoing the website's flip corner */
+.tf-flip-hint {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    font-size: 17px;
+    line-height: 1;
+    color: var(--tf-teal);
+}
+
+.tf-flip .tf-tags { margin-top: 0; }
+
+.tf-flip-founder {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.tf-flip-overline {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tf-teal);
+}
+
+.tf-flip-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--tf-navy);
+    margin: 6px 0 8px;
+}
+
+.tf-flip-founder p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.tf-flip-vision {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+}
+
+.tf-flip-vision-text {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.35;
+    color: #fff;
+    margin-top: 6px;
+}
+
+.tf-flip-back > p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #C9D1E8;
+    margin: 0;
+}
+
 /* ---- Partner logo wall ---- */
 .tf-logo-grid {
     display: grid;
