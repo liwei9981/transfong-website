@@ -9,7 +9,7 @@ VERSION=$(git rev-parse --short HEAD)
 STAGE=$(mktemp -d)
 echo "Staging release $VERSION ..."
 
-FILES="index.html ai-immersion.html ai-acceleration.html privacy.html fellowship.html internship.html tech-fellows.html styles.css immersion.css acceleration.css fellows.css script.js immersion.js acceleration.js fellows.js favicon.png"
+FILES="index.html ai-immersion.html ai-acceleration.html privacy.html fellowship.html internship.html tech-fellows.html styles.css immersion.css acceleration.css fellows.css deck.css script.js immersion.js acceleration.js fellows.js deck.js favicon.png"
 cp $FILES "$STAGE/"
 cp -R pictures competition "$STAGE/"
 

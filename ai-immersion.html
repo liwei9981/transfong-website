@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="immersion.css">
+    <link rel="stylesheet" href="deck.css">
 </head>
 <body>
 
@@ -596,5 +597,20 @@
 
     <script src="script.js"></script>
     <script src="immersion.js"></script>
+    <script>
+        /* Slide plan for presentation mode (deck.js) */
+        window.deckSlides = [
+            { sel: '#immersion-hero', fit: '.hero-content' },
+            { sel: '#objectives' },
+            { sel: '#track-record', hideFrom: '.tr-marquee' },   /* stats + timeline */
+            { sel: '#track-record', hideUntil: '.tr-marquee' },  /* photos + testimonials */
+            { sel: '#two-cities' },
+            { sel: '#site-visits', hideFrom: '.sv-cat.second' }, /* 1. AI & Intelligent Tech */
+            { sel: '#site-visits', hideUntil: '.sv-cat.second' },/* 2. Embodied AI & Robotics */
+            { sel: '#culture' },
+            { sel: '#pricing' }
+        ];
+    </script>
+    <script src="deck.js"></script>
 </body>
 </html>

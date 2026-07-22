@@ -1,0 +1,182 @@
+/* ============================================================
+   Presentation mode ("deck view") — pairs with deck.js.
+   A page opts in by defining window.deckSlides before deck.js.
+   ============================================================ */
+
+/* ---- Present button in the navbar ---- */
+.deck-present-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-light);
+    background: rgba(255, 255, 255, 0.1);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.deck-present-btn:hover {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: #fff;
+}
+
+.deck-present-btn svg {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+/* Deck mode is a desktop feature */
+@media (max-width: 900px) {
+    .deck-present-btn { display: none; }
+}
+
+/* ---- Deck mode ---- */
+html.deck-on,
+html.deck-on body {
+    overflow: hidden !important;
+    height: 100%;
+}
+
+.deck-on .navbar,
+.deck-on .footer,
+.deck-on .immersion-disclaimer {
+    display: none !important;
+}
+
+.deck-on section {
+    display: none !important;
+}
+
+.deck-on section.deck-active {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    margin: 0 !important;
+    overflow: hidden;
+    padding: 48px 48px 84px !important;
+}
+
+/* Never flex-shrink slide content — deck.js scales it to fit instead */
+.deck-on section.deck-active > * {
+    flex-shrink: 0;
+}
+
+/* Neutralize scroll-reveal animations that would leave content invisible */
+.deck-on .section-header,
+.deck-on .about-narrative,
+.deck-on .about-timeline,
+.deck-on .pillar-panel.active,
+.deck-on .city-card,
+.deck-on .accel-card,
+.deck-on .training-card,
+.deck-on .team-card,
+.deck-on .stat-card,
+.deck-on .contact-card,
+.deck-on .immersion-value-card,
+.deck-on .objective-group,
+.deck-on .city-itinerary-card,
+.deck-on .visits-track,
+.deck-on .visit-card,
+.deck-on .culture-card,
+.deck-on .pricing-panel,
+.deck-on .about-strip-inner,
+.deck-on .immersion-cta-inner {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Track-record timeline: horizontal scroller on the site, wrapped rows on a slide */
+.deck-on #track-record.deck-active .tr-timeline {
+    flex-wrap: wrap;
+    row-gap: 22px;
+    overflow-x: visible;
+    padding-bottom: 0;
+}
+
+.deck-on #track-record.deck-active .tr-trip {
+    flex: 0 0 16.66%;
+    min-width: 0;
+}
+
+.deck-on #track-record.deck-active .tr-next {
+    flex: 0 0 33.3%;
+    min-width: 0;
+}
+
+/* Hero: keep the animated background full-bleed behind the scaled content */
+.deck-on .immersion-hero.deck-active .hero-bg {
+    position: absolute;
+    inset: 0;
+}
+
+/* ---- HUD (bottom control bar) ---- */
+.deck-hud {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    z-index: 950;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    border-radius: var(--radius-full);
+    background: rgba(1, 27, 100, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 30px rgba(1, 27, 100, 0.35);
+    backdrop-filter: blur(8px);
+}
+
+.deck-on .deck-hud { display: flex; }
+
+.deck-hud button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: var(--radius-full);
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 150ms ease;
+}
+
+.deck-hud button:hover { background: rgba(255, 255, 255, 0.14); }
+
+.deck-hud .deck-arrow { font-size: 20px; line-height: 1; padding-bottom: 2px; }
+
+.deck-count {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 8px;
+    min-width: 52px;
+    text-align: center;
+}
+
+.deck-sep {
+    width: 1px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 0 4px;
+}
+
+.deck-hud .deck-lang { font-size: 12px; }
+
+.deck-hud .deck-exit { font-size: 15px; }
