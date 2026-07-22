@@ -73,6 +73,8 @@ html.deck-on body {
     --tf-purple: #6779BD;
     --tf-blue-05: #F2F3F7;
     --tf-blue-10: #E5E8EF;
+    --tf-blue-20: #CCD1E0;
+    --tf-blue-30: #B2BAD0;
     --tf-blue-60: #6776A2;
     --text-muted: #6776A2;
     --text-on-inverse-muted: #B9C2DC;
@@ -171,13 +173,29 @@ html.deck-on body {
 
 .tf-title-body h1 {
     font-family: var(--font-display);
-    font-size: 64px;
+    font-size: 62px;
     font-weight: 800;
-    line-height: 1.06;
+    line-height: 1.08;
     letter-spacing: -0.02em;
     margin: 0;
-    max-width: 980px;
+    max-width: 1000px;
     color: #fff;
+}
+
+/* Two-line hero title, matching the webpage: white line + teal→purple accent line */
+.tf-title-line { display: block; }
+
+.tf-title-accent {
+    background: linear-gradient(135deg, var(--tf-teal), var(--tf-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* The red full stop stays red even inside the gradient-clipped line */
+.tf-slide .title-red-dot {
+    -webkit-text-fill-color: var(--tf-red);
+    font-weight: 900;
 }
 
 .tf-title-sub {
