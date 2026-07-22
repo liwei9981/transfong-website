@@ -515,30 +515,62 @@ html.deck-on body {
     gap: 18px;
 }
 
+/* Flip card: logo on the front, full organisation name on the back */
 .tf-logo-card {
-    background: #fff;
-    border: 1px solid var(--border-subtle);
-    border-radius: 14px;
-    padding: 18px 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    text-align: center;
+    perspective: 1000px;
+    height: 116px;
     min-width: 0;
+    cursor: pointer;
 }
 
-.tf-logo-card img {
-    height: 42px;
+.tf-logo-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tf-logo-card:hover .tf-logo-inner { transform: rotateY(180deg); }
+
+.tf-logo-front,
+.tf-logo-back {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+    border-radius: 14px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    text-align: center;
+}
+
+.tf-logo-front {
+    background: #fff;
+    border: 1px solid var(--border-subtle);
+}
+
+.tf-logo-back {
+    transform: rotateY(180deg);
+    background: var(--surface-inverse-2);
+    border: 1px solid rgba(0, 177, 176, 0.55);
+}
+
+/* Every logo occupies an identical box, whatever its aspect ratio */
+.tf-logo-front img {
+    max-height: 44px;
     max-width: 100%;
+    width: auto;
     object-fit: contain;
 }
 
-.tf-logo-card span {
+.tf-logo-back span {
     font-size: 14px;
     font-weight: 600;
     line-height: 1.35;
-    color: var(--text-muted);
+    color: #fff;
 }
 
 /* ---- People (founding team, mentors) ---- */

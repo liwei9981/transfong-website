@@ -2260,54 +2260,118 @@ a, .nav-link, .pillar-tab, .lang-option, .city-card, .btn, .footer-links a {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-md);
     margin-top: var(--space-2xl);
-    max-width: 1020px;
+    max-width: 880px;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Flip card: logo on the front, full organisation name on the back */
 .partner-card {
-    background: var(--white);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    perspective: 1000px;
+    height: 132px;
+    cursor: pointer;
+}
+
+.partner-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s var(--ease-out);
+}
+
+.partner-card:hover .partner-card-inner,
+.partner-card:focus-visible .partner-card-inner {
+    transform: rotateY(180deg);
+}
+
+.partner-card:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
     border-radius: var(--radius-lg);
-    padding: var(--space-lg) var(--space-md);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    transition: all var(--duration-normal) var(--ease-out);
 }
 
-.partner-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0, 177, 176, 0.2), 0 8px 32px rgba(0, 0, 0, 0.35);
-}
-
-.partner-logo {
-    height: 72px;
+.partner-card-front,
+.partner-card-back {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-sm);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.partner-card-front {
+    background: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.partner-card-back {
+    transform: rotateY(180deg);
+    background: #04246F;
+    border: 1px solid rgba(0, 177, 176, 0.55);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Every logo occupies an identical box, whatever its aspect ratio */
+.partner-logo {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .partner-logo img {
-    max-height: 72px;
-    max-width: 200px;
+    max-height: 56px;
+    max-width: 100%;
     width: auto;
     object-fit: contain;
 }
 
 .partner-name {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    max-width: 250px;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--white);
+    line-height: 1.45;
+    margin: 0;
+}
+
+/* Touch devices cannot hover — show the logo and name together instead */
+@media (hover: none) {
+    .partner-card {
+        perspective: none;
+        height: auto;
+    }
+
+    .partner-card-inner {
+        transform: none !important;
+        transform-style: flat;
+        background: var(--white);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        padding: var(--space-md);
+    }
+
+    .partner-card-front,
+    .partner-card-back {
+        position: static;
+        backface-visibility: visible;
+        transform: none;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .partner-card-back { margin-top: var(--space-sm); }
+    .partner-name { color: var(--text-secondary); }
 }
 
 @media (max-width: 992px) {
@@ -2323,10 +2387,5 @@ a, .nav-link, .pillar-tab, .lang-option, .city-card, .btn, .footer-links a {
         margin-left: auto;
         margin-right: auto;
     }
-
-    .partner-logo,
-    .partner-logo img {
-        height: 80px;
-        max-height: 80px;
-    }
+}
 }
