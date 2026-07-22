@@ -550,6 +550,7 @@ html.deck-on body {
 .tf-logo-front {
     background: #fff;
     border: 1px solid var(--border-subtle);
+    padding: 10px 12px;
 }
 
 .tf-logo-back {
@@ -560,10 +561,15 @@ html.deck-on body {
 
 /* Every logo occupies an identical box, whatever its aspect ratio */
 .tf-logo-front img {
-    max-height: 44px;
+    max-height: 66px;
     max-width: 100%;
     width: auto;
     object-fit: contain;
+}
+
+/* The SGTech wordmark is far wider than the rest — keep it at its original scale */
+.tf-logo-front img[src*="sgtech"] {
+    max-height: 44px;
 }
 
 .tf-logo-back span {
