@@ -597,20 +597,240 @@
 
     <script src="script.js"></script>
     <script src="immersion.js"></script>
-    <script>
-        /* Slide plan for presentation mode (deck.js) */
-        window.deckSlides = [
-            { sel: '#immersion-hero', fit: '.hero-content' },
-            { sel: '#objectives' },
-            { sel: '#track-record', hideFrom: '.tr-marquee' },   /* stats + timeline */
-            { sel: '#track-record', hideUntil: '.tr-marquee' },  /* photos + testimonials */
-            { sel: '#two-cities' },
-            { sel: '#site-visits', hideFrom: '.sv-cat.second' }, /* 1. AI & Intelligent Tech */
-            { sel: '#site-visits', hideUntil: '.sv-cat.second' },/* 2. Embodied AI & Robotics */
-            { sel: '#culture' },
-            { sel: '#pricing' }
-        ];
-    </script>
+    <!-- ============ PRESENTATION SLIDES (deck.js renders these on "Present") ============ -->
+    <template id="deckSlides">
+
+        <!-- 1 · Title (navy) -->
+        <div class="tf-slide tf-slide--navy">
+            <img class="tf-bg" src="pictures/deck/network-wave-navy.png" alt="">
+            <div class="tf-veil"></div>
+            <div class="tf-title-body">
+                <img class="tf-logo" src="pictures/deck/transfong-logo-on-blue.png" alt="Transfong">
+                <div class="tf-eyebrow" data-en="26–30 Oct 2026 (tentative) · Wuxi &amp; Nanjing" data-zh="2026年10月26–30日（暂定）· 无锡 &amp; 南京">26–30 Oct 2026 (tentative) · Wuxi &amp; Nanjing</div>
+                <h1 data-en="Inside China's AI &amp; IoT frontier" data-zh="深入中国AI与物联网前沿">Inside China's AI &amp; IoT frontier<span class="title-red-dot">.</span></h1>
+            </div>
+            <p class="tf-title-sub" data-en="A 5-day Wuxi &amp; Nanjing immersion for founders, executives and investors — timed with the World Internet of Things Exposition, one of the world's largest AI and IoT gatherings." data-zh="为创始人、高管与投资人打造的无锡 &amp; 南京5天沉浸之旅——恰逢世界物联网博览会，全球顶级AI与物联网盛会。">A 5-day Wuxi &amp; Nanjing immersion for founders, executives and investors — timed with the World Internet of Things Exposition, one of the world's largest AI and IoT gatherings.</p>
+            <div class="tf-foot" data-en="Organised by Transfong · Supported by StartupX, Wuxi-Singapore Sci-Tech Innovation City &amp; Singapore Nanjing Eco Hi-tech Island" data-zh="主办方：创士锋 · 支持单位：StartupX、无锡新加坡科创城、新加坡南京生态科技岛">Organised by Transfong · Supported by StartupX, Wuxi-Singapore Sci-Tech Innovation City &amp; Singapore Nanjing Eco Hi-tech Island</div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 2 · Objective (white content, 3 cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Objective" data-zh="目标">Objective</div>
+                <h2 data-en="Explore &amp; connect" data-zh="探索与连接">Explore &amp; connect<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Timed to coincide with the World Internet of Things Exposition in Wuxi — China's premier stage for AI and IoT. In the world of tech, the best opportunities are perfectly timed." data-zh="行程特别安排于无锡世界物联网博览会期间——中国AI与物联网的顶级舞台。在科技领域，最好的机会总是恰逢其时。">Timed to coincide with the World Internet of Things Exposition in Wuxi — China's premier stage for AI and IoT. In the world of tech, the best opportunities are perfectly timed.</p>
+                <div class="tf-grid tf-grid--3">
+                    <div class="tf-card">
+                        <div class="tf-num">01</div>
+                        <h4><span data-en="Market exploration" data-zh="市场探索">Market exploration</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Go deep inside the real innovation frontline to understand how industries, policies, and ecosystems actually operate." data-zh="深入真正的创新前沿，了解产业、政策和生态系统如何实际运作。">Go deep inside the real innovation frontline to understand how industries, policies, and ecosystems actually operate.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">02</div>
+                        <h4><span data-en="Supply chain consolidation" data-zh="供应链整合">Supply chain consolidation</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Connect directly with China's strengths in AI, robotics, and advanced manufacturing for scalable cross-border collaboration." data-zh="直接对接中国在AI、机器人和先进制造领域的优势，实现可规模化的跨境合作。">Connect directly with China's strengths in AI, robotics, and advanced manufacturing for scalable cross-border collaboration.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">03</div>
+                        <h4><span data-en="Commercial outcomes" data-zh="商业成果">Commercial outcomes</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Engage in tailored, high-precision business matching with the right customers, partners, investors, and government agencies." data-zh="与合适的客户、合作伙伴、投资者和政府机构进行量身定制的高精度商业对接。">Engage in tailored, high-precision business matching with the right customers, partners, investors, and government agencies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 3 · Track record (navy, stat cards) -->
+        <div class="tf-slide tf-slide--navy">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Past trips" data-zh="往期回顾">Past trips</div>
+                <h2 data-en="Track record" data-zh="过往足迹">Track record<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Ten journeys and counting — three to four immersion trips a year since September 2023, each taking a delegation deep into a different corner of China's innovation ecosystem." data-zh="十段旅程，未完待续——自2023年9月以来每年三至四次沉浸式考察，每次都带领代表团深入中国创新生态的不同前沿。">Ten journeys and counting — three to four immersion trips a year since September 2023, each taking a delegation deep into a different corner of China's innovation ecosystem.</p>
+                <div class="tf-grid tf-grid--4">
+                    <div class="tf-card tf-stat">
+                        <div class="tf-stat-value tf-stat-value--red">10</div>
+                        <div class="tf-stat-label" data-en="Trips completed since Sep 2023" data-zh="自2023年9月以来完成的行程">Trips completed since Sep 2023</div>
+                    </div>
+                    <div class="tf-card tf-stat">
+                        <div class="tf-stat-value tf-stat-value--teal">9</div>
+                        <div class="tf-stat-label" data-en="Innovation cities visited" data-zh="走访的创新城市">Innovation cities visited</div>
+                    </div>
+                    <div class="tf-card tf-stat">
+                        <div class="tf-stat-value">~12</div>
+                        <div class="tf-stat-label" data-en="Companies on every trip" data-zh="每次行程的参与企业">Companies on every trip</div>
+                    </div>
+                    <div class="tf-card tf-stat">
+                        <div class="tf-stat-value tf-stat-value--red">110+</div>
+                        <div class="tf-stat-label" data-en="Participating companies to date" data-zh="累计参与企业">Participating companies to date</div>
+                    </div>
+                </div>
+                <p class="tf-note" data-en="Next departure: October 2026 · Wuxi &amp; Nanjing — the 11th journey." data-zh="下一次出发：2026年10月 · 无锡 &amp; 南京——第11段旅程。">Next departure: October 2026 · Wuxi &amp; Nanjing — the 11th journey.</p>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 4 · Testimonials (white content, 3 quote cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="What participants say" data-zh="参与者感言">What participants say</div>
+                <h2 data-en="In their own words" data-zh="参与者心声">In their own words<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Shared publicly on LinkedIn by members of past delegations." data-zh="来自往期代表团成员在领英上的公开分享。">Shared publicly on LinkedIn by members of past delegations.</p>
+                <div class="tf-grid tf-grid--3">
+                    <div class="tf-card">
+                        <div class="tf-quote-mark">&ldquo;</div>
+                        <p class="tf-quote-text" data-en="From seed to fruition — what began as conversations on this trip has grown into real cross-border opportunities." data-zh="从萌芽到结果——这趟旅程中的交流，如今已成长为实实在在的跨境合作机会。">From seed to fruition — what began as conversations on this trip has grown into real cross-border opportunities.</p>
+                        <div class="tf-quote-who" data-en="Daniel CF Ng · via LinkedIn" data-zh="Daniel CF Ng · 来自领英">Daniel CF Ng · via LinkedIn</div>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-quote-mark">&ldquo;</div>
+                        <p class="tf-quote-text" data-en="The tech immersion gave me a first-hand view of China's innovation ecosystem that no report could ever match." data-zh="这次科技沉浸之旅让我亲眼见证了中国的创新生态，这是任何报告都无法比拟的。">The tech immersion gave me a first-hand view of China's innovation ecosystem that no report could ever match.</p>
+                        <div class="tf-quote-who" data-en="Tania Hamad · via LinkedIn" data-zh="Tania Hamad · 来自领英">Tania Hamad · via LinkedIn</div>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-quote-mark">&ldquo;</div>
+                        <p class="tf-quote-text" data-en="The trip connected our water-tech solution directly with the right partners and opportunities in China." data-zh="这趟旅程让我们的水务科技方案直接对接了中国合适的合作伙伴与机遇。">The trip connected our water-tech solution directly with the right partners and opportunities in China.</p>
+                        <div class="tf-quote-who" data-en="Sean S. · via LinkedIn" data-zh="Sean S. · 来自领英">Sean S. · via LinkedIn</div>
+                    </div>
+                </div>
+                <p class="tf-note" data-en="Host-city welcome — &ldquo;a story of Wuxi and Singapore, part of the growing innovation bridge between our two ecosystems.&rdquo; · Wuxi, China" data-zh="东道主寄语——“无锡与新加坡的故事，共同架起两地创新生态之间日益紧密的桥梁。” · 中国无锡">Host-city welcome — &ldquo;a story of Wuxi and Singapore, part of the growing innovation bridge between our two ecosystems.&rdquo; · Wuxi, China</p>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 5 · Two cities (navy, 2 cards) -->
+        <div class="tf-slide tf-slide--navy">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Two cities" data-zh="双城之旅">Two cities</div>
+                <h2 data-en="Your journey" data-zh="您的旅程">Your journey<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Wuxi and Nanjing — two cities at the forefront of China's innovation revolution and collaboration with Singapore." data-zh="无锡和南京——中国创新革命与新加坡合作的前沿双城。">Wuxi and Nanjing — two cities at the forefront of China's innovation revolution and collaboration with Singapore.</p>
+                <div class="tf-grid tf-grid--2">
+                    <div class="tf-card">
+                        <h4><span data-en="Wuxi" data-zh="无锡">Wuxi</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="China's applied innovation and advanced manufacturing hub — the nation's 'Capital of IoT' and host of the World Internet of Things Exposition." data-zh="中国应用创新和先进制造业中心——被誉为中国“物联网之都”，也是世界物联网博览会的举办地。">China's applied innovation and advanced manufacturing hub — the nation's 'Capital of IoT' and host of the World Internet of Things Exposition.</p>
+                        <div class="tf-collab">
+                            <div class="tf-collab-k" data-en="Singapore-China collaboration" data-zh="中新合作项目">Singapore-China collaboration</div>
+                            <div class="tf-collab-t" data-en="Wuxi-Singapore Sci-Tech City" data-zh="无锡新加坡科创城">Wuxi-Singapore Sci-Tech City</div>
+                            <p data-en="Flagship project deepening SG-China tech cooperation in AI, integrated circuits, and biomedicine." data-zh="中新深化科技合作的旗舰项目，聚焦人工智能、集成电路与生物医药。">Flagship project deepening SG-China tech cooperation in AI, integrated circuits, and biomedicine.</p>
+                        </div>
+                    </div>
+                    <div class="tf-card">
+                        <h4><span data-en="Nanjing" data-zh="南京">Nanjing</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="A growing tech and talent capital powered by universities, deep-tech R&amp;D, and policy support." data-zh="一座由高校、深科技研发和政策支持驱动的新兴科技与人才之都。">A growing tech and talent capital powered by universities, deep-tech R&amp;D, and policy support.</p>
+                        <div class="tf-collab">
+                            <div class="tf-collab-k" data-en="Singapore-China collaboration" data-zh="中新合作项目">Singapore-China collaboration</div>
+                            <div class="tf-collab-t" data-en="Singapore-Nanjing Eco Hi-Tech Island" data-zh="新加坡南京生态科技岛">Singapore-Nanjing Eco Hi-Tech Island</div>
+                            <p data-en="The largest SG-Jiangsu flagship cooperation project — AI, water science, and digital economy." data-zh="新加坡与江苏省最大的旗舰合作项目——聚焦人工智能、水科学与数字经济。">The largest SG-Jiangsu flagship cooperation project — AI, water science, and digital economy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 6 · Site visits: AI & intelligent tech (white, 4 cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Site visits · Meet future unicorns" data-zh="实地参访 · 对话未来独角兽">Site visits · Meet future unicorns</div>
+                <h2><span data-en="1" data-zh="1">1</span><span class="title-red-dot">.</span> <span data-en="AI &amp; intelligent tech" data-zh="AI与智能科技">AI &amp; intelligent tech</span></h2>
+                <p class="tf-sub" data-en="Meeting upcoming unicorns in AI application and intelligent tech." data-zh="对话AI应用和智能科技领域的新兴独角兽。">Meeting upcoming unicorns in AI application and intelligent tech.</p>
+                <div class="tf-grid tf-grid--4">
+                    <div class="tf-card">
+                        <h4>Saturn Info Tech<span class="title-red-dot">.</span><span class="tf-cn">土星视界</span></h4>
+                        <p data-en="Voiceprint recognition technology for the power industry. Founded in 2020." data-zh="电力行业声纹识别技术。成立于2020年。">Voiceprint recognition technology for the power industry. Founded in 2020.</p>
+                        <div class="tf-tags"><span class="tf-tag" data-en="Series B" data-zh="B轮">Series B</span><span class="tf-tag tf-tag--teal" data-en="Voiceprint AI" data-zh="声纹AI">Voiceprint AI</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4>Silicon Intelligence<span class="title-red-dot">.</span><span class="tf-cn">硅基智能</span></h4>
+                        <p data-en="AIGC digital humans for live streaming and intelligent customer service. Founded in 2017." data-zh="用于直播和智能客服的AIGC数字人。成立于2017年。">AIGC digital humans for live streaming and intelligent customer service. Founded in 2017.</p>
+                        <div class="tf-tags"><span class="tf-tag" data-en="Series D" data-zh="D轮">Series D</span><span class="tf-tag tf-tag--teal" data-en="Digital human" data-zh="AIGC数字人">Digital human</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4>Titan Tech<span class="title-red-dot">.</span><span class="tf-cn">大块头智驾</span></h4>
+                        <p data-en="Level-4 autonomous heavy trucks for mining, ports, and heavy industries. Founded in 2021." data-zh="用于矿山、港口和重工业的L4自动驾驶重卡。成立于2021年。">Level-4 autonomous heavy trucks for mining, ports, and heavy industries. Founded in 2021.</p>
+                        <div class="tf-tags"><span class="tf-tag" data-en="Series B" data-zh="B轮">Series B</span><span class="tf-tag tf-tag--teal" data-en="Autonomous driving" data-zh="自动驾驶">Autonomous driving</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4>LongShine<span class="title-red-dot">.</span><span class="tf-cn">朗新科技</span></h4>
+                        <p data-en="Energy internet, smart cities, and digitalised services. Founded in 1996, listed in Shenzhen." data-zh="专注能源互联网、智慧城市和数字化服务。成立于1996年，深圳上市。">Energy internet, smart cities, and digitalised services. Founded in 1996, listed in Shenzhen.</p>
+                        <div class="tf-tags"><span class="tf-tag" data-en="Listed" data-zh="上市">Listed</span><span class="tf-tag tf-tag--teal" data-en="Energy internet" data-zh="能源互联网">Energy internet</span></div>
+                    </div>
+                </div>
+                <p class="tf-note" data-en="Plus Lead Digital 羚数智能 — 'Baigong' industrial LLM for high-end manufacturing — and additional premium visits in AI &amp; intelligent tech." data-zh="另含羚数智能——“百工”工业大模型赋能高端制造——以及AI与智能科技领域的更多优质参访。">Plus Lead Digital 羚数智能 — 'Baigong' industrial LLM for high-end manufacturing — and additional premium visits in AI &amp; intelligent tech.</p>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 7 · Site visits: Embodied AI & robotics (white, 4 cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Site visits · Meet future unicorns" data-zh="实地参访 · 对话未来独角兽">Site visits · Meet future unicorns</div>
+                <h2><span data-en="2" data-zh="2">2</span><span class="title-red-dot">.</span> <span data-en="Embodied AI &amp; robotics" data-zh="具身AI与机器人">Embodied AI &amp; robotics</span></h2>
+                <p class="tf-sub" data-en="Hidden tech champions in specialised sectors of robotics." data-zh="机器人专业领域的隐形科技冠军。">Hidden tech champions in specialised sectors of robotics.</p>
+                <div class="tf-grid tf-grid--4">
+                    <div class="tf-card">
+                        <h4>ESTUN Automation<span class="title-red-dot">.</span><span class="tf-cn">埃斯顿自动化</span></h4>
+                        <p data-en="China's first A+H listed industrial robotics company — #1 in industrial robot shipments in China." data-zh="中国工业机器人领域首家A+H上市企业，出货量稳居中国第一。">China's first A+H listed industrial robotics company — #1 in industrial robot shipments in China.</p>
+                        <div class="tf-tags"><span class="tf-tag" data-en="A+H listed" data-zh="A+H上市">A+H listed</span><span class="tf-tag tf-tag--teal" data-en="Industrial robotics" data-zh="工业机器人">Industrial robotics</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4>Magic Atomic<span class="title-red-dot">.</span><span class="tf-cn">魔法原子机器人</span></h4>
+                        <p data-en="Full-size humanoids and quadruped robot dogs already in volume production for industry and commerce." data-zh="全尺寸人形机器人及四足机器狗已在工业与商业场景量产交付。">Full-size humanoids and quadruped robot dogs already in volume production for industry and commerce.</p>
+                        <div class="tf-tags"><span class="tf-tag" data-en="Humanoid robots" data-zh="人形机器人">Humanoid robots</span><span class="tf-tag tf-tag--teal" data-en="Embodied AI" data-zh="具身智能">Embodied AI</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4>Trans-Bionics<span class="title-red-dot">.</span><span class="tf-cn">泉智博科技</span></h4>
+                        <p data-en="Design and manufacturing technologies for high-quality robotic joints. Founded in 2025." data-zh="高品质机器人关节的设计和制造技术。成立于2025年。">Design and manufacturing technologies for high-quality robotic joints. Founded in 2025.</p>
+                        <div class="tf-tags"><span class="tf-tag" data-en="Series A+" data-zh="A+轮">Series A+</span><span class="tf-tag tf-tag--teal" data-en="Robotic joints" data-zh="机器人关节">Robotic joints</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4>Zhiyue Space Intel<span class="title-red-dot">.</span><span class="tf-cn">知跃空间智能</span></h4>
+                        <p data-en="Robotic 'macro-micro brain' systems for complex industrial environments. Founded in 2025." data-zh="面向复杂工业环境的机器人“宏微脑”系统。成立于2025年。">Robotic 'macro-micro brain' systems for complex industrial environments. Founded in 2025.</p>
+                        <div class="tf-tags"><span class="tf-tag" data-en="Angel round" data-zh="天使轮">Angel round</span><span class="tf-tag tf-tag--teal" data-en="Spatial intelligence" data-zh="空间智能">Spatial intelligence</span></div>
+                    </div>
+                </div>
+                <p class="tf-note" data-en="Plus Juxie Drive 巨蟹智能驱动 — harmonic drives and micro low-voltage actuators — and additional premium visits in embodied AI &amp; robotics." data-zh="另含巨蟹智能驱动——谐波减速器与微型低压执行器——以及具身AI与机器人领域的更多优质参访。">Plus Juxie Drive 巨蟹智能驱动 — harmonic drives and micro low-voltage actuators — and additional premium visits in embodied AI &amp; robotics.</p>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 8 · Culture & heritage (white, 2 cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Culture &amp; heritage" data-zh="文化与遗产">Culture &amp; heritage</div>
+                <h2 data-en="Where high-tech meets ancient heritage" data-zh="高科技邂逅古老文化">Where high-tech meets ancient heritage<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Experiences that connect innovation with the depth of Chinese culture and the flavours of the autumn season." data-zh="将创新与中华文化的底蕴和金秋时令风味相连的体验。">Experiences that connect innovation with the depth of Chinese culture and the flavours of the autumn season.</p>
+                <div class="tf-grid tf-grid--2">
+                    <div class="tf-card">
+                        <div class="tf-eyebrow" data-en="Wuxi" data-zh="无锡">Wuxi</div>
+                        <h4><span data-en="Hairy crab season" data-zh="无锡大闸蟹">Hairy crab season</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="A celebrated autumn delicacy from the pristine waters of Taihu Lake and Jiangyin — our journey lands at the height of crab season." data-zh="产自太湖和江阴清澈水域的金秋美味——旅程恰逢大闸蟹上市的黄金时节。">A celebrated autumn delicacy from the pristine waters of Taihu Lake and Jiangyin — our journey lands at the height of crab season.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-eyebrow" data-en="Nanjing" data-zh="南京">Nanjing</div>
+                        <h4><span data-en="Confucius Temple" data-zh="夫子庙">Confucius Temple</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Poetic nightfall with 1,700 years of Qinhuai heritage — history, philosophy, and vibrant night markets along the ancient river." data-zh="秦淮河畔1700年历史的诗意夜幕——历史、哲学与充满活力的夜市在古老河岸交汇。">Poetic nightfall with 1,700 years of Qinhuai heritage — history, philosophy, and vibrant night markets along the ancient river.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 9 · Closing: programme fees (navy statement) -->
+        <div class="tf-slide tf-slide--navy">
+            <img class="tf-bg" src="pictures/deck/globe-in-hand.png" alt="" style="opacity:.85">
+            <div class="tf-veil tf-veil--left"></div>
+            <div class="tf-statement">
+                <div class="tf-eyebrow" data-en="Programme fees" data-zh="项目费用">Programme fees</div>
+                <h2 data-en="S$2,500 — fully subsidised to S$0 this autumn" data-zh="S$2,500项目费用——今秋全额补贴至S$0">S$2,500 — fully subsidised to S$0 this autumn<span class="title-red-dot">.</span></h2>
+                <p class="tf-includes" data-en="Includes local stay, accommodation and every site visit · Airfare excluded · Full subsidy subject to eligibility and T&amp;Cs · Participating tech firms can leverage Chinese Government grants for partial cost recovery." data-zh="包含当地食宿与全部实地参访 · 不含机票 · 全额补贴视资格条件和相关条款而定 · 参与科技企业可申请中国政府补助以部分回收成本。">Includes local stay, accommodation and every site visit · Airfare excluded · Full subsidy subject to eligibility and T&amp;Cs · Participating tech firms can leverage Chinese Government grants for partial cost recovery.</p>
+                <a class="tf-cta" href="https://forms.office.com/r/N4gHCrvSef" target="_blank" rel="noopener"><span data-en="Register now" data-zh="立即报名">Register now</span> →</a>
+            </div>
+            <div class="tf-foot" data-en="Organised by Transfong · www.transfong.com" data-zh="主办方：创士锋 · www.transfong.com">Organised by Transfong · www.transfong.com</div>
+            <div class="tf-rule"></div>
+        </div>
+
+    </template>
     <script src="deck.js"></script>
 </body>
 </html>

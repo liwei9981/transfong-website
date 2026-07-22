@@ -1,28 +1,33 @@
 /* ============================================================
    Presentation mode ("deck view") — pairs with deck.js.
-   A page opts in by defining window.deckSlides before deck.js.
+   Implements the Transfong slide design guideline
+   (02_Design handoff/2026.07.22_slide-guideline-package):
+   fixed 1280×720 canvas scaled to fit, navy/white registers,
+   Poppins + Mulish, red baseline rule + red full-stop dot.
+   A page opts in with a <template id="deckSlides"> of .tf-slide's.
    ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Mulish:wght@400;500;600;700;800&display=swap');
 
-/* ---- Present button in the navbar ---- */
+/* ---- Present button in the navbar (guideline: red pill) ---- */
 .deck-present-btn {
     display: flex;
     align-items: center;
     gap: 7px;
-    padding: 6px 14px;
-    border-radius: var(--radius-full);
-    border: 1px solid var(--border-light);
-    background: rgba(255, 255, 255, 0.1);
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: none;
+    background: #FF0006;
     font-family: var(--font-display);
     font-size: 13px;
     font-weight: 700;
-    color: var(--navy);
-    transition: all var(--duration-fast) var(--ease-out);
+    color: #fff;
+    cursor: pointer;
+    transition: background 150ms ease, transform 150ms ease;
 }
 
 .deck-present-btn:hover {
-    border-color: var(--navy);
-    background: var(--navy);
-    color: #fff;
+    background: #D90005;
+    transform: translateY(-1px);
 }
 
 .deck-present-btn svg {
@@ -31,105 +36,454 @@
     flex-shrink: 0;
 }
 
-/* Deck mode is a desktop feature */
 @media (max-width: 900px) {
     .deck-present-btn { display: none; }
 }
 
-/* ---- Deck mode ---- */
+/* ---- Overlay & stage ---- */
 html.deck-on,
 html.deck-on body {
     overflow: hidden !important;
     height: 100%;
 }
 
+/* Hide the website chrome behind the deck */
 .deck-on .navbar,
 .deck-on .footer,
-.deck-on .immersion-disclaimer {
-    display: none !important;
-}
-
+.deck-on .immersion-disclaimer,
+.deck-on main,
 .deck-on section {
     display: none !important;
 }
 
-.deck-on section.deck-active {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: flex-start;
+.deck-overlay {
     position: fixed;
     inset: 0;
     z-index: 900;
-    margin: 0 !important;
-    overflow: hidden;
-    padding: 48px 48px 84px !important;
+    background: #010E30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Design-guideline tokens, scoped to the deck */
+    --tf-navy: #011B64;
+    --tf-red: #FF0006;
+    --tf-red-hover: #D90005;
+    --tf-teal: #00B1B0;
+    --tf-purple: #6779BD;
+    --tf-blue-05: #F2F3F7;
+    --tf-blue-10: #E5E8EF;
+    --tf-blue-60: #6776A2;
+    --text-muted: #6776A2;
+    --text-on-inverse-muted: #B9C2DC;
+    --border-subtle: #E5E8EF;
+    --border-on-inverse: rgba(255, 255, 255, 0.18);
+    --surface-inverse-2: #04246F;
+    --shadow-sm: 0 2px 8px rgba(1, 27, 100, 0.08);
+    --font-display: 'Poppins', 'Noto Sans SC', sans-serif;
+    --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
 }
 
-/* Never flex-shrink slide content — deck.js scales it to fit instead */
-.deck-on section.deck-active > * {
-    flex-shrink: 0;
+.deck-stage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1280px;
+    height: 720px;
+    transform-origin: center center;
+    /* deck.js sets transform: translate(-50%,-50%) scale(s) */
 }
 
-/* Neutralize scroll-reveal animations that would leave content invisible */
-.deck-on .section-header,
-.deck-on .about-narrative,
-.deck-on .about-timeline,
-.deck-on .pillar-panel.active,
-.deck-on .city-card,
-.deck-on .accel-card,
-.deck-on .training-card,
-.deck-on .team-card,
-.deck-on .stat-card,
-.deck-on .contact-card,
-.deck-on .immersion-value-card,
-.deck-on .objective-group,
-.deck-on .city-itinerary-card,
-.deck-on .visits-track,
-.deck-on .visit-card,
-.deck-on .culture-card,
-.deck-on .pricing-panel,
-.deck-on .about-strip-inner,
-.deck-on .immersion-cta-inner {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-/* Track-record timeline: horizontal scroller on the site, wrapped rows on a slide */
-.deck-on #track-record.deck-active .tr-timeline {
-    flex-wrap: wrap;
-    row-gap: 22px;
-    overflow-x: visible;
-    padding-bottom: 0;
-}
-
-.deck-on #track-record.deck-active .tr-trip {
-    flex: 0 0 16.66%;
-    min-width: 0;
-}
-
-.deck-on #track-record.deck-active .tr-next {
-    flex: 0 0 33.3%;
-    min-width: 0;
-}
-
-/* Hero: keep the animated background full-bleed behind the scaled content */
-.deck-on .immersion-hero.deck-active .hero-bg {
+/* ---- Slide canvas ---- */
+.tf-slide {
+    display: none;
     position: absolute;
     inset: 0;
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #fff;
+    font-family: var(--font-body);
+    color: var(--tf-navy);
+}
+
+.tf-slide.active { display: block; }
+
+.tf-slide--navy {
+    background: var(--tf-navy);
+    color: #fff;
+}
+
+/* Signature devices */
+.tf-rule {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    background: var(--tf-red);
+}
+
+.tf-slide .title-red-dot { color: var(--tf-red); }
+
+.tf-eyebrow {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--tf-teal);
+    margin-bottom: 16px;
+}
+
+/* Background imagery + veils (navy register) */
+.tf-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tf-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(155deg, rgba(1, 19, 63, 0.28) 0%, rgba(1, 19, 63, 0.5) 55%, rgba(1, 19, 63, 0.68) 100%);
+}
+
+.tf-veil--left {
+    background: linear-gradient(100deg, rgba(1, 19, 63, 0.9) 0%, rgba(1, 19, 63, 0.66) 52%, rgba(1, 19, 63, 0.32) 100%);
+}
+
+/* ---- Template A: title ---- */
+.tf-title-body {
+    position: relative;
+    padding: 82px 90px 0;
+}
+
+.tf-title-body .tf-logo {
+    height: 54px;
+    display: block;
+    margin-bottom: 56px;
+}
+
+.tf-title-body .tf-eyebrow { font-size: 15px; margin-bottom: 22px; }
+
+.tf-title-body h1 {
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin: 0;
+    max-width: 980px;
+    color: #fff;
+}
+
+.tf-title-sub {
+    position: relative;
+    margin: 26px 0 0;
+    padding: 0 90px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #C9D1E8;
+    max-width: 860px;
+}
+
+.tf-foot {
+    position: absolute;
+    left: 90px;
+    right: 90px;
+    bottom: 42px;
+    font-family: var(--font-body);
+    color: var(--text-on-inverse-muted);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* ---- Template C: white content ---- */
+.tf-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 90px 30px;
+}
+
+.tf-content h2 {
+    font-family: var(--font-display);
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--tf-navy);
+    margin: 0 0 8px;
+    line-height: 1.1;
+}
+
+.tf-slide--navy .tf-content h2 { color: #fff; }
+
+.tf-sub {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin: 0 0 38px;
+    max-width: 760px;
+}
+
+.tf-slide--navy .tf-sub { color: #C9D1E8; }
+
+.tf-grid {
+    display: grid;
+    gap: 24px;
+}
+
+.tf-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.tf-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.tf-grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+.tf-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.tf-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--tf-red);
+}
+
+.tf-card .tf-num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--tf-navy);
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: var(--tf-blue-05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.tf-card h4 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--tf-navy);
+    line-height: 1.2;
+}
+
+.tf-card .tf-cn {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 3px;
+}
+
+.tf-card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Cards on the navy register */
+.tf-slide--navy .tf-card {
+    background: var(--surface-inverse-2);
+    border-color: var(--border-on-inverse);
+    box-shadow: none;
+}
+
+.tf-slide--navy .tf-card h4 { color: #fff; }
+.tf-slide--navy .tf-card p { color: #C9D1E8; }
+.tf-slide--navy .tf-card .tf-cn { color: var(--text-on-inverse-muted); }
+
+/* Tag chips (site-visit cards) */
+.tf-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.tf-tag {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #FFE5E6;
+    color: #B30004;
+}
+
+.tf-tag--teal {
+    background: #D9F2F2;
+    color: #06706F;
+}
+
+/* Footer note line on content slides */
+.tf-note {
+    margin: 26px 0 0;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.tf-slide--navy .tf-note { color: var(--text-on-inverse-muted); }
+
+/* ---- Stats (track record, navy) ---- */
+.tf-stat {
+    text-align: left;
+}
+
+.tf-stat .tf-stat-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 1;
+    color: #fff;
+}
+
+.tf-stat .tf-stat-value--red { color: var(--tf-red); }
+.tf-stat .tf-stat-value--teal { color: var(--tf-teal); }
+
+.tf-stat .tf-stat-label {
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #C9D1E8;
+}
+
+/* Quote cards */
+.tf-quote-mark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 1;
+    color: var(--tf-red);
+    margin-bottom: 12px;
+}
+
+.tf-card .tf-quote-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #2A3556;
+    margin: 0 0 16px;
+}
+
+.tf-card .tf-quote-who {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+/* City collaboration block inside navy cards */
+.tf-collab {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-on-inverse);
+}
+
+.tf-collab .tf-collab-k {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tf-teal);
+}
+
+.tf-collab .tf-collab-t {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+    margin-top: 6px;
+}
+
+.tf-collab p {
+    margin: 6px 0 0 !important;
+}
+
+/* ---- Template E: statement / closing ---- */
+.tf-statement {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 100px;
+    max-width: 1010px;
+}
+
+.tf-statement .tf-eyebrow { font-size: 15px; margin-bottom: 24px; }
+
+.tf-statement h2 {
+    font-family: var(--font-display);
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 26px;
+    color: #fff;
+}
+
+.tf-statement .tf-includes {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #C9D1E8;
+    margin: 0 0 34px;
+    max-width: 720px;
+}
+
+.tf-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    align-self: flex-start;
+    padding: 13px 30px;
+    border-radius: 999px;
+    background: var(--tf-red);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background 150ms ease, transform 150ms ease;
+}
+
+.tf-cta:hover {
+    background: var(--tf-red-hover);
+    transform: translateY(-1px);
+    text-decoration: none;
 }
 
 /* ---- HUD (bottom control bar) ---- */
 .deck-hud {
     display: none;
     position: fixed;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
+    right: 22px;
+    bottom: 22px;
     z-index: 950;
+    opacity: 0.28;
+    transition: opacity 180ms ease;
     align-items: center;
     gap: 4px;
     padding: 6px 10px;
-    border-radius: var(--radius-full);
+    border-radius: 999px;
     background: rgba(1, 27, 100, 0.92);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 30px rgba(1, 27, 100, 0.35);
@@ -138,6 +492,8 @@ html.deck-on body {
 
 .deck-on .deck-hud { display: flex; }
 
+.deck-hud:hover { opacity: 1; }
+
 .deck-hud button {
     display: flex;
     align-items: center;
@@ -145,7 +501,7 @@ html.deck-on body {
     min-width: 34px;
     height: 34px;
     padding: 0 10px;
-    border-radius: var(--radius-full);
+    border-radius: 999px;
     border: none;
     background: transparent;
     color: #fff;
