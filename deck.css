@@ -182,6 +182,14 @@ html.deck-on body {
     color: #fff;
 }
 
+/* Longer titles (e.g. the fellowship deck) step down a size to stay on two lines */
+.tf-title-body--long .tf-logo { margin-bottom: 42px; }
+
+.tf-title-body--long h1 {
+    font-size: 50px;
+    max-width: 1120px;
+}
+
 /* Two-line hero title, matching the webpage: white line + teal→purple accent line */
 .tf-title-line { display: block; }
 
@@ -259,6 +267,12 @@ html.deck-on body {
 .tf-grid--3 { grid-template-columns: repeat(3, 1fr); }
 .tf-grid--4 { grid-template-columns: repeat(4, 1fr); }
 .tf-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.tf-grid--6 { grid-template-columns: repeat(3, 1fr); gap: 20px 24px; }
+
+/* Compact card variant for dense grids (city network, privileges) */
+.tf-card--compact { padding: 20px 22px; }
+.tf-card--compact h4 { font-size: 17px; margin-bottom: 6px; }
+.tf-card--compact p { font-size: 14px; }
 
 .tf-card {
     position: relative;
@@ -361,6 +375,130 @@ html.deck-on body {
 }
 
 .tf-slide--navy .tf-note { color: var(--text-on-inverse-muted); }
+
+/* ---- Partner logo wall ---- */
+.tf-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 18px;
+}
+
+.tf-logo-card {
+    background: #fff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    min-width: 0;
+}
+
+.tf-logo-card img {
+    height: 42px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.tf-logo-card span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-muted);
+}
+
+/* ---- People (founding team, mentors) ---- */
+.tf-person > img {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    margin-bottom: 16px;
+    background: var(--tf-blue-05);
+}
+
+.tf-person .tf-role {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--tf-teal);
+    margin: 0 0 10px;
+}
+
+.tf-person .tf-creds {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.tf-person .tf-creds span {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 11px;
+    border-radius: 999px;
+    background: var(--tf-blue-05);
+    color: var(--tf-navy);
+}
+
+.tf-slide--navy .tf-person .tf-creds span {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* ---- Bullet list ---- */
+.tf-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.tf-list li {
+    position: relative;
+    padding-left: 26px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.tf-slide--navy .tf-list li { color: #C9D1E8; }
+
+.tf-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--tf-red);
+}
+
+/* Two-column split: copy on the left, list/cards on the right */
+.tf-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Headline stats under a title slide */
+.tf-hero-stats {
+    display: flex;
+    gap: 56px;
+    margin-top: 34px;
+}
+
+.tf-hero-stats .tf-stat-value { font-size: 44px; }
+.tf-hero-stats .tf-stat-label { font-size: 14px; margin-top: 8px; max-width: 190px; }
 
 /* ---- Photo cards (image sits above the card body) ---- */
 .tf-card--photo { padding: 0; display: flex; flex-direction: column; }

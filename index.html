@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="deck.css">
 </head>
 <body>
 
@@ -550,5 +551,280 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- ============ PRESENTATION SLIDES (deck.js renders these on "Present") ============ -->
+    <template id="deckSlides">
+
+        <!-- 1 · Title (navy) -->
+        <div class="tf-slide tf-slide--navy">
+            <img class="tf-bg" src="pictures/deck/network-wave-navy.png" alt="">
+            <div class="tf-veil"></div>
+            <div class="tf-title-body">
+                <img class="tf-logo" src="pictures/deck/transfong-logo-on-blue.png" alt="Transfong">
+                <div class="tf-eyebrow" data-en="Singapore-Based Accelerator · Company Introduction" data-zh="新加坡科技加速器 · 公司介绍">Singapore-Based Accelerator · Company Introduction</div>
+                <h1>
+                    <span class="tf-title-line" data-en="Your Tech Bridge" data-zh="助力科技企业">Your Tech Bridge</span>
+                    <span class="tf-title-line"><span class="tf-title-accent" data-en="Between China &amp; Singapore" data-zh="搭建跨国发展桥梁">Between China &amp; Singapore</span><span class="title-red-dot">.</span></span>
+                </h1>
+            </div>
+            <p class="tf-title-sub" data-en="A Singapore-led, cross-border tech business accelerator — connecting China's industry, market and talent resources with international technology innovation and markets." data-zh="我们是以新加坡为支点的跨境科技业务推动者——连接中国产业、市场和人才资源与国际科创技术和人才资源。">A Singapore-led, cross-border tech business accelerator — connecting China's industry, market and talent resources with international technology innovation and markets.</p>
+            <div class="tf-foot" data-en="Singapore · China · International · www.transfong.com" data-zh="新加坡 · 中国 · 国际 · www.transfong.com">Singapore · China · International · www.transfong.com</div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 2 · About (white, 3 cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Our story" data-zh="我们的故事">Our story</div>
+                <h2 data-en="About Transfong" data-zh="关于创士锋">About Transfong<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Built by technology transfer practitioners, operating on both sides of the Singapore-China corridor." data-zh="由技术转移与商业化的实践者创立，在中新走廊两端同时运营。">Built by technology transfer practitioners, operating on both sides of the Singapore-China corridor.</p>
+                <div class="tf-grid tf-grid--3">
+                    <div class="tf-card">
+                        <div class="tf-num">01</div>
+                        <h4><span data-en="Founded in Singapore" data-zh="创立于新加坡">Founded in Singapore</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Established in 2018 by former members of the technology transfer and commercialisation team at A*STAR, Singapore's national research agency." data-zh="2018年由新加坡科技研究局（A*STAR）技术转移与商业化团队的前成员创立。">Established in 2018 by former members of the technology transfer and commercialisation team at A*STAR, Singapore's national research agency.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">02</div>
+                        <h4><span data-en="Operating inside China" data-zh="深耕中国市场">Operating inside China</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="We entered the Chinese market at the end of 2019 and now operate the 'Singapore Centre' across six innovation cities." data-zh="我们于2019年底进入中国市场，目前在六座创新城市运营“新加坡中心”。">We entered the Chinese market at the end of 2019 and now operate the 'Singapore Centre' across six innovation cities.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">03</div>
+                        <h4><span data-en="Headquartered at One North" data-zh="总部位于纬壹科技城">Headquartered at One North</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Our global headquarters sits at One North, Singapore's premier hub for science, technology and innovation." data-zh="全球总部位于新加坡纬壹科技城——新加坡首屈一指的科学、技术与创新枢纽。">Our global headquarters sits at One North, Singapore's premier hub for science, technology and innovation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 3 · Journey timeline (navy) -->
+        <div class="tf-slide tf-slide--navy">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Since 2018" data-zh="自2018年以来">Since 2018</div>
+                <h2 data-en="How we grew the corridor" data-zh="我们如何拓展这条走廊">How we grew the corridor<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="From a Singapore founding team to a network of Singapore Centres across China's innovation cities." data-zh="从新加坡的创始团队，到覆盖中国多座创新城市的“新加坡中心”网络。">From a Singapore founding team to a network of Singapore Centres across China's innovation cities.</p>
+                <div class="tf-timeline">
+                    <div class="tf-trip">
+                        <div class="tf-track"><div class="tf-line"></div><div class="tf-node"></div></div>
+                        <div class="tf-trip-date" data-en="2018" data-zh="2018">2018</div>
+                        <div class="tf-trip-n" data-en="SINGAPORE" data-zh="新加坡">SINGAPORE</div>
+                        <div class="tf-trip-cities" data-en="Founded by the former A*STAR technology transfer team" data-zh="由A*STAR技术转移团队前成员创立">Founded by the former A*STAR technology transfer team</div>
+                    </div>
+                    <div class="tf-trip">
+                        <div class="tf-track"><div class="tf-line"></div><div class="tf-node"></div></div>
+                        <div class="tf-trip-date" data-en="2019" data-zh="2019">2019</div>
+                        <div class="tf-trip-n" data-en="XIAMEN" data-zh="厦门">XIAMEN</div>
+                        <div class="tf-trip-cities" data-en="First Singapore Centre, with Xiamen Sci-Tech Bureau" data-zh="首个新加坡中心，携手厦门科技局">First Singapore Centre, with Xiamen Sci-Tech Bureau</div>
+                    </div>
+                    <div class="tf-trip">
+                        <div class="tf-track"><div class="tf-line"></div><div class="tf-node"></div></div>
+                        <div class="tf-trip-date" data-en="2021" data-zh="2021">2021</div>
+                        <div class="tf-trip-n" data-en="SUZHOU" data-zh="苏州">SUZHOU</div>
+                        <div class="tf-trip-cities" data-en="Expanded through a partnership with Suzhou Industrial Park" data-zh="通过与苏州工业园区合作实现拓展">Expanded through a partnership with Suzhou Industrial Park</div>
+                    </div>
+                    <div class="tf-trip">
+                        <div class="tf-track"><div class="tf-line"></div><div class="tf-node"></div></div>
+                        <div class="tf-trip-date" data-en="2023" data-zh="2023">2023</div>
+                        <div class="tf-trip-n" data-en="WUXI" data-zh="无锡">WUXI</div>
+                        <div class="tf-trip-cities" data-en="Centre established with Wuxi High-Tech Park and Guolian Group" data-zh="携手无锡高新区与国联集团设立中心">Centre established with Wuxi High-Tech Park and Guolian Group</div>
+                    </div>
+                    <div class="tf-trip">
+                        <div class="tf-track"><div class="tf-line"></div><div class="tf-node"></div></div>
+                        <div class="tf-trip-date" data-en="2024" data-zh="2024">2024</div>
+                        <div class="tf-trip-n" data-en="NANJING" data-zh="南京">NANJING</div>
+                        <div class="tf-trip-cities" data-en="Launched with the Singapore-Nanjing Eco Hi-Tech Island" data-zh="携手新加坡南京生态科技岛启动">Launched with the Singapore-Nanjing Eco Hi-Tech Island</div>
+                    </div>
+                    <div class="tf-trip">
+                        <div class="tf-track"><div class="tf-line"></div><div class="tf-node"></div></div>
+                        <div class="tf-trip-date" data-en="2025" data-zh="2025">2025</div>
+                        <div class="tf-trip-n" data-en="BEIJING · JINAN" data-zh="北京 · 济南">BEIJING · JINAN</div>
+                        <div class="tf-trip-cities" data-en="Partnerships with ZGC International, Chaoyang CBD and Surbana Jurong" data-zh="携手中关村国际、朝阳CBD与盛裕集团">Partnerships with ZGC International, Chaoyang CBD and Surbana Jurong</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 4 · Three pillars (white, 3 cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="What we do" data-zh="核心业务">What we do</div>
+                <h2 data-en="Three pillars of excellence" data-zh="三大核心支柱">Three pillars of excellence<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="A full bridge between China and Singapore — from ecosystem partnerships to acceleration, education and internship." data-zh="连接中新的完整桥梁——从生态伙伴关系到加速服务、教育与实习。">A full bridge between China and Singapore — from ecosystem partnerships to acceleration, education and internship.</p>
+                <div class="tf-grid tf-grid--3">
+                    <div class="tf-card">
+                        <div class="tf-num">01</div>
+                        <h4><span data-en="SG-CN ecosystem partnership" data-zh="中新生态伙伴关系">SG-CN ecosystem partnership</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="The official partner entrusted to operate the 'Singapore Centre' across six cities, working with key local government and industry entities." data-zh="作为受托运营“新加坡中心”的官方合作伙伴，覆盖六座城市，携手当地重要政府与产业机构。">The official partner entrusted to operate the 'Singapore Centre' across six cities, working with key local government and industry entities.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">02</div>
+                        <h4><span data-en="SG-CN acceleration" data-zh="中新科创加速">SG-CN acceleration</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="A full range of cross-border acceleration services, directly supporting 200+ international tech startups and SMEs every year." data-zh="全方位的跨境加速服务，每年直接支持200多家国际科技初创企业与中小企业。">A full range of cross-border acceleration services, directly supporting 200+ international tech startups and SMEs every year.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">03</div>
+                        <h4><span data-en="Technopreneur education &amp; internship" data-zh="科创教育与实习">Technopreneur education &amp; internship</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="From government decision-makers to student technopreneurs — training and internship programmes that build capability across borders." data-zh="从政府决策者到学生科创人才——跨境培养创新与创业能力的培训及实习项目。">From government decision-makers to student technopreneurs — training and internship programmes that build capability across borders.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 5 · Pillar 1: the Singapore Centre network (navy, 6 compact cards) -->
+        <div class="tf-slide tf-slide--navy">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Pillar 01 · Ecosystem partnership" data-zh="支柱一 · 生态伙伴关系">Pillar 01 · Ecosystem partnership</div>
+                <h2 data-en="The Singapore Centre network" data-zh="新加坡中心网络">The Singapore Centre network<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="We are the official partner entrusted to operate the 'Singapore Centre' across these cities, collaborating with key local entities." data-zh="我们是受托运营“新加坡中心”的官方合作伙伴，在以下城市与当地重要机构携手合作。">We are the official partner entrusted to operate the 'Singapore Centre' across these cities, collaborating with key local entities.</p>
+                <div class="tf-grid tf-grid--6">
+                    <div class="tf-card tf-card--compact">
+                        <h4><span data-en="Xiamen" data-zh="厦门">Xiamen</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Sci-Tech Bureau, Torch High-Tech Park, Huli District" data-zh="科技局、火炬高新区、湖里区">Sci-Tech Bureau, Torch High-Tech Park, Huli District</p>
+                    </div>
+                    <div class="tf-card tf-card--compact">
+                        <h4><span data-en="Suzhou" data-zh="苏州">Suzhou</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Suzhou Industrial Park (SIP) and CSSD" data-zh="苏州工业园区（SIP）与中新集团">Suzhou Industrial Park (SIP) and CSSD</p>
+                    </div>
+                    <div class="tf-card tf-card--compact">
+                        <h4><span data-en="Wuxi" data-zh="无锡">Wuxi</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="High-Tech Park (SG Tech-Inno City) and Guolian Group" data-zh="高新区（新加坡科创城）与国联集团">High-Tech Park (SG Tech-Inno City) and Guolian Group</p>
+                    </div>
+                    <div class="tf-card tf-card--compact">
+                        <h4><span data-en="Nanjing" data-zh="南京">Nanjing</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Singapore-Nanjing Eco Hi-Tech Island" data-zh="新加坡南京生态科技岛">Singapore-Nanjing Eco Hi-Tech Island</p>
+                    </div>
+                    <div class="tf-card tf-card--compact">
+                        <h4><span data-en="Beijing" data-zh="北京">Beijing</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="ZGC International and Beijing Chaoyang CBD" data-zh="中关村国际与北京朝阳CBD">ZGC International and Beijing Chaoyang CBD</p>
+                    </div>
+                    <div class="tf-card tf-card--compact">
+                        <h4><span data-en="Jinan" data-zh="济南">Jinan</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Surbana Jurong and Jinan Start-up Area for Growth Drivers" data-zh="盛裕集团与济南新旧动能转换起步区">Surbana Jurong and Jinan Start-up Area for Growth Drivers</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 6 · Pillar 2: acceleration (white, 3 cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Pillar 02 · SG-CN acceleration" data-zh="支柱二 · 中新科创加速">Pillar 02 · SG-CN acceleration</div>
+                <h2 data-en="Supporting 200+ startups a year" data-zh="每年支持200多家科创企业">Supporting 200+ startups a year<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="A full range of cross-border acceleration services, directly supporting international tech startups and SMEs into and out of China." data-zh="全方位的跨境加速服务，助力国际科技初创企业与中小企业进出中国市场。">A full range of cross-border acceleration services, directly supporting international tech startups and SMEs into and out of China.</p>
+                <div class="tf-grid tf-grid--3">
+                    <div class="tf-card">
+                        <div class="tf-num">01</div>
+                        <h4><span data-en="Startup competition" data-zh="科创大赛">Startup competition</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Our flagship pitching series — the gateway into China's premier innovation ecosystems." data-zh="我们的旗舰路演系列——通往中国顶级创新生态的入口。">Our flagship pitching series — the gateway into China's premier innovation ecosystems.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">02</div>
+                        <h4><span data-en="Tech immersion trips" data-zh="科技沉浸考察">Tech immersion trips</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Curated deep-dives into China's leading tech ecosystems — on the ground, three to four times a year." data-zh="深入中国领先科技生态的定制考察——每年三至四次实地开展。">Curated deep-dives into China's leading tech ecosystems — on the ground, three to four times a year.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">03</div>
+                        <h4><span data-en="Corporate service support" data-zh="企业落地服务">Corporate service support</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="One-stop landing services: incorporation, EntrePass, directorship, and back-office support." data-zh="一站式落地服务：公司注册、创业准证、董事服务与后台支持。">One-stop landing services: incorporation, EntrePass, directorship, and back-office support.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 7 · Pillar 3: education & internship (white, 3 cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Pillar 03 · Education &amp; internship" data-zh="支柱三 · 科创教育与实习">Pillar 03 · Education &amp; internship</div>
+                <h2 data-en="Building technopreneurs, across borders" data-zh="跨境培养科创人才">Building technopreneurs, across borders<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="From government decision-makers to student technopreneurs — programmes that build innovation and entrepreneurship capability." data-zh="从政府决策者到学生科创人才——培养创新与创业能力的系列项目。">From government decision-makers to student technopreneurs — programmes that build innovation and entrepreneurship capability.</p>
+                <div class="tf-grid tf-grid--3">
+                    <div class="tf-card">
+                        <div class="tf-num">01</div>
+                        <h4><span data-en="Government training" data-zh="政府培训">Government training</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Singapore innovation ecosystem training for delegations from 30+ Chinese provinces and 20+ countries." data-zh="面向中国30多个省份及20多个国家代表团的新加坡创新生态培训。">Singapore innovation ecosystem training for delegations from 30+ Chinese provinces and 20+ countries.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">02</div>
+                        <h4><span data-en="Local SME education" data-zh="本地中小企业教育">Local SME education</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="The iSGP SMEs Growth Programme, delivered with NTU and Singapore government agencies." data-zh="与南洋理工大学及新加坡政府机构共同交付的iSGP中小企业成长计划。">The iSGP SMEs Growth Programme, delivered with NTU and Singapore government agencies.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">03</div>
+                        <h4><span data-en="International internship" data-zh="国际实习">International internship</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="The Transfong Fellowship — technopreneur and tech research internships inside international startups." data-zh="创士锋英才计划——在国际初创企业中开展科创与技术研究实习。">The Transfong Fellowship — technopreneur and tech research internships inside international startups.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 8 · Partners (navy logo wall) -->
+        <div class="tf-slide tf-slide--navy">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Our partners" data-zh="合作伙伴">Our partners</div>
+                <h2 data-en="In partnership with" data-zh="合作伙伴">In partnership with<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="We work with leading government agencies, universities, and development groups across China and Singapore." data-zh="我们与中新两地领先的政府机构、高校及开发集团紧密合作。">We work with leading government agencies, universities, and development groups across China and Singapore.</p>
+                <div class="tf-logo-grid">
+                    <div class="tf-logo-card"><img src="pictures/logos/caiep.png" alt=""><span data-en="China Association for International Exchange of Personnel" data-zh="中国国际人才交流协会">China Association for International Exchange of Personnel</span></div>
+                    <div class="tf-logo-card"><img src="pictures/logos/ntu.jpg" alt=""><span data-en="Nanyang Technological University, Singapore" data-zh="新加坡南洋理工大学">Nanyang Technological University, Singapore</span></div>
+                    <div class="tf-logo-card"><img src="pictures/logos/surbana-jurong.png" alt=""><span data-en="Surbana Jurong, Singapore" data-zh="新加坡盛裕集团">Surbana Jurong, Singapore</span></div>
+                    <div class="tf-logo-card"><img src="pictures/logos/zgc.jpg" alt=""><span data-en="Zhongguancun Industry Development Group" data-zh="中关村产业发展集团">Zhongguancun Industry Development Group</span></div>
+                    <div class="tf-logo-card"><img src="pictures/logos/nanjing-eco-island.jpg" alt=""><span data-en="Singapore-Nanjing Eco Hi-Tech Island" data-zh="新加坡南京生态科技岛">Singapore-Nanjing Eco Hi-Tech Island</span></div>
+                    <div class="tf-logo-card"><img src="pictures/logos/wuxi-sgtic.jpg" alt=""><span data-en="Wuxi-Singapore Sci-Tech Innovation City" data-zh="无锡新加坡科创城">Wuxi-Singapore Sci-Tech Innovation City</span></div>
+                    <div class="tf-logo-card"><img src="pictures/logos/sip.jpg" alt=""><span data-en="Suzhou Industrial Park" data-zh="苏州工业园区">Suzhou Industrial Park</span></div>
+                    <div class="tf-logo-card"><img src="pictures/logos/shanghai-university.svg" alt=""><span data-en="Shanghai University" data-zh="上海大学">Shanghai University</span></div>
+                    <div class="tf-logo-card"><img src="pictures/logos/sgtech.png" alt=""><span data-en="SGTech, Singapore" data-zh="新加坡科技企业协会">SGTech, Singapore</span></div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 9 · Founding team (white, 2 person cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Leadership" data-zh="领导团队">Leadership</div>
+                <h2 data-en="Founding team" data-zh="创始团队">Founding team<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Technology transfer and high-tech industry practitioners, with four decades of combined experience across Singapore and China." data-zh="技术转移与高科技产业的实践者，在中新两地拥有合计四十年的行业经验。">Technology transfer and high-tech industry practitioners, with four decades of combined experience across Singapore and China.</p>
+                <div class="tf-grid tf-grid--2">
+                    <div class="tf-card tf-person">
+                        <img src="pictures/mentors/li-wei.jpeg" alt="">
+                        <h4><span data-en="Dr. Li Wei" data-zh="李伟博士">Dr. Li Wei</span><span class="title-red-dot">.</span></h4>
+                        <div class="tf-role" data-en="Co-founder &amp; CEO" data-zh="联合创始人兼首席执行官">Co-founder &amp; CEO</div>
+                        <p data-en="Nearly 20 years in technology transfer and commercialisation, including over a decade at A*STAR. Skilled in investment, incubation, IP management and international collaboration." data-zh="近20年技术转移与商业化经验，其中十余年任职于新加坡科技研究局。擅长投资、孵化、知识产权管理与国际合作。">Nearly 20 years in technology transfer and commercialisation, including over a decade at A*STAR. Skilled in investment, incubation, IP management and international collaboration.</p>
+                        <div class="tf-creds"><span>NTU · Ph.D.</span><span>INSEAD · MBA</span><span data-en="A*STAR · 10+ yrs" data-zh="A*STAR · 10年以上">A*STAR · 10+ yrs</span></div>
+                    </div>
+                    <div class="tf-card tf-person">
+                        <img src="pictures/mentors/tyler-huang.jpeg" alt="">
+                        <h4><span data-en="Tyler Huang" data-zh="黄伟杰">Tyler Huang</span><span class="title-red-dot">.</span></h4>
+                        <div class="tf-role" data-en="Co-founder &amp; CTO" data-zh="联合创始人兼首席技术官">Co-founder &amp; CTO</div>
+                        <p data-en="Nearly 20 years in high-tech enterprise and project management, including over 10 years at NXP Semiconductors. Lean Six Sigma certified project manager." data-zh="近20年高科技企业与项目管理经验，其中十余年任职于恩智浦半导体。精益六西格玛认证项目经理。">Nearly 20 years in high-tech enterprise and project management, including over 10 years at NXP Semiconductors. Lean Six Sigma certified project manager.</p>
+                        <div class="tf-creds"><span>UESTC · B.Eng</span><span>NUS · M.Tech</span><span data-en="NXP · 10+ yrs" data-zh="NXP · 10年以上">NXP · 10+ yrs</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 10 · Vision (navy statement) -->
+        <div class="tf-slide tf-slide--navy">
+            <img class="tf-bg" src="pictures/deck/globe-in-hand.png" alt="" style="opacity:.85">
+            <div class="tf-veil tf-veil--left"></div>
+            <div class="tf-statement">
+                <div class="tf-eyebrow" data-en="Our vision" data-zh="我们的愿景">Our vision</div>
+                <h2 data-en="We believe a world with less barriers to business is a more harmonious one" data-zh="我们相信，商业壁垒更少的世界，是更和谐的世界">We believe a world with less barriers to business is a more harmonious one<span class="title-red-dot">.</span></h2>
+                <p class="tf-includes" data-en="Global headquarters · One North, Singapore — with Singapore Centres across Xiamen, Suzhou, Wuxi, Nanjing, Beijing and Jinan." data-zh="全球总部 · 新加坡纬壹科技城——并在厦门、苏州、无锡、南京、北京与济南设有新加坡中心。">Global headquarters · One North, Singapore — with Singapore Centres across Xiamen, Suzhou, Wuxi, Nanjing, Beijing and Jinan.</p>
+            </div>
+            <div class="tf-foot">hello@transfong.com · www.transfong.com</div>
+            <div class="tf-rule"></div>
+        </div>
+
+    </template>
+    <script src="deck.js"></script>
 </body>
 </html>

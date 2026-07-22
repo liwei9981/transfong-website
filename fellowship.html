@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="deck.css">
     <link rel="stylesheet" href="fellows.css">
 </head>
 <body>
@@ -788,5 +789,262 @@
 
     <script src="script.js"></script>
     <script src="fellows.js"></script>
+
+    <!-- ============ PRESENTATION SLIDES (deck.js renders these on "Present") ============ -->
+    <template id="deckSlides">
+
+        <!-- 1 · Title (navy) -->
+        <div class="tf-slide tf-slide--navy">
+            <img class="tf-bg" src="pictures/deck/network-wave-navy.png" alt="">
+            <div class="tf-veil"></div>
+            <div class="tf-title-body tf-title-body--long">
+                <img class="tf-logo" src="pictures/deck/transfong-logo-on-blue.png" alt="Transfong">
+                <div class="tf-eyebrow" data-en="By application · 12-month renewable fellowship" data-zh="申请制 · 12个月可续期英才计划">By application · 12-month renewable fellowship</div>
+                <h1>
+                    <span class="tf-title-line" data-en="Transfong Fellowship Programme" data-zh="创士锋英才计划">Transfong Fellowship Programme</span>
+                    <span class="tf-title-line"><span class="tf-title-accent" data-en="Intern with International Tech Startups" data-zh="走进国际科技创业公司">Intern with International Tech Startups</span><span class="title-red-dot">.</span></span>
+                </h1>
+                <div class="tf-hero-stats">
+                    <div class="tf-stat">
+                        <div class="tf-stat-value tf-stat-value--red">2–3</div>
+                        <div class="tf-stat-label" data-en="Internships per fellowship year" data-zh="每个计划年度的实习机会">Internships per fellowship year</div>
+                    </div>
+                    <div class="tf-stat">
+                        <div class="tf-stat-value tf-stat-value--teal">200+</div>
+                        <div class="tf-stat-label" data-en="Tech startups we support every year" data-zh="我们每年支持的科技创业公司">Tech startups we support every year</div>
+                    </div>
+                    <div class="tf-stat">
+                        <div class="tf-stat-value">12</div>
+                        <div class="tf-stat-label" data-en="Months of mentorship, renewable by invitation" data-zh="12个月导师陪伴，可受邀续期">Months of mentorship, renewable by invitation</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-foot" data-en="For high school and university students planning to study overseas · www.transfong.com/fellowship" data-zh="面向计划海外深造的高中生与大学生 · www.transfong.com/fellowship">For high school and university students planning to study overseas · www.transfong.com/fellowship</div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 2 · Why join (white, 3 step cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Why join" data-zh="为何加入">Why join</div>
+                <h2 data-en="Beyond school, beyond big names" data-zh="超越校园，超越大厂">Beyond school, beyond big names<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Thousands of applicants show the same grades and the same big-brand internships. Inside an international tech startup, the work is unmistakably yours." data-zh="成千上万的申请者有着相似的成绩与大厂实习经历。而在国际科技创业公司里，你的工作成果无可替代。">Thousands of applicants show the same grades and the same big-brand internships. Inside an international tech startup, the work is unmistakably yours.</p>
+                <div class="tf-grid tf-grid--3">
+                    <div class="tf-card">
+                        <div class="tf-num">01</div>
+                        <h4><span data-en="2-week bootcamp" data-zh="两周训练营">2-week bootcamp</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="4–5 small-group online sessions on what's really happening in AI, robotics and IoT — how startups build, fund and scale. Taught by venture builders, not textbooks." data-zh="4–5次小班在线课程，讲透AI、机器人与物联网的真实进展，以及创业公司如何构建、融资与扩张。由创业实践者授课，而非教科书。">4–5 small-group online sessions on what's really happening in AI, robotics and IoT — how startups build, fund and scale. Taught by venture builders, not textbooks.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">02</div>
+                        <h4><span data-en="2–3 internship placements" data-zh="2–3段实习安排">2–3 internship placements</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Internships with international tech startups across your fellowship year — real projects, real deliverables, side by side with founders." data-zh="在计划年度内进入国际科技创业公司实习——真实项目、真实成果，与创始人并肩工作。">Internships with international tech startups across your fellowship year — real projects, real deliverables, side by side with founders.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">03</div>
+                        <h4><span data-en="Review and enhance your profile" data-zh="总结并提升背景">Review and enhance your profile</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Graduate with what admissions officers rarely see: verifiable work at the tech frontier, founder referral letters, and a story entirely your own." data-zh="收获招生官罕见的材料：科技前沿的可验证工作、创始人推荐信，以及完全属于你自己的故事。">Graduate with what admissions officers rarely see: verifiable work at the tech frontier, founder referral letters, and a story entirely your own.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 3 · Mentors (navy, 4 person cards) -->
+        <div class="tf-slide tf-slide--navy">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Your mentors" data-zh="你的导师">Your mentors</div>
+                <h2 data-en="Taught by practitioners" data-zh="由实践者授课">Taught by practitioners<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="The bootcamp is taught and mentored by Transfong's leaders and innovation partners — people who have built, invested in and scaled technology businesses across Singapore, China and beyond." data-zh="训练营由创士锋的管理者与创新伙伴亲自授课与指导——他们在新加坡、中国及全球创建、投资并规模化了众多科技企业。">The bootcamp is taught and mentored by Transfong's leaders and innovation partners — people who have built, invested in and scaled technology businesses across Singapore, China and beyond.</p>
+                <div class="tf-grid tf-grid--4">
+                    <div class="tf-card tf-person">
+                        <img src="pictures/mentors/li-wei.jpeg" alt="">
+                        <h4><span data-en="Dr. Li Wei" data-zh="李伟博士">Dr. Li Wei</span><span class="title-red-dot">.</span></h4>
+                        <div class="tf-role" data-en="Co-founder &amp; CEO" data-zh="联合创始人兼首席执行官">Co-founder &amp; CEO</div>
+                        <p data-en="Programme Director of NTU's iSGP corporate training programme; former A*STAR technology commercialisation team. Ph.D. (NTU); MBA (INSEAD)." data-zh="南洋理工大学iSGP企业培训项目主任；曾任职A*STAR技术商业化团队。博士（南洋理工）；MBA（欧洲工商管理学院）。">Programme Director of NTU's iSGP corporate training programme; former A*STAR technology commercialisation team. Ph.D. (NTU); MBA (INSEAD).</p>
+                    </div>
+                    <div class="tf-card tf-person">
+                        <img src="pictures/mentors/tyler-huang.jpeg" alt="">
+                        <h4><span data-en="Tyler Huang" data-zh="黄伟杰">Tyler Huang</span><span class="title-red-dot">.</span></h4>
+                        <div class="tf-role" data-en="Co-founder &amp; COO" data-zh="联合创始人兼首席运营官">Co-founder &amp; COO</div>
+                        <p data-en="Former senior technology executive at NXP Semiconductors. Master's in Technology Management (NUS); dual bachelor's in Electronic Engineering and English (UESTC)." data-zh="曾任恩智浦半导体高级技术管理者。科技管理硕士（新加坡国立大学）；电子工程与英语双学士（电子科技大学）。">Former senior technology executive at NXP Semiconductors. Master's in Technology Management (NUS); dual bachelor's in Electronic Engineering and English (UESTC).</p>
+                    </div>
+                    <div class="tf-card tf-person">
+                        <img src="pictures/mentors/zhang-rui.jpeg" alt="">
+                        <h4><span data-en="Zhang Rui" data-zh="张锐">Zhang Rui</span><span class="title-red-dot">.</span></h4>
+                        <div class="tf-role" data-en="Venture Partner" data-zh="创业合伙人">Venture Partner</div>
+                        <p data-en="Co-founder of Yunhaiyao; Vice President of the Tsinghua SEM Alumni Association; advisor to SUTD's S.M.A.R.T entrepreneurship programme." data-zh="云海肴联合创始人；清华经管学院校友会副会长；新加坡科技设计大学S.M.A.R.T创业项目顾问。">Co-founder of Yunhaiyao; Vice President of the Tsinghua SEM Alumni Association; advisor to SUTD's S.M.A.R.T entrepreneurship programme.</p>
+                    </div>
+                    <div class="tf-card tf-person">
+                        <img src="pictures/mentors/shirley-yao.jpeg" alt="">
+                        <h4><span data-en="Dr. Shirley Yao" data-zh="姚博士">Dr. Shirley Yao</span><span class="title-red-dot">.</span></h4>
+                        <div class="tf-role" data-en="Venture Partner" data-zh="创业合伙人">Venture Partner</div>
+                        <p data-en="Industry mentor at NTU; former head of key accounts, Google APAC international growth team; mentor at Google's startup accelerator. Ph.D. (Peking University)." data-zh="南洋理工大学产业导师；曾任谷歌亚太国际增长团队大客户负责人；谷歌创业加速器导师。博士（北京大学）。">Industry mentor at NTU; former head of key accounts, Google APAC international growth team; mentor at Google's startup accelerator. Ph.D. (Peking University).</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 4 · Portfolio I (white, 4 anonymised startup cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Selected internship opportunities" data-zh="精选实习机会">Selected internship opportunities</div>
+                <h2 data-en="Our founders and startups" data-zh="我们的创始人与创业公司">Our founders and startups<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Fellows join Transfong's support team and intern inside companies like these, led by founders with world-class credentials." data-zh="学员将加入创士锋的支持团队，深入这样的企业实习，与拥有世界级履历的创始人共事。">Fellows join Transfong's support team and intern inside companies like these, led by founders with world-class credentials.</p>
+                <div class="tf-grid tf-grid--4">
+                    <div class="tf-card">
+                        <h4><span data-en="Antimicrobial biotech pioneer" data-zh="抗菌生物科技公司">Antimicrobial biotech pioneer</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Founder: Dr. Yang — Fellow of the Singapore Academy of Engineering and US AIMBE. Backed by A*STAR and Temasek Foundation." data-zh="创始人：杨博士——新加坡工程院与美国医学与生物工程院院士。获A*STAR与淡马锡基金会支持。">Founder: Dr. Yang — Fellow of the Singapore Academy of Engineering and US AIMBE. Backed by A*STAR and Temasek Foundation.</p>
+                        <div class="tf-tags"><span class="tf-tag tf-tag--teal" data-en="Biotech" data-zh="生物科技">Biotech</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4><span data-en="Digital eye-health platform" data-zh="少儿视力健康数字平台">Digital eye-health platform</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Founder: Prof. Wong — President's Science Award winner, 1,000+ papers, founding dean of Tsinghua Medicine. Spun out of the Singapore National Eye Centre." data-zh="创始人：王教授——总统科学奖得主，发表论文千余篇，清华医学院创始院长。孵化自新加坡国家眼科中心。">Founder: Prof. Wong — President's Science Award winner, 1,000+ papers, founding dean of Tsinghua Medicine. Spun out of the Singapore National Eye Centre.</p>
+                        <div class="tf-tags"><span class="tf-tag tf-tag--teal" data-en="HealthTech" data-zh="健康科技">HealthTech</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4><span data-en="Vision-based robot navigation" data-zh="纯视觉机器人导航公司">Vision-based robot navigation</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Founder: Dr. Gao — NUS Ph.D., Tsinghua B.Eng, NeurIPS world champion. Embodied-intelligence navigation born from NUS robotics research." data-zh="创始人：高博士——新国大博士、清华学士，NeurIPS世界冠军。源自新国大机器人研究的具身智能导航。">Founder: Dr. Gao — NUS Ph.D., Tsinghua B.Eng, NeurIPS world champion. Embodied-intelligence navigation born from NUS robotics research.</p>
+                        <div class="tf-tags"><span class="tf-tag tf-tag--teal" data-en="Embodied AI" data-zh="具身智能">Embodied AI</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4><span data-en="Cognitive AI platform" data-zh="认知智能AI平台">Cognitive AI platform</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Founder: Dr. Lin — IEEE Fellow and former IBM chief scientist. Explainable AI powering real-time financial-crime detection at leading global banks." data-zh="创始人：林博士——IEEE会士、前IBM首席科学家。可解释AI为全球顶级银行提供实时金融风控。">Founder: Dr. Lin — IEEE Fellow and former IBM chief scientist. Explainable AI powering real-time financial-crime detection at leading global banks.</p>
+                        <div class="tf-tags"><span class="tf-tag tf-tag--teal" data-en="AI · FinTech" data-zh="AI · 金融科技">AI · FinTech</span></div>
+                    </div>
+                </div>
+                <p class="tf-note" data-en="Company names and full profiles are disclosed to admitted fellows during internship matching." data-zh="入选学员将在实习匹配阶段获得完整的公司名称与详细信息。">Company names and full profiles are disclosed to admitted fellows during internship matching.</p>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 5 · Portfolio II (white, 4 more anonymised startups) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Selected internship opportunities" data-zh="精选实习机会">Selected internship opportunities</div>
+                <h2 data-en="Sixteen startups, one network" data-zh="十六家企业，同一网络">Sixteen startups, one network<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Deep tech across semiconductors, new energy, medtech and advanced manufacturing — a sample of the current portfolio." data-zh="覆盖半导体、新能源、医疗科技与先进制造的深科技企业——以下为当前portfolio的部分示例。">Deep tech across semiconductors, new energy, medtech and advanced manufacturing — a sample of the current portfolio.</p>
+                <div class="tf-grid tf-grid--4">
+                    <div class="tf-card">
+                        <h4><span data-en="Photonic-chip design house" data-zh="光子芯片设计公司">Photonic-chip design house</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Founder: Dr. Li — 18+ years in photonic integration, ex-A*STAR and Huawei, 50+ papers and 20+ patents." data-zh="创始人：李博士——18年以上光子集成经验，曾任职A*STAR与华为，发表论文50余篇、专利20余项。">Founder: Dr. Li — 18+ years in photonic integration, ex-A*STAR and Huawei, 50+ papers and 20+ patents.</p>
+                        <div class="tf-tags"><span class="tf-tag tf-tag--teal" data-en="Semiconductors" data-zh="半导体">Semiconductors</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4><span data-en="Solid-state battery innovator" data-zh="固态锂硫电池创新企业">Solid-state battery innovator</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Founder: Dr. Rao — developed the first commercial solid-state lithium-sulfur battery, with co-founders among the world's most-cited materials scientists." data-zh="创始人：Rao博士——率先开发首个商用固态锂硫电池，联合创始人为全球高被引材料科学家。">Founder: Dr. Rao — developed the first commercial solid-state lithium-sulfur battery, with co-founders among the world's most-cited materials scientists.</p>
+                        <div class="tf-tags"><span class="tf-tag tf-tag--teal" data-en="New energy" data-zh="新能源">New energy</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4><span data-en="AI medical-imaging company" data-zh="AI医学影像公司">AI medical-imaging company</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Founder: Prof. Hartman — breast-cancer specialist with 21 years of clinical experience. NUS spin-off, deployed across multiple Asian countries." data-zh="创始人：Hartman教授——拥有21年临床经验的乳腺癌专家。新国大孵化，已在多个亚洲国家落地。">Founder: Prof. Hartman — breast-cancer specialist with 21 years of clinical experience. NUS spin-off, deployed across multiple Asian countries.</p>
+                        <div class="tf-tags"><span class="tf-tag tf-tag--teal" data-en="MedTech" data-zh="医疗科技">MedTech</span></div>
+                    </div>
+                    <div class="tf-card">
+                        <h4><span data-en="AI process-engineering platform" data-zh="AI工艺工程平台">AI process-engineering platform</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Founded by ex-Tesla factory digitalisation and manufacturing-AI specialists. Customers cut process design time by 90%." data-zh="由特斯拉前工厂数字化与制造AI专家创立。客户工艺设计时间缩短90%。">Founded by ex-Tesla factory digitalisation and manufacturing-AI specialists. Customers cut process design time by 90%.</p>
+                        <div class="tf-tags"><span class="tf-tag tf-tag--teal" data-en="AI · Manufacturing" data-zh="AI · 制造">AI · Manufacturing</span></div>
+                    </div>
+                </div>
+                <p class="tf-note" data-en="Also in the portfolio: air-cargo SaaS, silicon-anode materials, smart water monitoring, knee-motion analytics, social-trading fintech, property discovery, venture scaling and brain-health neurotech." data-zh="portfolio还包括：航空货运SaaS、硅基负极材料、智能水质监测、膝关节运动分析、社交交易金融科技、AI找房平台、企业规模化平台与脑健康神经科技。">Also in the portfolio: air-cargo SaaS, silicon-anode materials, smart water monitoring, knee-motion analytics, social-trading fintech, property discovery, venture scaling and brain-health neurotech.</p>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 6 · What you graduate with (navy, 4 cards) -->
+        <div class="tf-slide tf-slide--navy">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Your portfolio" data-zh="你的成果">Your portfolio</div>
+                <h2 data-en="What you graduate with" data-zh="你将收获什么">What you graduate with<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Admissions officers trust what they can verify. Everything the fellowship produces is specific and checkable." data-zh="招生官相信可以核实的材料。本计划产出的每一项成果都具体且可查证。">Admissions officers trust what they can verify. Everything the fellowship produces is specific and checkable.</p>
+                <div class="tf-grid tf-grid--4">
+                    <div class="tf-card">
+                        <div class="tf-num">01</div>
+                        <h4><span data-en="Verifiable internship certificates" data-zh="可验证的实习证书">Verifiable internship certificates</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Co-branded by Transfong and the host startup, with a verification link so universities can confirm dates, project and supervisor." data-zh="由创士锋与实习企业联合签发，附验证链接，高校可核实日期、项目与导师。">Co-branded by Transfong and the host startup, with a verification link so universities can confirm dates, project and supervisor.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">02</div>
+                        <h4><span data-en="Founder referral letters" data-zh="创始人推荐信">Founder referral letters</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Strong performers earn a personal referral letter from the startup founder — with specific stories and concrete contributions." data-zh="表现优异者将获得创始人亲笔推荐信——包含具体事例与实际贡献。">Strong performers earn a personal referral letter from the startup founder — with specific stories and concrete contributions.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">03</div>
+                        <h4><span data-en="Work you can show" data-zh="可展示的成果">Work you can show</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Every internship ends with a tangible deliverable — a market study, research report or prototype you can point to in essays and interviews." data-zh="每段实习都以实际成果收尾——市场研究、调研报告或原型，可用于文书与面试。">Every internship ends with a tangible deliverable — a market study, research report or prototype you can point to in essays and interviews.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">04</div>
+                        <h4><span data-en="Application storytelling guidance" data-zh="申请呈现指导">Application storytelling guidance</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="A structured reflection session after each internship turns the experience into compelling material for personal statements and interviews." data-zh="每段实习后的结构化复盘，把经历转化为个人陈述与面试中的有力素材。">A structured reflection session after each internship turns the experience into compelling material for personal statements and interviews.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 7 · Fellowship privileges (white, 3 cards) -->
+        <div class="tf-slide">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Fellowship privileges" data-zh="学员专属机会">Fellowship privileges</div>
+                <h2 data-en="Inside a living innovation ecosystem" data-zh="置身鲜活的创新生态">Inside a living innovation ecosystem<span class="title-red-dot">.</span></h2>
+                <p class="tf-sub" data-en="Transfong runs startup competitions, immersion trips and founder events across Singapore and China. Selected Fellows may be invited to join as student volunteers." data-zh="创士锋在中新两地举办科创大赛、沉浸考察与创始人活动。优秀学员可受邀作为学生志愿者参与。">Transfong runs startup competitions, immersion trips and founder events across Singapore and China. Selected Fellows may be invited to join as student volunteers.</p>
+                <div class="tf-grid tf-grid--3">
+                    <div class="tf-card">
+                        <div class="tf-num">01</div>
+                        <h4><span data-en="Startup pitch competitions" data-zh="科创路演大赛">Startup pitch competitions</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Volunteer at our SG-CN AI acceleration pitch rounds in Singapore — watch startups pitch to investors, up close." data-zh="在新加坡的中新AI加速路演现场担任志愿者——近距离观察创业公司向投资人路演。">Volunteer at our SG-CN AI acceleration pitch rounds in Singapore — watch startups pitch to investors, up close.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">02</div>
+                        <h4><span data-en="Tech immersion trips" data-zh="科技沉浸考察">Tech immersion trips</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Support our China immersion programmes visiting future unicorns in AI, robotics and IoT — alongside founders and investors." data-zh="协助我们的中国沉浸考察项目，与创始人和投资人一同走访AI、机器人与物联网领域的未来独角兽。">Support our China immersion programmes visiting future unicorns in AI, robotics and IoT — alongside founders and investors.</p>
+                    </div>
+                    <div class="tf-card">
+                        <div class="tf-num">03</div>
+                        <h4><span data-en="Founder sessions &amp; community" data-zh="创始人分享与社群">Founder sessions &amp; community</span><span class="title-red-dot">.</span></h4>
+                        <p data-en="Join online sessions with startup founders from our network, and connect with fellow students who share your ambitions." data-zh="参加与网络内创始人的线上分享会，结识志同道合的同龄伙伴。">Join online sessions with startup founders from our network, and connect with fellow students who share your ambitions.</p>
+                    </div>
+                </div>
+                <p class="tf-note" data-en="These opportunities are by invitation only, based on performance and availability — a privilege of the fellowship, not a guaranteed component." data-zh="以上机会均为邀请制，视表现与时间安排而定——属于计划的额外礼遇，而非保证内容。">These opportunities are by invitation only, based on performance and availability — a privilege of the fellowship, not a guaranteed component.</p>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 8 · Who can apply (navy, split layout) -->
+        <div class="tf-slide tf-slide--navy">
+            <div class="tf-content">
+                <div class="tf-eyebrow" data-en="Who can apply" data-zh="招生对象">Who can apply</div>
+                <h2 data-en="For students aiming to study abroad" data-zh="面向计划海外深造的学生">For students aiming to study abroad<span class="title-red-dot">.</span></h2>
+                <div class="tf-split" style="margin-top:14px">
+                    <p class="tf-sub" style="margin:0" data-en="The fellowship is built for high school and university students in China who plan to pursue their next degree overseas — undergraduate or graduate, outside China. Admission is selective and cohorts are kept small." data-zh="本计划面向计划前往海外攻读下一学位的中国高中生与大学生——本科或研究生，均在境外就读。招生择优录取，班额始终保持精简。">The fellowship is built for high school and university students in China who plan to pursue their next degree overseas — undergraduate or graduate, outside China. Admission is selective and cohorts are kept small.</p>
+                    <ul class="tf-list">
+                        <li data-en="High schoolers aiming for overseas undergraduate study, and undergraduates targeting master's or PhD programmes abroad" data-zh="计划海外本科的高中生，以及目标海外硕士或博士项目的本科生">High schoolers aiming for overseas undergraduate study, and undergraduates targeting master's or PhD programmes abroad</li>
+                        <li data-en="Set on pursuing a higher degree outside China" data-zh="明确计划在境外攻读更高学位">Set on pursuing a higher degree outside China</li>
+                        <li data-en="Curious about technology and entrepreneurship — no coding required" data-zh="对科技与创业充满好奇——无需编程基础">Curious about technology and entrepreneurship — no coding required</li>
+                        <li data-en="Able to work in English and commit time during school holidays" data-zh="能以英文工作，并可在假期投入时间">Able to work in English and commit time during school holidays</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tf-rule"></div>
+        </div>
+
+        <!-- 9 · Closing (navy statement) -->
+        <div class="tf-slide tf-slide--navy">
+            <img class="tf-bg" src="pictures/deck/globe-in-hand.png" alt="" style="opacity:.85">
+            <div class="tf-veil tf-veil--left"></div>
+            <div class="tf-statement">
+                <div class="tf-eyebrow" data-en="Admissions" data-zh="申请通道">Admissions</div>
+                <h2 data-en="Small cohorts. Limited places. Apply early" data-zh="精简班额，名额有限，尽早申请">Small cohorts. Limited places. Apply early<span class="title-red-dot">.</span></h2>
+                <p class="tf-includes" data-en="Admission is selective and each cohort is intentionally small. Tell us about your student — or yourself — and we will arrange an introductory conversation." data-zh="招生择优录取，每期班额刻意保持精简。告诉我们你的孩子——或你自己的情况，我们将安排一次入门交流。">Admission is selective and each cohort is intentionally small. Tell us about your student — or yourself — and we will arrange an introductory conversation.</p>
+                <a class="tf-cta" href="https://forms.office.com/r/N4gHCrvSef" target="_blank" rel="noopener"><span data-en="Apply for the fellowship" data-zh="申请英才计划">Apply for the fellowship</span> →</a>
+            </div>
+            <div class="tf-foot" data-en="Transfong Ventures · www.transfong.com/fellowship" data-zh="创士锋 · www.transfong.com/fellowship">Transfong Ventures · www.transfong.com/fellowship</div>
+            <div class="tf-rule"></div>
+        </div>
+
+    </template>
+    <script src="deck.js"></script>
 </body>
 </html>
