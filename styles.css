@@ -259,6 +259,7 @@ img {
 .lang-toggle {
     display: flex;
     align-items: center;
+    white-space: nowrap;
     gap: 6px;
     padding: 6px 14px;
     border-radius: var(--radius-full);
@@ -376,16 +377,15 @@ img {
 
 /* Sunshine — subtle gradient lighting in upper right */
 .hero-sunshine {
+    /* Spans the whole hero: a partial box would clip the gradient and leave
+       a visible vertical seam, most noticeable on narrow screens. */
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 70%;
-    height: 80%;
+    inset: 0;
     background: radial-gradient(
-        circle at top right,
+        circle at 100% 0%,
         rgba(29, 116, 255, 0.25) 0%,
         rgba(36, 172, 251, 0.1) 40%,
-        transparent 70%
+        transparent 72%
     );
     pointer-events: none;
     z-index: 1;
@@ -2281,7 +2281,8 @@ a, .nav-link, .pillar-tab, .lang-option, .city-card, .btn, .footer-links a {
 }
 
 .partner-card:hover .partner-card-inner,
-.partner-card:focus-visible .partner-card-inner {
+.partner-card:focus-visible .partner-card-inner,
+.partner-card.flipped .partner-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -2348,36 +2349,17 @@ a, .nav-link, .pillar-tab, .lang-option, .city-card, .btn, .footer-links a {
     margin: 0;
 }
 
-/* Touch devices cannot hover — show the logo and name together instead */
+/* Touch devices cannot hover, so a tap flips the card (see script.js) —
+   the hint below the section title tells visitors that. */
+.partners-hint {
+    display: none;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: var(--space-sm);
+}
+
 @media (hover: none) {
-    .partner-card {
-        perspective: none;
-        height: auto;
-    }
-
-    .partner-card-inner {
-        transform: none !important;
-        transform-style: flat;
-        background: var(--white);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: var(--radius-lg);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-        padding: var(--space-md);
-    }
-
-    .partner-card-front,
-    .partner-card-back {
-        position: static;
-        backface-visibility: visible;
-        transform: none;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        padding: 0;
-    }
-
-    .partner-card-back { margin-top: var(--space-sm); }
-    .partner-name { color: var(--text-secondary); }
+    .partners-hint { display: block; }
 }
 
 @media (max-width: 992px) {

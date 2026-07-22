@@ -37,7 +37,28 @@
 }
 
 @media (max-width: 900px) {
-    .deck-present-btn { display: none; }
+    .deck-present-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Phones: the label would crowd the language toggle, so show the play mark only */
+@media (max-width: 600px) {
+    .deck-present-btn {
+        padding: 0;
+        width: 34px;
+        height: 34px;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .deck-present-btn span { display: none; }
+
+    .deck-present-btn svg {
+        width: 12px;
+        height: 12px;
+    }
 }
 
 /* ---- Overlay & stage ---- */
@@ -392,7 +413,8 @@ html.deck-on body {
 }
 
 .tf-flip:hover .tf-flip-inner,
-.tf-flip:focus-within .tf-flip-inner { transform: rotateY(180deg); }
+.tf-flip:focus-within .tf-flip-inner,
+.tf-flip.flipped .tf-flip-inner { transform: rotateY(180deg); }
 
 .tf-flip-front,
 .tf-flip-back {
@@ -531,7 +553,8 @@ html.deck-on body {
     transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.tf-logo-card:hover .tf-logo-inner { transform: rotateY(180deg); }
+.tf-logo-card:hover .tf-logo-inner,
+.tf-logo-card.flipped .tf-logo-inner { transform: rotateY(180deg); }
 
 .tf-logo-front,
 .tf-logo-back {
@@ -997,3 +1020,25 @@ html.deck-on body {
 .deck-hud .deck-lang { font-size: 12px; }
 
 .deck-hud .deck-exit { font-size: 15px; }
+
+/* ---- Small screens: the deck rotates to landscape, so keep the HUD compact ---- */
+@media (max-width: 900px) {
+    .deck-hud {
+        bottom: 12px;
+        padding: 5px 8px;
+        gap: 2px;
+    }
+
+    .deck-hud button {
+        min-width: 30px;
+        height: 30px;
+        padding: 0 8px;
+        font-size: 13px;
+    }
+
+    .deck-count {
+        font-size: 12px;
+        min-width: 44px;
+        padding: 0 4px;
+    }
+}

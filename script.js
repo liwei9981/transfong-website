@@ -60,6 +60,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    // --- Partner flip cards ---
+    // Hover-capable devices flip on hover via CSS (and flip back on mouse-out).
+    // Touch devices tap to flip; keyboard users get Enter/Space.
+    const partnerCanHover = window.matchMedia('(hover: hover)').matches;
+
+    document.querySelectorAll('.partner-card').forEach(card => {
+        const flip = () => card.classList.toggle('flipped');
+        if (!partnerCanHover) card.addEventListener('click', flip);
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                flip();
+            }
+        });
+    });
+
+
     // --- Navbar Scroll Effect ---
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;

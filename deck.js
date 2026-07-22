@@ -76,6 +76,7 @@
         overlay.appendChild(stage);
         document.body.appendChild(overlay);
         slides = Array.prototype.slice.call(stage.querySelectorAll('.tf-slide'));
+        bindTouch();
 
         // Slides are authored in English — sync if the site is in Chinese
         if (currentLang() === 'zh') {
@@ -94,11 +95,20 @@
         }
     }
 
-    /* ---------- Scale-to-fit (never reflow) ---------- */
+    /* ---------- Scale-to-fit (never reflow) ----------
+       On a portrait phone the slide would shrink to an unreadable strip, so the
+       stage is rotated a quarter turn to use the long edge of the screen. */
     function fit() {
         if (!stage) return;
-        var s = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
-        stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+        var vw = window.innerWidth, vh = window.innerHeight;
+        var rotate = vh > vw && vw < 900;
+        if (rotate) {
+            var sr = Math.min(vh / 1280, vw / 720);
+            stage.style.transform = 'translate(-50%, -50%) rotate(90deg) scale(' + sr + ')';
+        } else {
+            var s = Math.min(vw / 1280, vh / 720);
+            stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+        }
     }
 
     /* ---------- Mode switching ---------- */
@@ -135,6 +145,8 @@
     function go(n) {
         if (n < 0 || n >= slides.length) return;
         current = n;
+        // Cards tapped open on the previous slide reset to their front
+        stage.querySelectorAll('.flipped').forEach(function (el) { el.classList.remove('flipped'); });
         slides.forEach(function (s, i) { s.classList.toggle('active', i === n); });
         hud.querySelector('.deck-count').textContent = (n + 1) + ' / ' + slides.length;
         // Persist position so refresh keeps the slide
@@ -168,6 +180,40 @@
     });
 
     window.addEventListener('resize', function () { if (active) fit(); });
+    window.addEventListener('orientationchange', function () {
+        if (active) setTimeout(fit, 120);
+    });
+
+    /* ---------- Touch: tap a card to flip it, swipe to change slide ---------- */
+    function bindTouch() {
+        // Hover cannot happen on a touch screen, so tapping toggles the flip.
+        overlay.addEventListener('click', function (e) {
+            var card = e.target.closest && e.target.closest('.tf-flip, .tf-logo-card');
+            if (card) card.classList.toggle('flipped');
+        });
+
+        var x0 = null, y0 = null;
+        overlay.addEventListener('touchstart', function (e) {
+            if (e.touches.length !== 1) return;
+            x0 = e.touches[0].clientX;
+            y0 = e.touches[0].clientY;
+        }, { passive: true });
+
+        overlay.addEventListener('touchend', function (e) {
+            if (x0 === null) return;
+            var t = e.changedTouches[0];
+            var dx = t.clientX - x0, dy = t.clientY - y0;
+            x0 = null;
+            // The stage is rotated in portrait, so a vertical swipe reads as
+            // "next" there and a horizontal one does in landscape.
+            var portrait = window.innerHeight > window.innerWidth && window.innerWidth < 900;
+            var d = portrait ? dy : dx;
+            var off = portrait ? dx : dy;
+            if (Math.abs(d) > 60 && Math.abs(d) > Math.abs(off)) {
+                go(d < 0 ? current + 1 : current - 1);
+            }
+        }, { passive: true });
+    }
 
     // Deep links: #present opens the deck; #slide-N opens at slide N
     var m = location.hash.match(/^#slide-(\d+)$/);
