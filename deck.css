@@ -344,6 +344,131 @@ html.deck-on body {
 
 .tf-slide--navy .tf-note { color: var(--text-on-inverse-muted); }
 
+/* ---- Photo cards (image sits above the card body) ---- */
+.tf-card--photo { padding: 0; display: flex; flex-direction: column; }
+
+.tf-card--photo > img {
+    width: 100%;
+    height: 116px;
+    object-fit: cover;
+    display: block;
+    background: var(--tf-blue-05);
+}
+
+.tf-card--photo .tf-card-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tf-card--photo h4 { font-size: 18px; }
+.tf-card--photo p { font-size: 14px; }
+.tf-card--photo .tf-tags { margin-top: auto; padding-top: 12px; }
+
+/* ---- Photo mosaic (past-trip moments) ---- */
+.tf-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 176px);
+    gap: 16px;
+}
+
+.tf-photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+}
+
+.tf-photo-grid .tf-photo--wide { grid-column: span 2; }
+
+/* ---- Journey timeline ---- */
+.tf-timeline {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 26px 22px;
+}
+
+.tf-trip .tf-track {
+    position: relative;
+    height: 12px;
+    margin-bottom: 14px;
+}
+
+.tf-trip .tf-track .tf-line {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: -22px;
+    height: 2px;
+    background: var(--tf-blue-20);
+}
+
+.tf-slide--navy .tf-trip .tf-track .tf-line { background: rgba(255, 255, 255, 0.22); }
+
+.tf-trip .tf-track .tf-node {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--tf-red);
+}
+
+.tf-trip .tf-trip-n {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    color: var(--tf-teal);
+}
+
+.tf-trip .tf-trip-date {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--tf-navy);
+    margin-top: 5px;
+}
+
+.tf-slide--navy .tf-trip .tf-trip-date { color: #fff; }
+
+.tf-trip .tf-trip-cities {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+.tf-slide--navy .tf-trip .tf-trip-cities { color: #C9D1E8; }
+
+/* The upcoming departure, highlighted at the end of the timeline */
+.tf-trip--next { grid-column: span 2; }
+
+.tf-trip--next .tf-track .tf-node {
+    width: 18px;
+    height: 18px;
+    top: -3px;
+    box-shadow: 0 0 0 5px rgba(255, 0, 6, 0.22);
+}
+
+.tf-trip--next .tf-track .tf-line { right: 62%; }
+
+.tf-next-card {
+    border: 1px solid var(--tf-red);
+    border-radius: 14px;
+    padding: 16px 20px;
+    background: rgba(255, 0, 6, 0.04);
+}
+
+.tf-slide--navy .tf-next-card { background: rgba(255, 255, 255, 0.06); }
+
+.tf-next-card .tf-trip-n { color: var(--tf-red); }
+
 /* ---- Stats (track record, navy) ---- */
 .tf-stat {
     text-align: left;
@@ -392,9 +517,20 @@ html.deck-on body {
 
 /* City collaboration block inside navy cards */
 .tf-collab {
-    margin-top: 20px;
-    padding-top: 20px;
+    margin-top: 18px;
+    padding-top: 18px;
     border-top: 1px solid var(--border-on-inverse);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.tf-collab > img {
+    width: 96px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
 }
 
 .tf-collab .tf-collab-k {
