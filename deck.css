@@ -703,6 +703,12 @@ html.deck-on body {
     background: var(--tf-blue-05);
 }
 
+/* Larger 16:9 photo (used where a slide has only 2 cards and ample vertical room) */
+.tf-card--photo.tf-photo-lg > img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
 .tf-card--photo .tf-card-body {
     padding: 18px 20px 20px;
     display: flex;
