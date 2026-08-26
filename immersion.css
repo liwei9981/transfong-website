@@ -32,7 +32,7 @@
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-weight: 600;
+    font-weight: 700;
     color: rgba(255, 255, 255, 0.6);
     margin: 0;
 }
@@ -121,7 +121,7 @@
 
 .gallery-title {
     font-size: clamp(24px, 4vw, 36px);
-    font-weight: 800;
+    font-weight: 700;
     color: var(--white);
     letter-spacing: -0.5px;
     line-height: 1.2;
@@ -418,7 +418,7 @@
 
 .objective-group-header h3 {
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--navy);
 }
 
@@ -492,7 +492,7 @@
 
 .city-group-title {
     font-size: 26px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--navy);
     letter-spacing: -0.3px;
     margin-bottom: var(--space-lg);
@@ -567,7 +567,7 @@
 
 .city-photo-overlay h3 {
     font-size: 28px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--white);
     letter-spacing: -0.5px;
     margin-bottom: var(--space-xs);
@@ -611,7 +611,7 @@
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--white);
     flex-shrink: 0;
 }
@@ -622,7 +622,7 @@
 
 .visits-track-info h3 {
     font-size: 22px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--navy);
     letter-spacing: -0.3px;
 }
@@ -714,7 +714,7 @@
     height: 28px;
     border-radius: 50%;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: var(--space-md);
 }
 
@@ -763,7 +763,7 @@
     display: inline-block;
     padding: 3px 10px;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: var(--radius-full);
     letter-spacing: 0.3px;
 }
@@ -1058,7 +1058,7 @@
 
 .pricing-amount {
     font-size: clamp(48px, 8vw, 72px);
-    font-weight: 900;
+    font-weight: 700;
     color: var(--white);
     letter-spacing: -2px;
     margin-bottom: var(--space-xs);
@@ -1066,7 +1066,7 @@
 
 .pricing-amount-label {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--teal);
     margin-bottom: var(--space-xl);
 }
@@ -1258,7 +1258,7 @@
 
 .immersion-value-card h3.immersion-value-title {
     font-size: 19px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.3px;
     line-height: 1.25;
     margin-bottom: 0;

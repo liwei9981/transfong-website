@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyLanguage(lang) {
         currentLang = lang;
         document.documentElement.setAttribute('data-lang', lang);
+        // keep the real lang attribute in sync so :lang(zh) CSS (CJK tracking
+        // and line-height) and assistive tech both resolve correctly
+        document.documentElement.lang = (lang === 'zh') ? 'zh-CN' : 'en';
         localStorage.setItem('transfong-lang', lang);
 
         // Update toggle button state

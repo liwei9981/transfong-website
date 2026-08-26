@@ -3,10 +3,9 @@
    Implements the Transfong slide design guideline
    (02_Design handoff/2026.07.22_slide-guideline-package):
    fixed 1280×720 canvas scaled to fit, navy/white registers,
-   Poppins + Mulish, red baseline rule + red full-stop dot.
+   Space Grotesk + Inter, red baseline rule + red full-stop dot.
    A page opts in with a <template id="deckSlides"> of .tf-slide's.
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Mulish:wght@400;500;600;700;800&display=swap');
 
 /* ---- Present button in the navbar (guideline: red pill) ---- */
 .deck-present-btn {
@@ -103,8 +102,9 @@ html.deck-on body {
     --border-on-inverse: rgba(255, 255, 255, 0.18);
     --surface-inverse-2: #04246F;
     --shadow-sm: 0 2px 8px rgba(1, 27, 100, 0.08);
-    --font-display: 'Poppins', 'Noto Sans SC', sans-serif;
-    --font-body: 'Mulish', 'Noto Sans SC', sans-serif;
+    --font-display:  'Space Grotesk', 'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-subtitle: 'Inter', 'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body:     'Inter', 'Noto Sans SC', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
 .deck-stage {
@@ -195,7 +195,7 @@ html.deck-on body {
 .tf-title-body h1 {
     font-family: var(--font-display);
     font-size: 62px;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.08;
     letter-spacing: -0.02em;
     margin: 0;
@@ -224,7 +224,7 @@ html.deck-on body {
 /* The red full stop stays red even inside the gradient-clipped line */
 .tf-slide .title-red-dot {
     -webkit-text-fill-color: var(--tf-red);
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .tf-title-sub {
@@ -261,7 +261,7 @@ html.deck-on body {
 .tf-content h2 {
     font-family: var(--font-display);
     font-size: 44px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--tf-navy);
     margin: 0 0 8px;
@@ -317,7 +317,7 @@ html.deck-on body {
 
 .tf-card .tf-num {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 18px;
     color: var(--tf-navy);
     width: 48px;
@@ -343,7 +343,7 @@ html.deck-on body {
     display: block;
     font-family: var(--font-body);
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-muted);
     margin-top: 3px;
 }
@@ -493,7 +493,7 @@ html.deck-on body {
 
 .tf-flip-name {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 20px;
     color: var(--tf-navy);
     margin: 6px 0 8px;
@@ -597,7 +597,7 @@ html.deck-on body {
 
 .tf-logo-back span {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.35;
     color: #fff;
 }
@@ -782,7 +782,7 @@ html.deck-on body {
 
 .tf-trip .tf-trip-date {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 20px;
     color: var(--tf-navy);
     margin-top: 5px;
@@ -792,7 +792,7 @@ html.deck-on body {
 
 .tf-trip .tf-trip-cities {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-muted);
     margin-top: 5px;
     line-height: 1.4;
@@ -830,7 +830,7 @@ html.deck-on body {
 
 .tf-stat .tf-stat-value {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 56px;
     line-height: 1;
     color: #fff;
@@ -842,14 +842,14 @@ html.deck-on body {
 .tf-stat .tf-stat-label {
     margin-top: 12px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     color: #C9D1E8;
 }
 
 /* Quote cards */
 .tf-quote-mark {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 34px;
     line-height: 1;
     color: var(--tf-red);
@@ -924,7 +924,7 @@ html.deck-on body {
 .tf-statement h2 {
     font-family: var(--font-display);
     font-size: 50px;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.02em;
     margin: 0 0 26px;

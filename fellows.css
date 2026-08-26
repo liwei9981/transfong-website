@@ -40,7 +40,7 @@
 .fellows-hero-stat-value {
     font-family: var(--font-display);
     font-size: 34px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--white);
     line-height: 1.1;
 }
@@ -151,7 +151,7 @@
     right: var(--space-lg);
     font-family: var(--font-display);
     font-size: 44px;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1;
     opacity: 0.14;
 }
@@ -188,7 +188,7 @@
 
 .fellows-step-card h3.fellows-step-title {
     font-size: 19px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.3px;
     line-height: 1.25;
     margin-bottom: 0;
@@ -244,7 +244,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-mentors-header h3 {
     font-family: var(--font-display);
     font-size: clamp(20px, 3vw, 28px);
-    font-weight: 800;
+    font-weight: 700;
     color: var(--navy);
     letter-spacing: -0.4px;
     margin-bottom: var(--space-sm);
@@ -307,7 +307,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 
 .fellows-mentor-body h4 {
     font-size: 17px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--navy);
     letter-spacing: -0.2px;
 }
@@ -467,7 +467,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 
 .fellows-invite-card h3.fellows-invite-title {
     font-size: 19px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.3px;
     line-height: 1.25;
     margin-bottom: 0;
@@ -673,7 +673,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 
 .fellows-flip-front h4 {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--navy);
     letter-spacing: -0.2px;
     margin-bottom: var(--space-sm);
@@ -699,7 +699,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 
 .fellows-flip-founder-name {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--navy);
     letter-spacing: -0.2px;
     margin: 2px 0 8px;
@@ -724,7 +724,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 
 .fellows-flip-back h4 {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--white);
     margin-bottom: var(--space-xs);
 }
@@ -759,7 +759,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-flip-vision-label {
     display: inline-block;
     font-size: 10.5px;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.4px;
     color: var(--teal);
@@ -833,7 +833,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 
 .fellows-gallery-title {
     font-size: clamp(24px, 4vw, 36px);
-    font-weight: 800;
+    font-weight: 700;
     color: var(--white);
     letter-spacing: -0.5px;
     line-height: 1.2;
@@ -972,7 +972,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 
 .fellows-track-card h3 {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--navy);
     letter-spacing: -0.3px;
     margin-bottom: var(--space-lg);
@@ -1070,7 +1070,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
     background: var(--navy);
     color: var(--white);
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 17px;
     display: flex;
     align-items: center;
@@ -1211,7 +1211,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-cta-panel h2 {
     font-family: var(--font-display);
     font-size: clamp(24px, 3.6vw, 36px);
-    font-weight: 800;
+    font-weight: 700;
     color: var(--white);
     letter-spacing: -0.5px;
     margin-bottom: var(--space-md);
