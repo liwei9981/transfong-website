@@ -108,10 +108,12 @@
     --space-5xl: 8rem;
 
     /* Border Radius */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
+    /* Sharp-corner design: cards/panels/chips are square.
+       --radius-full stays for pills (buttons, labels, toggles). */
+    --radius-sm: 0;
+    --radius-md: 0;
+    --radius-lg: 0;
+    --radius-xl: 0;
     --radius-full: 9999px;
 
     /* Shadows */
@@ -224,7 +226,7 @@ img {
     width: 36px;
     height: 36px;
     background: var(--navy);
-    border-radius: var(--radius-sm);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -373,7 +375,7 @@ img {
     width: 100%;
     height: 2px;
     background: var(--navy);
-    border-radius: 2px;
+    border-radius: 0;
     transition: all var(--duration-fast) var(--ease-out);
 }
 
@@ -635,7 +637,7 @@ img {
     color: var(--navy);
     background: var(--white);
     padding: 2px 10px;
-    border-radius: 12px;
+    border-radius: 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     margin-top: -12px;
     z-index: 2;
@@ -646,7 +648,7 @@ img {
     background: var(--white);
     color: var(--navy);
     padding: 14px 24px;
-    border-radius: 24px;
+    border-radius: 0;
     font-size: 16px;
     font-weight: 700;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -739,7 +741,7 @@ img {
     padding: var(--space-xl);
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     transition: all var(--duration-normal) var(--ease-out);
     backdrop-filter: blur(10px);
 }
@@ -839,7 +841,7 @@ img {
     position: relative;
     width: 100%;
     height: 300px;
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     overflow: hidden;
     margin-bottom: var(--space-3xl);
     box-shadow: var(--shadow-xl);
@@ -857,7 +859,7 @@ img {
     right: 24px;
     background: rgba(255, 255, 255, 0.95);
     padding: 10px 20px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
@@ -884,7 +886,7 @@ img {
 
 .about-connexis-img {
     position: relative;
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-xl);
     flex: 0 0 auto;
@@ -911,7 +913,7 @@ img {
     right: 16px;
     background: rgba(255, 255, 255, 0.95);
     padding: 8px 16px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
@@ -964,7 +966,7 @@ img {
     bottom: 0;
     width: 2px;
     background: linear-gradient(to bottom, var(--teal), var(--purple), var(--navy-30));
-    border-radius: 2px;
+    border-radius: 0;
 }
 
 .timeline-item {
@@ -1037,7 +1039,7 @@ img {
     margin-bottom: var(--space-2xl);
     padding: 4px;
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     box-shadow: var(--shadow-sm);
 }
 
@@ -1048,7 +1050,7 @@ img {
     justify-content: center;
     gap: var(--space-sm);
     padding: 18px var(--space-lg);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     font-size: 18px;
     font-weight: 700;
     color: var(--text-secondary);
@@ -1098,7 +1100,7 @@ img {
     margin-bottom: var(--space-2xl);
     padding: var(--space-2xl);
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     box-shadow: var(--shadow-sm);
 }
 
@@ -1109,7 +1111,7 @@ img {
     color: var(--teal);
     padding: 10px;
     background: rgba(0, 177, 176, 0.08);
-    border-radius: var(--radius-md);
+    border-radius: 0;
 }
 
 .pillar-header-row h3 {
@@ -1134,7 +1136,7 @@ img {
 
 .city-card {
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-light);
     transition: all var(--duration-normal) var(--ease-out);
@@ -1169,7 +1171,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 6px;
     background: linear-gradient(90deg, var(--teal), var(--purple));
     transform: scaleX(0);
     transform-origin: left;
@@ -1216,7 +1218,7 @@ img {
 .accel-card {
     padding: var(--space-2xl);
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-light);
     transition: all var(--duration-normal) var(--ease-out);
@@ -1233,7 +1235,7 @@ img {
     height: 48px;
     padding: 10px;
     background: rgba(0, 177, 176, 0.08);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     color: var(--teal);
     margin-bottom: var(--space-lg);
 }
@@ -1274,7 +1276,7 @@ img {
 
 .training-card {
     padding: var(--space-2xl);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     position: relative;
     overflow: hidden;
     transition: all var(--duration-normal) var(--ease-out);
@@ -1421,7 +1423,7 @@ img {
 
 .team-card {
     background: var(--white);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-light);
@@ -1448,7 +1450,7 @@ img {
 .team-photo-wrap {
     width: 180px;
     height: 220px;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-radius: 0;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -1627,7 +1629,7 @@ img {
 
 .contact-card {
     padding: var(--space-2xl);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     background: var(--white);
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-sm);
@@ -2084,7 +2086,7 @@ img {
 .accel-promo-card {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: 0;
     position: relative;
     overflow: hidden;
@@ -2131,7 +2133,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
+    height: 8px;
 }
 
 .accel-promo-card--teal .accel-promo-card-accent { background: var(--teal); }
@@ -2248,7 +2250,7 @@ button:focus-visible,
 .lang-toggle:focus-visible {
     outline: 2px solid var(--teal);
     outline-offset: 3px;
-    border-radius: var(--radius-sm);
+    border-radius: 0;
 }
 
 /* Cursor: Pointer on all clickable elements */
@@ -2276,7 +2278,7 @@ a, .nav-link, .pillar-tab, .lang-option, .city-card, .btn, .footer-links a {
     padding: 12px 24px;
     background: var(--navy);
     color: var(--white);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     font-size: 14px;
     font-weight: 700;
     z-index: 9999;
@@ -2346,7 +2348,7 @@ a, .nav-link, .pillar-tab, .lang-option, .city-card, .btn, .footer-links a {
 .partner-card:focus-visible {
     outline: 2px solid var(--teal);
     outline-offset: 3px;
-    border-radius: var(--radius-lg);
+    border-radius: 0;
 }
 
 .partner-card-front,
@@ -2357,7 +2359,7 @@ a, .nav-link, .pillar-tab, .lang-option, .city-card, .btn, .footer-links a {
     align-items: center;
     justify-content: center;
     padding: var(--space-md);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }

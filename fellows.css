@@ -127,7 +127,7 @@
 
 .fellows-step-card {
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-2xl) var(--space-xl);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-light);
@@ -170,7 +170,7 @@
 .fellows-step-icon {
     width: 56px;
     height: 56px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -267,7 +267,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-mentor-card {
     background: var(--white);
     border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: all var(--duration-normal) var(--ease-out);
@@ -348,7 +348,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
     flex-direction: column;
     background: var(--bg-primary);
     border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-xl);
     transition: all var(--duration-normal) var(--ease-out);
 }
@@ -369,7 +369,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-outcome-icon {
     width: 48px;
     height: 48px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     background: var(--navy);
     display: flex;
     align-items: center;
@@ -412,7 +412,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
     line-height: 1.8;
     padding: var(--space-lg) var(--space-xl);
     background: var(--navy-05);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
 }
 
 /* ============================================
@@ -433,7 +433,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-invite-card {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-xl);
     transition: all var(--duration-normal) var(--ease-out);
 }
@@ -458,7 +458,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-invite-icon {
     width: 48px;
     height: 48px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -512,7 +512,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
     padding: var(--space-md) var(--space-lg);
     background: rgba(0, 177, 176, 0.08);
     border: 1px solid rgba(0, 177, 176, 0.25);
-    border-radius: var(--radius-md);
+    border-radius: 0;
 }
 
 .fellows-invite-note .material-symbols-outlined {
@@ -577,7 +577,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-flip-card:focus-visible {
     outline: 2px solid var(--teal);
     outline-offset: 3px;
-    border-radius: var(--radius-lg);
+    border-radius: 0;
 }
 
 .fellows-flip-inner {
@@ -605,7 +605,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
     inset: 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -645,7 +645,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-flip-icon {
     width: 44px;
     height: 44px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -881,7 +881,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
     flex-shrink: 0;
     width: 400px;
     height: 280px;
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     overflow: hidden;
     position: relative;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -937,7 +937,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-track-card {
     background: var(--bg-primary);
     border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-2xl) var(--space-xl);
     transition: all var(--duration-normal) var(--ease-out);
 }
@@ -1009,7 +1009,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
     margin: var(--space-2xl) auto 0;
     padding: var(--space-md) var(--space-lg);
     background: var(--navy-05);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     border: 1px solid var(--border-light);
 }
 
@@ -1083,7 +1083,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-timeline-body {
     background: var(--white);
     border: 1px solid var(--border-light);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-lg) var(--space-xl);
     flex: 1;
     box-shadow: var(--shadow-sm);
@@ -1121,7 +1121,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 .fellows-faq-item {
     background: var(--bg-primary);
     border: 1px solid var(--border-light);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     overflow: hidden;
     transition: border-color var(--duration-fast) var(--ease-out);
 }
@@ -1174,7 +1174,7 @@ h3.fellows-step-title--purple { color: var(--purple); }
 
 .fellows-cta-panel {
     background: var(--navy);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     padding: var(--space-3xl) var(--space-2xl);
     text-align: center;
     position: relative;

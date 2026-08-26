@@ -170,7 +170,7 @@
     flex-shrink: 0;
     width: 400px;
     height: 280px;
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     overflow: hidden;
     position: relative;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -303,7 +303,7 @@
 
 .immersion-value-card {
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-2xl) var(--space-lg);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-light);
@@ -318,8 +318,8 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    border-radius: 3px 3px 0 0;
+    height: 6px;
+    border-radius: 0;
 }
 
 .immersion-value-card:nth-child(1)::before { background: var(--teal); }
@@ -334,7 +334,7 @@
 .immersion-value-icon {
     width: 56px;
     height: 56px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -380,7 +380,7 @@
 
 .objective-group {
     background: var(--bg-primary);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-2xl);
     border: 1px solid var(--border-light);
     transition: all var(--duration-normal) var(--ease-out);
@@ -401,7 +401,7 @@
 .objective-group-icon {
     width: 48px;
     height: 48px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -435,7 +435,7 @@
     gap: var(--space-md);
     padding: var(--space-md) var(--space-lg);
     background: var(--white);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     border: 1px solid var(--border-light);
     transition: all var(--duration-fast) var(--ease-out);
 }
@@ -531,7 +531,7 @@
 
 
 .city-photo-card {
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     transition: all var(--duration-normal) var(--ease-out);
@@ -646,7 +646,7 @@
 
 .visit-card {
     background: var(--bg-primary);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-xl) var(--space-2xl);
     border: 1px solid var(--border-light);
     transition: all var(--duration-normal) var(--ease-out);
@@ -932,7 +932,7 @@
 
 .culture-card {
     background: var(--white);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-light);
@@ -1012,7 +1012,7 @@
     max-width: 700px;
     margin: 0 auto;
     background: var(--navy);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     padding: var(--space-3xl);
     position: relative;
     overflow: hidden;

@@ -51,7 +51,7 @@
 
 .accel-value-card {
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-2xl);
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-light);
@@ -66,8 +66,8 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    border-radius: 3px 3px 0 0;
+    height: 6px;
+    border-radius: 0;
 }
 
 .accel-value-card:nth-child(1)::before { background: var(--teal); }
@@ -82,7 +82,7 @@
 .accel-value-icon {
     width: 56px;
     height: 56px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +127,7 @@
 
 .comp-card {
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--border-light);
@@ -289,7 +289,7 @@
     bottom: 0;
     width: 3px;
     background: linear-gradient(to bottom, var(--teal), var(--purple), var(--red));
-    border-radius: 3px;
+    border-radius: 0;
 }
 
 .accel-timeline-item {
@@ -326,7 +326,7 @@
 
 .accel-timeline-content {
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-xl) var(--space-2xl);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-light);
@@ -389,7 +389,7 @@
 
 .benefit-card {
     background: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: 0;
     padding: var(--space-2xl);
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-light);
@@ -404,7 +404,7 @@
 .benefit-icon {
     width: 48px;
     height: 48px;
-    border-radius: var(--radius-md);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -437,7 +437,7 @@
 /* --- Gateway Panel --- */
 .gateway-panel {
     background: var(--navy);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     padding: var(--space-3xl);
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -502,7 +502,7 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--space-lg) var(--space-xl);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all var(--duration-normal) var(--ease-out);
@@ -553,7 +553,7 @@
 .accel-cta-inner {
     position: relative;
     background: var(--navy);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     padding: var(--space-2xl) var(--space-xl) var(--space-xl);
     text-align: center;
     overflow: hidden;

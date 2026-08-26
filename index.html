@@ -161,12 +161,12 @@
         #services .wwd-pillar { margin-top: var(--space-3xl); }
         #services .wwd-pillar + .wwd-pillar { margin-top: var(--space-3xl); padding-top: var(--space-3xl); border-top: 1px solid var(--border-light); }
         #services .wwd-pillar-head { display: flex; gap: var(--space-lg); align-items: flex-start; margin-bottom: var(--space-xl); max-width: 860px; }
-        #services .wwd-pillar-num { flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--navy); color: var(--white); font-size: 15px; font-weight: 700; letter-spacing: 1px; border-radius: 14px; }
+        #services .wwd-pillar-num { flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--navy); color: var(--white); font-size: 15px; font-weight: 700; letter-spacing: 1px; border-radius: 0; }
         #services .wwd-pillar-head h3 { font-size: 24px; font-weight: 700; color: var(--navy); letter-spacing: -0.5px; line-height: 1.25; margin: 9px 0 8px; }
         #services .wwd-pillar-head p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
         #services .wwd-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
-        #services .wwd-card { display: flex; flex-direction: column; position: relative; overflow: hidden; background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); transition: all var(--duration-normal) var(--ease-out); }
-        #services .wwd-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--purple)); transform: scaleX(0); transform-origin: left; transition: transform var(--duration-normal) var(--ease-out); z-index: 1; }
+        #services .wwd-card { display: flex; flex-direction: column; position: relative; overflow: hidden; background: var(--white); border: 1px solid var(--border-light); border-radius: 0; box-shadow: var(--shadow-sm); transition: all var(--duration-normal) var(--ease-out); }
+        #services .wwd-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--teal), var(--purple)); transform: scaleX(0); transform-origin: left; transition: transform var(--duration-normal) var(--ease-out); z-index: 1; }
         #services .wwd-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
         #services .wwd-card:hover::before { transform: scaleX(1); }
         #services .wwd-city-photo { position: relative; height: 130px; overflow: hidden; }
@@ -177,12 +177,12 @@
         #services .wwd-card-body h4 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: var(--space-sm); }
         #services .wwd-card-body p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
         #services .wwd-city .wwd-card-body p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
-        #services .wwd-icon { width: 44px; height: 44px; padding: 10px; background: rgba(0, 177, 176, 0.08); border-radius: var(--radius-md); color: var(--teal); margin-bottom: var(--space-md); }
+        #services .wwd-icon { width: 44px; height: 44px; padding: 10px; background: rgba(0, 177, 176, 0.08); border-radius: 0; color: var(--teal); margin-bottom: var(--space-md); }
         #services .wwd-icon svg { width: 100%; height: 100%; }
         #services .wwd-sub { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: 0.5px; margin-bottom: 6px; }
         #services .wwd-link { margin-top: auto; padding-top: var(--space-md); font-size: 14px; font-weight: 700; color: var(--teal); align-self: flex-start; }
         #services .wwd-link:hover { text-decoration: underline; }
-        #services .wwd-link:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
+        #services .wwd-link:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 0; }
         #services .wwd-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: var(--space-md); }
         #services .wwd-card-head .wwd-icon { margin-bottom: 0; flex-shrink: 0; }
         #services .wwd-card-head h4 { font-size: 21px; font-weight: 700; color: var(--navy); line-height: 1.15; margin-bottom: 0; }

@@ -172,7 +172,7 @@
       #track-record .tr-next { flex: 0 0 250px; min-width: 250px; }
       #track-record .tr-next .node { top: -3px; width: 18px; height: 18px; box-shadow: 0 0 0 5px rgba(255,0,6,0.28); }
       #track-record .tr-next .line { right: 60%; }
-      #track-record .tr-next-card { display: block; text-decoration: none; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,0,6,0.55); border-radius: 14px; padding: 18px 20px; margin-right: 8px; transition: transform 200ms ease; }
+      #track-record .tr-next-card { display: block; text-decoration: none; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,0,6,0.55); border-radius: 0; padding: 18px 20px; margin-right: 8px; transition: transform 200ms ease; }
       #track-record .tr-next-card:hover { transform: translateY(-3px); text-decoration: none; }
       #track-record .tr-next-card .k { font-family: var(--font-display); font-weight: 700; font-size: 0.8125rem; color: #FF0006; letter-spacing: 0.1em; }
       #track-record .tr-next-card .d { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: #fff; margin-top: 6px; }
@@ -180,16 +180,16 @@
       #track-record .tr-next-card .cta { color: #fff; font-size: 0.875rem; font-weight: 700; margin-top: 12px; }
       #track-record .tr-marquee { margin-top: 20px; overflow: hidden; }
       #track-record .tr-marquee-inner { display: flex; gap: 16px; width: max-content; animation: tr-marquee 55s linear infinite; }
-      #track-record .tr-marquee-inner img { height: 250px; width: 375px; object-fit: cover; border-radius: 10px; flex-shrink: 0; }
+      #track-record .tr-marquee-inner img { height: 250px; width: 375px; object-fit: cover; border-radius: 0; flex-shrink: 0; }
       @keyframes tr-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       #track-record .tr-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px; }
-      #track-record .tr-quote { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 14px; }
+      #track-record .tr-quote { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 0; padding: 26px; display: flex; flex-direction: column; gap: 14px; }
       #track-record .tr-quote .qdot { display: block; width: 10px; height: 10px; border-radius: 50%; }
       #track-record .tr-quote p { margin: 0; color: #fff; line-height: 1.65; font-size: 0.9875rem; flex: 1; }
       #track-record .tr-quote .who { font-size: 0.875rem; font-weight: 700; color: rgba(255,255,255,0.72); }
       #track-record .tr-li-btn { display: inline-flex; align-items: center; gap: 9px; align-self: flex-start; padding: 9px 18px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); color: #fff; font-size: 0.8125rem; font-weight: 700; text-decoration: none; transition: background 200ms ease, border-color 200ms ease; }
       #track-record .tr-li-btn:hover { background: rgba(255,255,255,0.1); border-color: #fff; text-decoration: none; }
-      #track-record .tr-li-btn .in { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 4px; background: #fff; color: #011B64; font-family: var(--font-display); font-weight: 700; font-size: 0.6875rem; line-height: 1; }
+      #track-record .tr-li-btn .in { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 0; background: #fff; color: #011B64; font-family: var(--font-display); font-weight: 700; font-size: 0.6875rem; line-height: 1; }
     </style>
 
     <section id="track-record">
@@ -298,14 +298,14 @@
       #two-cities .section-header { text-align: center; margin-bottom: 44px; }
       #two-cities .tc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 28px; }
       @media (max-width: 520px) { #two-cities .tc-grid { grid-template-columns: 1fr; } }
-      #two-cities .tc-card { background: #fff; border: 1px solid var(--border-light); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 200ms ease, box-shadow 200ms ease; }
+      #two-cities .tc-card { background: #fff; border: 1px solid var(--border-light); border-radius: 0; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 200ms ease, box-shadow 200ms ease; }
       #two-cities .tc-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
       #two-cities .tc-card > img { width: 100%; height: 240px; object-fit: cover; display: block; }
       #two-cities .tc-body { padding: 28px; }
       #two-cities .tc-body h3 { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--navy); margin: 0 0 10px; }
       #two-cities .tc-body > p { margin: 0; line-height: 1.65; font-size: 0.9875rem; }
       #two-cities .tc-collab { display: flex; align-items: center; gap: 14px; margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--border-light); }
-      #two-cities .tc-collab img { width: 88px; height: 66px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+      #two-cities .tc-collab img { width: 88px; height: 66px; object-fit: cover; border-radius: 0; flex-shrink: 0; }
       #two-cities .tc-collab .k { font-family: var(--font-display); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); }
       #two-cities .tc-collab .t { font-weight: 700; color: var(--navy); font-size: 0.9375rem; margin-top: 4px; }
       #two-cities .tc-collab p { margin: 4px 0 0; font-size: 0.8438rem; line-height: 1.5; }
@@ -363,7 +363,7 @@
       #site-visits .sv-cat .num { color: var(--navy); }
       #site-visits .sv-cat.second { margin-top: 64px; }
       #site-visits .sv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
-      #site-visits .sv-card { background: #fff; border: 1px solid var(--border-light); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease; }
+      #site-visits .sv-card { background: #fff; border: 1px solid var(--border-light); border-radius: 0; overflow: hidden; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; transition: transform 200ms ease, box-shadow 200ms ease; }
       #site-visits .sv-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
       #site-visits .sv-card > img { width: 100%; height: 170px; object-fit: cover; display: block; background: #EDF1F9; }
       #site-visits .sv-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
